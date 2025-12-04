@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mathematical Functions and Python Code</title>
+    <!-- Include the MathJax library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- Configuration for inline math delimiters -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['\\(','\\)']]}
+        });
+    </script>
+    <style>
+        /* Style for Python code block */
+        .python-code {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-left: 3px solid #f36d33;
+            color: #666;
+            page-break-inside: avoid;
+            font-family: monospace;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 1.6em;
+            max-width: 100%;
+            overflow: auto;
+            padding: 1em 1.5em;
+            display: block;
+            word-wrap: break-word;
+        }
+      pre {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-left: 3px solid #f36d33;
+            color: #666;
+            page-break-inside: avoid;
+            font-family: monospace;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 1.6em;
+            max-width: 100%;
+            overflow: auto;
+            padding: 1em 1.5em;
+            display: block;
+            word-wrap: break-word;
+        }
+      .equation { background-color: #f4f4f4; padding: 10px; }
+    </style>
+</head>
+<body>
+
+<h1>1 Methodology and Implementation</h1>
+
+<p>Consider a system of nonlinear equations given by the function</p>
+<p>\( F: \mathbb{R}^n \rightarrow \mathbb{R}^n \)</p>
+
+<p>We need to find a solution of \( x \in \mathbb{R}^n \) such that \( F(x) = 0 \).</p>
+<p>For the two-dimensional case with 2 functions, the function \( F \) and its system is given below:</p>
+<p>\( F(x, y) = \begin{cases} f(x, y) \\ g(x, y) \end{cases} \)</p>
+
+<p>The Jacobian matrix \( J \) of \( F \) is a square matrix of all first-order derivatives of components of \( F \), shown below:</p>
+<p>\( J(x, y) = \begin{bmatrix} \frac{\partial f}{\partial x} & \frac{\partial f}{\partial y} \\ \frac{\partial g}{\partial x} & \frac{\partial g}{\partial y} \end{bmatrix} \)</p>
+
+<p>The Newton iteration in multidimensional with the Jacobian matrix is given by:</p>
+<p>\( \begin{pmatrix} x_{n+1} \\ y_{n+1} \end{pmatrix} = \begin{pmatrix} x_n \\ y_n \end{pmatrix} - J^{-1}(x_n, y_n)F(x_n, y_n) \)</p>
+
+<p>where \( x \) and \( y \) are approximations.</p>
+
+<h2>Example 1</h2>
+
+<p>
+  <mathjax>
+    \(F(x, y)= \begin{pmatrix} x \sin(y) \\ \cos(x) + \sin(y^2) \end{pmatrix}\)
+  </mathjax>
+</p>
+
+<p>
+  <mathjax>
+    \(J(x, y)= \begin{pmatrix} \sin(y) & x \cos(y) \\ -\sin(x) & 2y\cos(y^2) \end{pmatrix}\)
+  </mathjax>
+</p>
+
+<p>In Python, we need to first define the functions of \(F\) and their corresponding Jacobian matrix.</p>
+
+<pre><code class="language-python">
+# Define the function F(x, y) = [f(x, y), g(x, y)]
+def F(x, y):
+    return np.array([x * np.sin(y), np.cos(x) + np.sin(y**2)])
+
+# Define the Jacobian matrix of F
+def J(x, y):
+    return np.array([[np.sin(y), x * np.cos(y)], 
+                     [-np.sin(x), 2 * y * np.cos(y**2)]])
+</code></pre>
+
+<p>For the implementation of the Multidimensional Newton's method, we need to perform iterations for solving for the updated step <strong>b</strong>. Instead of calculating the inverse of the Jacobian, we can solve the system:</p>
+
+<p>
+  <mathjax>
+    \(J(x_n, y_n) \textbf{b} = -F(x_n, y_n)\)
+  </mathjax>
+</p>
+
+<pre><code class="language-python">
+# Multidimensional Newton's method for 2 functions
+def newtons_method(F, J, x0, y0, tol):
+    x, y = x0, y0
+    
+    # initialize the step size vector b with infinity to enter the while loop
+    b = np.array([np.inf, np.inf]) 
+    
+    # iterating until b is smaller than the tolerance
+    while np.linalg.norm(b) >= tol:
+        
+        # solve the linear system J(x, y) * b = -F(x, y)
+        b = np.linalg.solve(J(x, y), -F(x, y))
+        
+        # update the guesses for x and y
+        x, y = x + b[0], y + b[1]
+    
+    return x, y
+</code></pre>
+
+<p>The above function can be applied to solve for the example system with the initial guess of \( (x_0, y_0) = (\frac{\pi}{2}, \pi) \):</p>
+
+<pre><code class="language-python">
+# Initial guess
+x0, y0 = np.pi/2, np.pi
+
+# Apply Newton's method
+solution = newtons_method(F, J, x0, y0, 1e-6)
+
+# Print the solution
+print("Solution: x = {:}, y = {:}".format(solution[0], solution[1]))
+</code></pre>
+
+<p>The returned solution is Solution: x = 1.1259698864749177, y = 3.141592653589793.</p>
+
+<p>The given example functions have multiple roots, and the returned solution is highly dependent on the initial guess. If we try to solve with the initial guess of \( (x_1, y_1) = (1.0, 1.0) \):</p>
+
+<pre><code class="language-python">
+# Initial guess
+x1, y1 = 1.0, 1.0
+
+# Apply Newton's method
+solution1 = newtons_method(F, J, x1, y1, 1e-6)
+
+# Print the solution
+print("Solution: x = {:}, y = {:}".format(solution1[0], solution1[1]))
+</code></pre>
+
+<p>The solution changes to be Solution: x = 1.5707963267948966, y = -6.64410208813345e-25.</p>
+
+<p>The Multidimensional Newton's Method can converge to different solutions based on our initial guess. We also need to ensure that the given functions are differentiable and the Jacobian matrix is non-singular at the beginning and is invertible at each iteration, otherwise, the method might fail to converge.</p>
+
+<!-- Example 2 section -->
+<h2>Example 2</h2>
+<p>The new functions are given below:</p>
+
+<!-- Mathematical function F(x, y) -->
+\(F(x, y) = \left(
+\begin{matrix}
+    1 + x^2 - y^2 + e^x \cos(y)\\
+    2xy + e^x \sin(y)
+\end{matrix}
+\right)\)
+
+<!-- Jacobian matrix J(x, y) -->
+\(J(x, y)= \left(
+\begin{matrix}
+    2x + e^x \cos(y) & -2y - e^x \sin(y)\\ 
+    2y + e^x \sin(y) & 2x + e^x \cos(y)
+\end{matrix}
+\right)\)
+
+<!-- Python code block -->
+<pre class="python-code">
+# Define the function F(x, y) = [f(x, y), g(x, y)]
+def F(x, y):
+    return np.array([1 + x**2 - y**2 + np.exp(x)*np.cos(y), 2*x*y + np.exp(x)*np.sin(y)])
+
+# Define the Jacobian matrix of F
+def J(x, y):
+    return np.array([[2*x + np.exp(x)*np.cos(y), -2*y - np.exp(x)*np.sin(y)], 
+                     [2*y + np.exp(x)*np.sin(y), 2x + np.exp(x)*np.cos(y)]])
+
+# Initial guess
+x0, y0 = 1, 1
+
+# Apply Newton's method
+solution = newtons_method(F, J, x0, y0, 1e-6)
+
+# Print the solution
+print("Solution: x = {:}, y = {:}".format(solution[0], solution[1]))
+</pre>
+
+<p>Then solution with initial guess of \( (x, y) = (1, 1) \) is Solution: x = -0.2931626870672417, y = 1.1726598176735787.</p>
+
+    <h2>Newton's Method in Multidimensional Space</h2>
+    
+    <p>Consider a vector of functions $F(x)$ defined as:</p>
+    <!-- Display the vector of functions -->
+    \[F(x) =
+    \begin{pmatrix}
+        f_1(x)\\
+        f_2(x)\\
+        \vdots\\
+        f_k(x)
+    \end{pmatrix}\]
+    
+    <p>The corresponding Jacobian matrix $J(x)$ is given by:</p>
+    <!-- Display the Jacobian matrix -->
+    \[J(x)=
+    \begin{pmatrix}
+    \frac{\partial f_1}{\partial x_1}(x) & \frac{\partial f_1}{\partial x_2}(x) & \cdots & \frac{\partial f_1}{\partial x_n}(x) \\
+    \frac{\partial f_2}{\partial x_1}(x) & \frac{\partial f_2}{\partial x_2}(x) & \cdots & \frac{\partial f_2}{\partial x_n}(x) \\
+    \vdots & \vdots & \ddots & \vdots \\
+    \frac{\partial f_k}{\partial x_1}(x) & \frac{\partial f_k}{\partial x_2}(x) & \cdots & \frac{\partial f_k}{\partial x_n}(x) \\
+    \end{pmatrix}
+    \]
+    
+    <p>The Multidimensional Newton's Method solves for the next approximation using the formula:</p>
+    <!-- Display the Newton's method formula -->
+    \[x_{n+1} = x_n - J(x_n)^{-1} F(x_n)\]
+    
+    <p>The Python implementation of the general Multidimensional Newton's Method is as follows:</p>
+    
+  <!-- Display the Python code -->
+<pre class="python">
+# General Multidimensional Newton's Method
+# Can be implemented with any number of given functions
+
+def multidimensional_newton(funcs, jacobian, initial_guess, tol=1e-10):
+    # Initialize the guess
+    x_k = np.array(initial_guess)
+    
+    while True:
+        # Evaluate the functions
+        F_k = np.array([func(*x_k) for func in funcs])
+        
+        # Evaluate the Jacobian matrix
+        J_k = jacobian(*x_k)
+        
+        # Check if the Jacobian is near singular
+        if np.linalg.cond(J_k) > 1 / np.finfo(float).eps:
+            print("Jacobian is near singular at the initial guess. Newton's method may not converge.")
+            return None
+        
+        # Solve the system J_k * b = -F to find delta
+        b, residuals, rank, s = np.linalg.lstsq(J_k, -F_k, rcond=None)
+        
+        # If the system is underdetermined or overdetermined, no solution was found
+        if residuals.size > 0 and np.any(residuals > tol):
+            print("The system does not have a solution.")
+            return None
+        
+        if rank < J_k.shape[0]:
+            print("Jacobian matrix is rank deficient at the initial guess, and the Newton's method may not converge.")
+        
+        # Update the guess
+        x_k += b
+        
+        # Check for convergence
+        if np.linalg.norm(b) < tol:
+            break
+        
+    return x_k
+  </pre>
+    
+    <p>Applying the functions with an initial guess of [1.0, 1.0], the solution is:</p>
+    <!-- Display the solution -->
+    <pre class="python">Solution: [-0.29316269  1.17265982]</pre>
+
+<h2>Example 3</h2>
+    <p>The given functions are:</p>
+    <p>\[
+    F(x)=
+    \begin{pmatrix}
+        x^2 + y^2 +z^2 - 100\\
+        xyz -1 \\
+        x - y - \sin(z)
+    \end{pmatrix}
+    \]</p>
+    
+    <p>Then, the Jacobian matrix is shown below:</p>
+    <p>\[
+    J(x) = 
+    \begin{pmatrix}
+        2x & 2y & 2z\\
+        yz & xz & xy\\
+        1 & -1 & -\cos(z)
+    \end{pmatrix}
+    \]</p>
+    
+    <p>With the initial guess of \( (x, y, z) = (1.0, 1.0, \pi) \), we can implement the multidimensional Newton's method:</p>
+    <pre><code>def f(x, y, z):
+    return x**2 + y**2 + z**2 -100
+
+def g(x, y, z):
+    return x*y*z - 1
+
+def h(x, y, z):
+    return x - y - np.sin(z)
+
+def Jacobian(x, y, z):
+    return np.array([[2*x, 2*y, 2*z],
+                     [y*z, x*z, x*y],
+                     [1, -1, -np.cos(z)]])
+    
+F_new = [f, g, h]
+initial = [1.0, 1.0, np.pi]
+
+# Apply the method which allows any number of functions
+sol = multidimensional_newton(F_new, Jacobian, initial)
+print(f"Solution: {sol}")
+</code></pre>
+    <p>The solution is given as \([-7.06104719, -7.08104601,  0.02000016]\).</p>
+
+<h2>Example 4</h2>
+    <p>The system of differential equations is:</p>
+    <p>\[
+    \begin{align*}
+        x' &= 1 x - 0.05 xy \\\\
+        y' &= 1 y + 0.01 xy
+    \end{align*}
+    \]</p>
+    <p>where \( \alpha = 1 \), \( \beta = 0.05 \), \( \gamma = 0.01 \) and \( \delta = 1 \)</p>
+    <p>The Jacobian matrix is defined:</p>
+    <p>\[
+    J(x, y) = 
+    \begin{pmatrix}
+        1 - 0.05 y & -0.05 x\\
+        0.01 y & 1 + 0.01 x
+    \end{pmatrix}
+    \]</p>
+    <p>To find the equilibrium points, we set \(x'\) and \(y'\) to zero and solve for \(x\) and \(y\). This gives the following system of algebraic equations:</p>
+    <p>\[ 
+    \begin{cases}
+    0 = x - 0.05xy \\\\
+    0 = y + 0.01xy
+    \end{cases} 
+    \]</p>
+    <p>From this system of equations, the first equation indicates that either \(x=0\) or \(y=20\). The second equation indicates that either \(y=0\) or \(x = -100\).</p>
+    <p>Therefore, our potential initial guesses for equilibrium points can be:</p>
+    <p>\[
+    \begin{cases}
+        (x, y) = (0, 0)\\
+        (x, y) = (0, 20)\\
+        (x, y) = (-100, 0)\\
+        (x, y) = (nonzero, nonzero)
+    \end{cases}
+    \]</p>
+    <p>To solve this system, we can use the multidimensional Newton's method with initial guesses of \([0.0, 0.0]\), \([0.0, 20.0]\), \([-100.0, 0]\), and \([-100, 20]\).</p>
+
+
+      <h2>Example 5</h2>
+    <p>The system of differential equations is defined as:</p>
+    <p>\[
+    \begin{align*}
+        x' &= -0.1 xy - x \\\\
+        y' &= -x + 0.9y\\\\
+        z' &= \cos(y) - xz
+    \end{align*}
+    \]</p>
+    <p>The Jacobian matrix is defined as:</p>
+    <p>\[
+    J(x, y, z) =
+    \begin{pmatrix}
+        -0.1y - 1 & -0.1x & 0 \\\\
+        -1 & 0.9 & 0 \\\\
+        -z & -\sin(y) & -x
+    \end{pmatrix}
+    \]</p>
+    <p>Set \(x', y', z'\) to zero and solve for \(x, y, z\). The following shows the algebraic equations:</p>
+    <p>\[
+    \begin{cases}
+        0 = -0.1 xy - x\\\\
+        0 = -x + 0.9y\\\\
+        0 = \cos(y) - xz
+    \end{cases}
+    \]</p>
+    <p>From the first equation, either \(x=0\) or \(y=-10\) since \(x(-0.1y-1) = 0\).</p>
+    <p>From the second equation, either both \(x, y\) are zero or nonzero, yielding \(y= \frac{x}{0.9}\).</p>
+    <p>For the third equation, if \(x\) is zero, \(z\) can be any value and \(\cos(y)\) needs to be zero. If \(x\neq 0\), we need to define \(z=\frac{\cos(y)}{x}\)</p>
+    <p>After applying multiple initial guesses, most of them give a singular Jacobian matrix, which cannot be solved through the multidimensional Newton's method, unless applying the initial guess of \((x', y', z') = (1.0, -10.0, 1.0)\).</p>
+    <p>The solution is approximated as \([-9, -10, 0.09323017]\).</p>
+    <p><strong>Python Code:</strong></p>
+    <pre>
+def f20(x, y, z):
+    return -0.1*x*y - x
+
+def g20(x, y, z):
+    return -x + 0.9 * y
+
+def h20(x, y, z):
+    return np.cos(y) - x*z
+
+def Jaco(x, y ,z):
+    return np.array([[-0.1*y - 1, -0.1*x, 0],
+                     [-1, 0.9, 0],
+                     [-z, -np.sin(y), -x]])
+
+F = [f20, g20, h20]
+initial0 = [1.0, -10.0, 1.0]
+sol0 = multidimensional_newton(F, Jaco, initial0)
+print(sol0)
+    </pre>
+
+          
+</body>
+</html>
+
