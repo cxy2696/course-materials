@@ -2,19 +2,19 @@
 
 [![Quality checks](https://github.com/cxy2696/course-materials/actions/workflows/quality.yml/badge.svg)](https://github.com/cxy2696/course-materials/actions/workflows/quality.yml)
 
-A curated archive of university coursework in **information science, computer
-science, statistics, economics, and business** (2022–2025). It collects lecture
-notes, lab reports, problem sets, presentations, and — most importantly — the
-code and data behind the analyses.
+This repository collects my university coursework in information science,
+computer science, statistics, economics, and business (2022–2026): lecture
+notes, lab reports, problem sets, presentations, and the code and data behind
+them.
 
-The archive is meant to be readable and reusable: every course has a guide, the
-code avoids hard-coded local paths, public datasets are cached where possible,
-and a single command checks the repository's hygiene.
+Most folders have a README with the files and commands that matter. Data paths
+are relative, public datasets are cached where possible, and two commands cover
+the main checks:
 
 ```bash
 git clone https://github.com/cxy2696/course-materials.git
 cd course-materials
-make check          # notebooks, links, secrets, Python/R/Julia syntax
+make check          # repository hygiene, links, syntax
 make check-code     # Java tests, C++ build, merged Python tests
 ```
 
@@ -81,59 +81,12 @@ Shared infrastructure:
 Full setup instructions for Python, Java, C++, R, Julia, PostgreSQL, Tableau, and LaTeX are
 in [`docs/running-code.md`](docs/running-code.md).
 
-## Highlights
+## Recent changes
 
-* **Numerical analysis** — a full MATH 310 archive (33 notebooks, eight problem
-  sets, modeling notes, and a cross-entropy project) plus the lab subset with
-  Newton basins, climate calculus, LU factorization, and PCA face recognition.
-* **Network science** — a 34k-node coauthorship analysis (degree distribution,
-  components, BFS levels) and hybrid-contagion simulations.
-* **Matrix computations** — Julia/Pluto problem sets plus a self-contained
-  Bayesian-optimization tutorial adapted from Peter Frazier's paper.
-* **Market design** — random serial dictatorship, deferred acceptance, and
-  top-trading-cycles simulations for school choice.
-* **Business intelligence** — a full data-warehouse project with dimensional
-  models, ETL, Tableau dashboards, and a WhereScape case.
-* **Applied AI** — retrieval-augmented generation (RAG) over legal/health
-  documents and LLM API exercises.
-* **Programming coursework** — CSCI 161 Java labs, five machine-learning
-  assignments, MITx 6.00.1x, an INFO 4100 R setup, standalone analysis
-  notebooks, and a creative-project template, merged from the separate `code`
-  repository. The CS 6850 coauthorship parser was updated and its duplicate
-  dataset removed.
-
-## What this cleanup changed
-
-This repository was refreshed in November 2026. The main changes:
-
-* **Documentation** — a landing page, a README for every course/project, and a
-  `docs/` set covering the catalog, running code, conventions, privacy, and
-  security.
-* **Reproducibility** — `file.choose()` prompts replaced by explicit data
-  paths; public statistics datasets cached under
-  `Applied-Statistics/data/external/`; Julia `Project.toml` files; Python
-  `requirements.txt`; SQL DDL with a relative `\copy`.
-* **Correctness** — fixed a coauthorship parser that mixed bibliography
-  metadata into author names, an undefined `pdata` object in the panel-data
-  script, an invalid R default argument, and silent `summary(..., robust=TRUE)`
-  calls (now `robust_summary()` with HC1 standard errors).
-* **Notebook portability** — removed Windows absolute paths and remote image
-  URLs from the numerical-analysis labs; data now lives in one `data/` folder.
-* **Hygiene** — removed 16 `.DS_Store` files, Office lock files, notebook
-  checkpoints, redundant archives, and exact duplicates; added `.gitignore`,
-  `.gitattributes`, and CI checks.
-* **Migration** — folded the standalone `MATH-Modeling` and `code` archives into
-  this repository, with a mapping note in [`docs/math-modeling.md`](docs/math-modeling.md)
-  and [`docs/code-merge.md`](docs/code-merge.md).
-* **Security** — removed a committed Google API key from the exercise notebook
-  and documented the incident. **The key is still in git history; revoke it.**
-  See [`docs/security.md`](docs/security.md).
-
-Most original notebook outputs are intentionally retained: they document what
-the submissions produced. The exercise notebook's outputs were cleared when its
-leaked key was removed. Where the cleanup changed an analysis (for example the
-coauthorship parser or robust standard errors), the outputs were regenerated or
-the difference is noted in the course README.
+The merge of the standalone `code` and `MATH-Modeling` archives is recorded in
+[`CHANGELOG.md`](CHANGELOG.md). Mapping notes are in
+[`docs/code-merge.md`](docs/code-merge.md) and
+[`docs/math-modeling.md`](docs/math-modeling.md).
 
 ## Data and privacy
 

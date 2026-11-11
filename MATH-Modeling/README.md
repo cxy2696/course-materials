@@ -1,10 +1,12 @@
 # MATH-Modeling
 
-> This folder is part of the [`course-materials`](../README.md) archive. It was migrated from the standalone [`cxy2696/MATH-Modeling`](https://github.com/cxy2696/MATH-Modeling) repository; the course layout and documentation are preserved so the notebooks keep working.
+> This folder is part of the [`course-materials`](../README.md) archive. It was migrated from the standalone `cxy2696/MATH-Modeling` repository; the layout is preserved so the notebooks keep working.
 
-I keep my numerical analysis, mathematical modeling and optimization coursework here: the notebooks I wrote, my homework, the lecture notes I collected, and the reference books I used. I also added a small checker so the notebooks, links and data paths stay consistent as I revise them.
-
-Most of the numerical-analysis notebooks come from **MATH 310 (Numerical Analysis)** at the University of Puget Sound, spring 2024. The exercise numbers in the file names follow that course's textbook. The modeling notes are from a separate modeling course, and the optimization books and lecture notes are reference material I studied alongside the courses. The smaller lab/project subset for the same MATH 310 course is in [`../Numerical-Analysis-Lab/`](../Numerical-Analysis-Lab/) and [`../Basins-of-Attraction/`](../Basins-of-Attraction/).
+This is my MATH 310 (Numerical Analysis) and mathematical-modeling coursework:
+notebooks, problem sets, lecture notes, and reference books. The numerical
+analysis part is from the University of Puget Sound, spring 2024; the smaller
+MATH 310 lab/project subset is in [`../Numerical-Analysis-Lab/`](../Numerical-Analysis-Lab/)
+and [`../Basins-of-Attraction/`](../Basins-of-Attraction/).
 
 ## What is here
 
@@ -68,25 +70,6 @@ MATH-Modeling/
 └── README.md
 ```
 
-## How I work through the material
-
-I followed the numbered folders in order. Each one has a short index in [`notebooks/README.md`](notebooks/README.md) with the exercises it covers.
-
-| Step | Topic | Entry point | What it covers |
-| :---: | --- | --- | --- |
-| 1 | Python and floating point | [`notebooks/01-python-and-floating-point/`](notebooks/01-python-and-floating-point/) | Python, NumPy/SciPy, machine precision and round-off |
-| 2 | Root finding | [`notebooks/02-root-finding/`](notebooks/02-root-finding/) | bisection, regula falsi, Newton, secant, Newton for systems |
-| 3 | Linear algebra | [`notebooks/03-linear-algebra/`](notebooks/03-linear-algebra/) | elimination, LU, QR, eigenvalues, SVD |
-| 4 | Optimization | [`notebooks/04-optimization/`](notebooks/04-optimization/) | derivative-free search, gradient descent, least squares, Newton with line search |
-| 5 | Function approximation | [`notebooks/05-function-approximation/`](notebooks/05-function-approximation/) | Taylor expansions, polynomial approximation, error bounds |
-| 6 | Numerical calculus | [`notebooks/06-numerical-calculus/`](notebooks/06-numerical-calculus/) | finite differences, truncation error, trapezoid and Simpson rules |
-| 7 | Differential equations | [`notebooks/07-differential-equations/`](notebooks/07-differential-equations/) | Euler, implicit Euler, midpoint, RK4, parameter fitting |
-| 8 | Partial differential equations | [`notebooks/08-partial-differential-equations/`](notebooks/08-partial-differential-equations/) | heat, wave, Laplace/Poisson, finite differences |
-| 9 | Fourier analysis | [`notebooks/09-fourier-analysis/`](notebooks/09-fourier-analysis/) | DFT, Fourier series, FFT |
-| 10 | Applications | [`notebooks/10-applications/`](notebooks/10-applications/) | the goat problem: geometry plus a root finder |
-
-The problem sets mirror the course sequence; [`homework/README.md`](homework/README.md) lists the exercises in each one.
-
 ## The notebooks
 
 I grouped the 33 numerical-analysis notebooks into ten folders, numbered in the order I studied them. Each notebook keeps the derivation, the code and the figures from the original run. The full index with exercise numbers and methods is in [`notebooks/README.md`](notebooks/README.md).
@@ -110,12 +93,6 @@ I collected the books and lecture notes in [`references/`](references/): five op
 ## Data
 
 The five datasets are in [`data/`](data/); [`data/README.md`](data/README.md) records where each one came from and its SHA-256 hash. I replaced the original `raw.githubusercontent.com` reads with relative paths so the notebooks run offline.
-
-## A pass over the code
-
-I reran all 74 notebooks in November 2026 and fixed what broke. The simulations now draw their trials in one batch, and the PDE solvers update a whole grid row at a time; that is where most of the speed came from. The LU and QR routines do the same with their row and column updates. In the ODE notebooks the solution arrays were integers whenever `dt` was an integer, so every step was truncated; they are floats now. Some things were simply wrong: the QR "full SVD" helper stacked random columns onto $U$, the SVD rank test used a fixed threshold, the bisection check printed a warning and kept going, and regula falsi compared the wrong sign. I fixed those and added a reconstruction or residual check where it was cheap, so the output shows whether the result is right.
-
-I also seeded every random example and replaced the remaining `np.matrix` code with arrays. Every notebook was re-executed afterwards, so the saved outputs come from the current code. [`docs/performance.md`](docs/performance.md) has the timings and the list of what changed where.
 
 ## Checking the repository
 
