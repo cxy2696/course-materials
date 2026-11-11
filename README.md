@@ -104,8 +104,9 @@ This repository was refreshed in November 2026. The main changes:
   and documented the incident. **The key is still in git history; revoke it.**
   See [`docs/security.md`](docs/security.md).
 
-Original notebook outputs are intentionally retained: they document what the
-submissions produced. Where the cleanup changed an analysis (for example the
+Most original notebook outputs are intentionally retained: they document what
+the submissions produced. The exercise notebook's outputs were cleared when its
+leaked key was removed. Where the cleanup changed an analysis (for example the
 coauthorship parser or robust standard errors), the outputs were regenerated or
 the difference is noted in the course README.
 

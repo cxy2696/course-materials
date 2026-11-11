@@ -36,6 +36,12 @@ History rewriting changes every commit hash. Coordinate with anyone who has a
 clone or fork; they will need to re-clone. If the key is already revoked, the
 rewrite is optional — the credential is useless even though the string remains.
 
+### Harden the repository
+
+Enable **secret scanning** and **push protection** in the GitHub repository
+settings (Settings → Code security and analysis). They catch future key-shaped
+strings at push time; they do not remove the existing history.
+
 ### Verification
 
 ```bash

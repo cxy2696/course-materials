@@ -54,7 +54,9 @@ No course content was rewritten; the changes are cleanup, fixes, and guides.
 * Numerical-analysis notebooks use one `data/` folder instead of Windows paths
   and remote GitHub/cocalc URLs. Missing kernelspecs were added.
 * The exercises notebook now reads `GEMINI_API_KEY` from the environment and
-  cleans ORCID values without assuming the real 12-digit format.
+  cleans ORCID values without assuming the real 12-digit format. Its stale
+  outputs were cleared when the key was removed.
+* Added a root `SECURITY.md` reporting policy.
 * The `exercises` folder was flattened from `exercises/exercises/` to
   `exercises/`.
 
