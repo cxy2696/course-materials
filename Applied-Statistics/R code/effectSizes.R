@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("lattice"))
+
 # Jake Price
 # October 21, 2022
 #
@@ -17,7 +21,7 @@
 #          As far as I could find, there is not an easy way to do it automatically in R
 
 # Data exploration
-rootData<-read.csv(file.choose(), header=TRUE)
+rootData<-read_data("roots.csv")
 boxplot(Diameter ~ Trt, data = rootData)
 lattice::xyplot(Diameter ~ factor(Trt), data = rootData)
 lattice::densityplot(~Diameter, groups = Trt, data = rootData, auto.key = TRUE)

@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("palmerpenguins"))
+
 #####################################################
 #
 #Author: Xinyi (Anny) Cui
@@ -7,7 +11,7 @@
 ##############################################
 #
 #Data
-rootData<-read.csv(file.choose(), header=TRUE)
+rootData<-read_data("roots.csv")
 library(palmerpenguins)
 data(penguins)
 

@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("lattice"))
+
 ################################################################################
 #
 #Author: Xinyi (Anny) Cui
@@ -16,7 +20,7 @@
 ################################################################################
 #
 #Import the dataset and add a new column called Age (91-Year)
-carData<-read.table("http://www.statsci.org/data/oz/mazdas.txt", header=TRUE)
+carData<-read_external("mazdas.txt")
 carData$Age<-91-carData$Year
 head(carData)
 str(carData)

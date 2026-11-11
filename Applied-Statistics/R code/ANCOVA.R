@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("lattice"))
+
 ##########
 #
 #Author: Xinyi (Anny) Cui
@@ -14,17 +18,13 @@
 #########################################
 #
 #Call the dataset
-heatData<-read.table("http://www.statsci.org/data/general/insulgas.txt")
+heatData<-read_external("insulgas.txt")
 head(heatData)
 str(heatData)
 
-heatData<-subset(heatData, V1!="Insulate")
-head(heatData)
-str(heatData)
-
-heatData$Insulate<-heatData$V1
-heatData$Temp<-as.numeric(heatData$V2)
-heatData$Gas<-as.numeric(heatData$V3)
+stopifnot(all(c("Insulate", "Temp", "Gas") %in% names(heatData)))
+heatData$Temp <- as.numeric(heatData$Temp)
+heatData$Gas <- as.numeric(heatData$Gas)
 
 heating1<-subset(heatData, Insulate=="Before")
 heating2<-subset(heatData, Insulate=="After")

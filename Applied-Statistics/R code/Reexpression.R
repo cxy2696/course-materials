@@ -1,3 +1,6 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+
 ################################################################################
 #Xinyi (Anny) Cui
 #Oct. 23, 2022
@@ -11,7 +14,7 @@
 #
 #
 #Import dataset
-rootData<-read.csv(file.choose(), header=TRUE)
+rootData<-read_data("roots.csv")
 head(rootData)
 str(rootData)
 

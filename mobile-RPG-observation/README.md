@@ -1,14 +1,68 @@
-# mobile-RPG-observation [PDF version](https://cxy2696.github.io/Anny%20Thesis.pdf)
-Thesis work
+# Mobile RPG Observation
 
-Does the proliferation of otaku culture significantly influence the popularity and adoption of RPG mobile games in the modern age? 
+An independent thesis project on the relationship between otaku culture and the
+mobile-RPG market. The question: does the proliferation of otaku culture
+significantly influence the popularity and adoption of RPG mobile games in the
+modern age?
 
-Key findings indicate that otaku culture significantly impacts consumer behavior and market trends in the mobile RPG industry, demonstrating a nuanced symbiosis between cultural affinity and economic dynamics. Contributing to understanding how cultural phenomena like otaku culture shape market dynamics and consumer preferences in the digital age. The study also highlights the complexities of this relationship, suggesting that while otaku culture fosters event hosting and anime releases, other factors may inhibit RPG revenue growth. The research concludes that the influence of otaku culture on the mobile RPG market involves a complex interplay of cultural, economic, and technological factors, emphasizing the need for nuanced understanding in the digital entertainment space.
+The same analysis is in
+[`../ECON411/`](../ECON411/README.md) (the course version). This folder is the
+standalone project with its own README, thesis, R scripts, data, and poster.
 
-Providing insights for game developers and marketers navigating the otaku marketplace.
+## Key findings
 
-![revenue](https://github.com/cxy2696/mobile-RPG-observation/assets/93075691/184775cf-9c5a-4512-9347-c4a7fc05940e)
+The study finds a nuanced relationship: otaku-culture indicators (anime/manga
+conventions, sales, and accessibility) are associated with mobile-RPG market
+activity, but the effect is not uniform across revenue and downloads. Other
+factors — mobile penetration, GDP, and country/year effects — matter, and the
+short unbalanced panel limits causal claims. The thesis argues that cultural
+affinity and economic dynamics interact rather than one simply driving the
+other.
 
-![download](https://github.com/cxy2696/mobile-RPG-observation/assets/93075691/7cc1c567-3d34-4b5a-a1ed-a6d1c4e22610)
+## What is inside
 
-![results](https://github.com/cxy2696/mobile-RPG-observation/assets/93075691/161a11ba-de92-4ef2-9726-eb7a5954bbe1)
+| Path | Description |
+| --- | --- |
+| `Thesis (1).docx` | Full thesis |
+| `Thesis.R` | Main regressions and stargazer tables |
+| `rpgD.R` | Panel/fixed-effects models and diagnostics |
+| `panel plot.R` | Scatterplot/correlation matrix helpers |
+| `rpgObservation.CSV` | Country-year panel |
+| `Poster pictures/` | Figures, model tables, variable matrix, and poster PDFs |
+| `README.md` | This guide |
+
+![Revenue and downloads](<Poster pictures/results.png>)
+
+## Panel variables
+
+`rpgR` (revenue), `rpgD` (downloads), `user` (active mobile users),
+`con` (conventions), `amsale` (anime/manga sales), `amR` (anime accessibility),
+`anime` (combined culture index), `gdp`, `gdpperson`, `mobile`, `country`,
+`year`.
+
+## Run it
+
+```r
+install.packages(c("plm", "stargazer", "ggplot2", "coefplot", "car",
+                   "corrplot", "lmtest", "sandwich", "dplyr"))
+```
+
+```bash
+cd mobile-RPG-observation
+Rscript Thesis.R
+Rscript rpgD.R
+```
+
+Both scripts source `_setup.R` and load `rpgObservation.CSV`. The panel script
+previously referenced an undefined `pdata` object (it created `ndata`); that is
+fixed in the archive.
+
+## Notes
+
+* This is an observational study with a short panel; it documents associations,
+  not causal effects.
+* The thesis and figures are original work; the underlying Statista/World Bank
+  extracts have their own terms. See
+  [`../docs/third-party-materials.md`](../docs/third-party-materials.md).
+* The old README used GitHub asset URLs from a previous repository; the images
+  now point at the local `Poster pictures/` files.

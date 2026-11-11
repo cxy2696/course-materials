@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("lattice"))
+
 ######################################
 #
 #Author: Xinyi (Anny) Cui
@@ -13,7 +17,7 @@
 #
 #############################
 #Import the dataset
-companies<-read.csv(file.choose(),header=TRUE)
+companies<-read_data("ForbesTop2000-2017.csv")
 head(companies)
 str(companies)
 

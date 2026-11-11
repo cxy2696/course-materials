@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("lattice"))
+
 # Jake Price
 # 10/19/2020
 # 
@@ -13,7 +17,7 @@
 #    Compact, Large, Midsize, Small, Sporty, Van
 
 # import data and make sure it loaded right
-cars = read.csv(file.choose())
+cars = read_data("93cars.csv")
 head(cars)
 
 # data exploration

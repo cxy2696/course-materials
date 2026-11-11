@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("lattice"))
+
 ################################################################################
 #
 #Author: Xinyi (Anny) Cui
@@ -9,7 +13,7 @@
 ################################################################################
 #
 #Import the data file
-petrelData<-read.csv(file.choose(), header=TRUE)
+petrelData<-read_data("snowPetrels.csv")
 head(petrelData)
 str(petrelData)
 #

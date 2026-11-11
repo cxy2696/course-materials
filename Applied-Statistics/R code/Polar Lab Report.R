@@ -1,3 +1,6 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+
 ################################################################################
 #
 #Author: Xinyi (Anny) Cui
@@ -10,13 +13,13 @@
 ################################################################################
 #
 #imoport the ice core data and check for it
-iceCore<-read.csv(file.choose(),header=TRUE)
+iceCore<-read_data("ice_core.csv")
 head(iceCore)
 str(iceCore)
 attach(iceCore)
 #
 #import the trek data and check for it
-trek<-read.csv(file.choose(),header=TRUE)
+trek<-read_data("isotope_and_T.csv")
 head(trek)
 str(trek)
 attach(trek)

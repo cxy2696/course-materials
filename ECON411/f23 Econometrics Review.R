@@ -1,10 +1,16 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("corrplot", "lmtest", "sandwich", "stargazer"))
+
+# Review of simple, multiple, and log regressions for Econometrics.
+
 #Simple Regression
 #Download data set "caschool" and import it using "Text(readr)"
 #Run simple regression
 
 3.851/(2*0.04231)
 
-caschool<-read.csv(file.choose(),header=TRUE)
+caschool <- read_data("caschool.csv")
 
 MyModel1<-lm(testscr~str, caschool)
 summary(MyModel1)
@@ -13,13 +19,13 @@ summary(MyModel1)
 #Intall package "RCurl"
 #Download and run "robust.R" R script.  "summary.lm" and "url_robust" should appear in the upper right pane.
 
-summary(MyModel1, robust=T)
+robust_summary(MyModel1)
 
 # Omitted Variable Bias
 #What happens when we add another explanatory variable?  For example, #the variable "el_pct" which represents the percent of students for #whom English is a second language 
 
 MyModel2<-lm(testscr~str+el_pct, caschool)
-summary(MyModel2, robust=T)
+robust_summary(MyModel2)
 
 #What changed?
 
@@ -32,28 +38,28 @@ summary(MyModel2, robust=T)
 # Condition 1.  The following regression shows the el_pct is a determinant of testscr.
 
 MyModel2<-lm(testscr~str+el_pct, caschool)
-summary(MyModel2, robust=T)
+robust_summary(MyModel2)
 
 # Condition 2. We can verify the second condition by calculating a correlation coefficient or by running a regression of one of the independent variables on the other.
 
 cor(caschool$str,caschool$el_pct)
 
 corModel<-lm(str~el_pct,caschool)
-summary(corModel, robust=T)
+robust_summary(corModel)
 
 #Multicollinearity
 #Imperfect multicollinearity
 #Import data set "mlb1"
-mlb1<-read.csv(file.choose(),header=TRUE)
+mlb1 <- read_data("mlb1.csv")
 
 mlbModel1<-lm(lsalary~years+gamesyr+bavg+hrunsyr+rbisyr,data=mlb1) 
-summary(mlbModel1, robust = T)
+robust_summary(mlbModel1)
 
 mlbModel2<-lm(lsalary~years+gamesyr+bavg+rbisyr,data=mlb1)
-summary(mlbModel2, robust = T)
+robust_summary(mlbModel2)
 
 mlbModel3<-lm(lsalary~years+gamesyr+bavg+hrunsyr,data=mlb1)
-summary(mlbModel3, robust = T)
+robust_summary(mlbModel3)
 
 submlb1<-subset(mlb1, select=c(bavg, hrunsyr, rbisyr))
 
@@ -88,12 +94,12 @@ plot(testscr~str, caschool)
 plot(testscr~avginc, caschool)
 
 linModel<-lm(testscr~avginc,caschool)
-summary(linModel, robust=T)
+robust_summary(linModel)
 
 abline(linModel, col="red")
 
 QuadModel<-lm(testscr~avginc+I(avginc^2), caschool)
-summary(QuadModel,robust=T)
+robust_summary(QuadModel)
 
 # add quatratic function to the plot - we didn't do this in 284, so the code might not make sense.
 order_id <- order(caschool$avginc)
@@ -116,16 +122,16 @@ abline(linModel, col="red")
 #logarithmic models
 
 linlin<-lm(testscr~avginc, caschool)
-summary(linlin,robust=T)
+robust_summary(linlin)
 
 linlog<-lm(testscr~I(log(avginc)), caschool)
-summary(linlog,robust=T)
+robust_summary(linlog)
 
 loglin<-lm(I(log(testscr))~avginc, caschool)
-summary(loglin,robust=T)
+robust_summary(loglin)
 
 loglog<-lm(I(log(testscr))~I(log(avginc)), caschool)
-summary(loglog,robust=T)
+robust_summary(loglog)
 
 caschool$lavginc<-log(caschool$avginc)
 

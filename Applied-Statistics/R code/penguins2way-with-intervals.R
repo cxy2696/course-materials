@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("lattice", "palmerpenguins"))
+
 # Jake Price
 # November 9, 2022
 # Two-Way ANOVA with Interactions - Palmer's Penguins

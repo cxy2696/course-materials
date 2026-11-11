@@ -1,7 +1,13 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("ggplot2"))
+
+# Scatterplot matrix and correlations for the mobile-RPG variables.
+
 
 library(ggplot2)
 
-rpgData<-read.csv(file.choose(), header=TRUE)
+rpgData <- read_data("rpgObservation.CSV")
 
 # Scatterplot Matrix
 pairs(~ rpgR + rpgD + user + con + amsale + amR + anime + gdp + gdpperson + mobile, data = rpgData,

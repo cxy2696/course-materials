@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("lattice"))
+
 ################################################################################
 #
 #Author: Xinyi (Anny) Cui
@@ -12,7 +16,7 @@
 ################################################################################
 #
 #Import dataset
-lands<-read.csv(file.choose(),header=TRUE)
+lands<-read_data("roots.csv")
 head(lands)
 str(lands)
 #

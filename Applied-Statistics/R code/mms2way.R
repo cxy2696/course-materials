@@ -1,3 +1,6 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+
 # Jake Price
 # 11/2/2022
 #
@@ -10,7 +13,7 @@
 # Explanatory: Color (Red, Blue, Green, Yellow, Orange, Brown)
 
 # load and check data
-mms = read.csv(file.choose())
+mms = read_data("mms.csv")
 head(mms)
 
 # begin visualizing and judging additive effects

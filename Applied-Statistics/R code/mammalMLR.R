@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("car", "lattice"))
+
 # Jake Price
 # 10/10/20
 # Multiple linear regression of mammal lifespan
@@ -19,7 +23,7 @@
 #gestation: Gestation time (in days
 
 # load and check data
-mammals = read.table("http://www.statsci.org/data/general/sleep.txt",header = TRUE)
+mammals = read_external("sleep.txt")
 head(mammals)
 
 # Begin by visualizing each quantitative variable and assessing need

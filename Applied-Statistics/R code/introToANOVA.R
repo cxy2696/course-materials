@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("lattice"))
+
 # Jake Price
 # 10/14/2022
 #
@@ -8,7 +12,7 @@
 # Explanatory: Manual (0 = automatic, 1 = manual)
 
 # data visualization
-cars<-read.csv(file.choose(),header=TRUE)
+cars<-read_data("93cars.csv")
 boxplot(HMPG ~ Manual, data = cars, horizontal = TRUE)
 lattice::densityplot(~HMPG, groups = Manual,
                      data = cars,

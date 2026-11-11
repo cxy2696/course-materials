@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("lattice"))
+
 ################################################################################
 #
 #Author: Xinyi (Anny) Cui
@@ -10,8 +14,7 @@
 ################################################################################
 #
 #Import the dataset and see the information
-exposureData<-read.table("http://www.statsci.org/data/general/hanford.txt",
-                         header=TRUE)
+exposureData<-read_external("hanford.txt")
 head(exposureData)
 str(exposureData)
 #

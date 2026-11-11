@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("palmerpenguins"))
+
 # Jake Price
 # 11/18/22
 # ANOVA and Regression

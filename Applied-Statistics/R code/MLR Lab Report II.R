@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("car", "lattice"))
+
 ################################################################################
 #
 #Author: Xinyi (Anny) Cui
@@ -11,7 +15,7 @@
 ################################################################################
 #
 #Import the dataset
-houseData<-read.csv(file.choose(), header=TRUE)
+houseData<-read_data("kc_house_data.csv")
 head(houseData)
 str(houseData)
 #

@@ -1,10 +1,16 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("dplyr", "kableExtra", "knitr", "plm", "scatterplot3d", "stargazer"))
+
+# Thesis analysis: panel regressions of mobile-RPG revenue and downloads.
+
 library(stargazer)
 
-rpgData<-read.csv(file.choose(), header=TRUE)
+rpgData <- read_data("rpgObservation.CSV")
 
 linModel<-lm(rpgR~rpgD+user+con+amsale+amR+anime+gdp+gdpperson+mobile, rpgData)
 summary(linModel)
-summary(linModel, robust=T)
+robust_summary(linModel)
 
 library(stargazer)
 stargazer(as.data.frame(rpgData), type="latex")
@@ -43,7 +49,7 @@ scatterplotMatrix<-pairs(~ rpgR + rpgD + user + con + amsale + amR + anime + gdp
 
 
 # function for the lower panel to display r-squared and p-values
-panel.rsquared.pvalue <- function(x, y, digits = 4, prefix="", cex.txt = , ...) {
+panel.rsquared.pvalue <- function(x, y, digits = 4, prefix = "", cex.txt = NULL, ...) {
   usr <- par("usr"); on.exit(par(usr))
   par(usr = c(0, 1, 0, 1))
   r <- cor(x, y)
@@ -52,8 +58,8 @@ panel.rsquared.pvalue <- function(x, y, digits = 4, prefix="", cex.txt = , ...) 
   p <- test$p.value
   txt<-format(c("R^2 = ", format(r2, digits = digits), "\np = ", format(p, digits = digits)))[1]
   txt <- paste0(prefix, txt)
-  if(missing(cex.cor)) cex.cor <- 0.8/strwidth(txt)
-  text(0.5, 0.5, txt, cex = 0.5 * cex.cor * abs(r))
+  if (is.null(cex.txt)) cex.txt <- 0.8 / strwidth(txt)
+  text(0.5, 0.5, txt, cex = 0.5 * cex.txt * abs(r))
 }
 
 # scatterplot matrix with the r^ and p-value
@@ -67,8 +73,7 @@ scatterplotMatrix <- pairs(~ rpgR + rpgD + user + con + amsale + amR + anime + g
 
 
 # Install the package if you haven't already
-install.packages("scatterplot3d")
-
+# install.packages("scatterplot3d")  # install once, then rerun
 # Load the package
 library(scatterplot3d)
 

@@ -1,0 +1,34 @@
+# Normalize text files to LF in the repository.
+* text=auto eol=lf
+
+# Binary assets: never try to diff or merge them.
+*.pdf binary
+*.docx binary
+*.doc binary
+*.pptx binary
+*.xlsx binary
+*.xls binary
+*.zip binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.wav binary
+*.parquet binary
+
+# Source and documentation formats.
+*.R text diff=r-language
+*.r text diff=r-language
+*.py text diff=python
+*.jl text diff=julia
+*.ipynb text
+*.md text diff=markdown
+*.yml text
+*.yaml text
+*.toml text
+*.sql text
+*.pgsql text
+
+# Keep the documentation out of GitHub's language statistics.
+docs/** linguist-documentation
+*.md linguist-documentation

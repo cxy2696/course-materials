@@ -1,3 +1,6 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+
 # Jake Price
 # 10/24/2022
 # Reexpressions and Multiple Comparisons
@@ -9,7 +12,7 @@
 #                    phosphorus added to soil)
 
 # look at data
-roots<-read.csv(file.choose(),header=TRUE)
+roots<-read_data("roots.csv")
 head(roots)
 
 # assess whether re-expression would be helpful

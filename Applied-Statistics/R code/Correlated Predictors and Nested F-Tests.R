@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("lattice"))
+
 ################################################################################
 #
 #Author: Xinyi (Anny) Cui
@@ -11,8 +15,7 @@
 ################################################################################
 #
 #Import the data
-mammalData<-read.table("http://www.statsci.org/data/general/sleep.txt",
-                       header=TRUE)
+mammalData<-read_external("sleep.txt")
 head(mammalData)
 str(mammalData)
 #

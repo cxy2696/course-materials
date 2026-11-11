@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("lattice"))
+
 # Jake Price
 # Haloween 2022!
 # 
@@ -17,7 +21,7 @@
 # Explanatory: Choir
 
 # load and inspect data
-choir = read.csv(file.choose())
+choir = read_data("singerHeightsData.csv")
 head(choir)
 str(choir)
 nrow(choir)

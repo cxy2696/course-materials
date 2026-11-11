@@ -1,0 +1,5 @@
+# Extra packages for "AI in Organizations" (INFO 1170/5170) homework.
+# These are optional for the rest of the repository.
+python-dotenv>=1.0
+openai>=1.30
+gradio>=4.0

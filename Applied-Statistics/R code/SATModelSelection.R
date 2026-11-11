@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("Sleuth3", "car", "lattice"))
+
 # Jake Price
 # 11/16/22
 # Predict SAT scores using measures of state

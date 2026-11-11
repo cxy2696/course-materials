@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("Sleuth3", "car", "lattice"))
+
 ##################################
 #
 #Author: Xinyi (Anny) Cui
@@ -13,9 +17,9 @@
 #####################################
 #
 #Access the data
-install.packages("Sleuth3")
+# install.packages("Sleuth3")  # install once, then rerun
 library(Sleuth3)
-?case1201
+# help(case1201)
 
 satData<-case1201
 head(satData)

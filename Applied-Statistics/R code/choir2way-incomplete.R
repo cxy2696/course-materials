@@ -1,3 +1,6 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+
 # Choir Data Inference with Interactions
 #
 # Jake Price
@@ -13,6 +16,7 @@
 # Treatment: choir (Portland Symphonic Choir, Reed Chorus)
 
 # load the data
+choir <- read_data("singerHeightsData.csv")
 head(choir)
 
 # data exploration

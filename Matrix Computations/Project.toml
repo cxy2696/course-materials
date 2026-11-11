@@ -1,0 +1,19 @@
+[deps]
+FastGaussQuadrature = "442a2c76-b920-505d-bb47-c5924d526838"
+FFTW = "7a1cc6ca-52ef-59f5-83cd-3a7055c09341"
+ForwardDiff = "f6369f11-7733-5829-9624-2563aa707210"
+IterativeSolvers = "42fd0dbc-a981-5370-80f2-aaf504508153"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+LinearMaps = "7a12625a-238d-50fd-b39a-03d52299707e"
+Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
+Pluto = "c3e4b0f8-55cb-11ea-2926-15256bba5781"
+
+[compat]
+FastGaussQuadrature = "0.5, 1"
+FFTW = "1"
+ForwardDiff = "0.10, 1"
+IterativeSolvers = "0.9"
+LinearMaps = "3"
+Plots = "1"
+Pluto = "0.19, 0.20"
+julia = "1.10"

@@ -1,4 +1,7 @@
-install.packages("matchingMarkets")
+# --- Shared setup (package checks) -------------------------------------------
+source("_setup.R")
+require_packages(c("matchingMarkets"))
+
 library(matchingMarkets)
 
 # Set seed for reproducibility

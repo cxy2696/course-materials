@@ -1,6 +1,11 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+
+# Earnings and height: a simple two-group comparison.
+
 # earnheight
 
-earnheight <- read.csv(file.choose(),header=TRUE)
+earnheight <- read_data("earnheight.CSV")
 summary(earnheight)
 head(earnheight)
 

@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("lattice"))
+
 ###############################################################
 #
 #Author: 
@@ -21,7 +25,7 @@
 ################################################################
 #
 #Read the dataset
-eggs<-read.csv(file.choose(),header=TRUE)
+eggs<-read_data("babes2.csv")
 head(eggs)
 str(eggs)
 

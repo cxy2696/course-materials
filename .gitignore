@@ -1,0 +1,50 @@
+# OS and editor noise
+.DS_Store
+._*
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# Office lock files
+~$*
+
+# Notebooks
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# R
+.Rhistory
+.RData
+.Ruserdata/
+.Rproj.user/
+renv/library/
+renv/python/
+renv/staging/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Local environment files (never commit keys)
+.env
+.env.*
+!.env.example
+
+# Generated analysis output
+Numerical-Analysis-Lab/outputs/
+**/outputs/
+Rplots.pdf
+*.log
+
+# Julia
+Manifest.toml
+*.jl.cov
+*.jl.mem

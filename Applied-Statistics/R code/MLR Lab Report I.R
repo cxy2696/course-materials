@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("lattice"))
+
 ################################################################################
 #
 #Author: Xinyi (Anny) Cui
@@ -11,8 +15,7 @@
 ################################################################################
 #
 #Import the dataset
-footballData<-read.table("http://www.statsci.org/data/general/punting.txt",
-                         header=TRUE)
+footballData<-read_external("punting.txt")
 head(footballData)
 str(footballData)
 names(footballData)

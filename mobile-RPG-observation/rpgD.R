@@ -1,7 +1,9 @@
-
+source("_setup.R")
+rpgData <- read_data("rpgObservation.CSV")
 library(stargazer)
+library(plm)
 # Convert the data frame to a pdata.frame object
-ndata <- pdata.frame(rpgData, index = c("country", "year"))
+pdata <- pdata.frame(rpgData, index = c("country", "year"))
 
 
 model_1_1<-lm(rpgR~0+user + con + amsale + amR + anime + gdp + 
@@ -290,8 +292,7 @@ ggplot(pdata, aes(x = as.factor(year), y = rpgD, fill = continent)) +
 
 # Assuming you've already fitted the model, e.g., model_2_1
 # Install the 'car' package if not already installed
-install.packages("car")
-
+# install.packages("car")  # install once, then rerun
 # Load the 'car' package
 library(car)
 
@@ -310,8 +311,7 @@ cor_matrix <- cor(predictors, use = "complete.obs") # Handling missing values if
 print(cor_matrix)
 
 # Install the 'corrplot' package if not already installed
-install.packages("corrplot")
-
+# install.packages("corrplot")  # install once, then rerun
 # Load the 'corrplot' package
 library(corrplot)
 

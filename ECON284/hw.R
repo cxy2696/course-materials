@@ -1,15 +1,20 @@
-hw8 <- read.csv(file.choose(), header=TRUE)
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+
+# Homework 8: returns to education with log and quadratic specifications.
+
+hw8 <- read_data("hw 8-5.CSV")
 
 hw8Model <- lm(ahe~age+female+bachelor, hw8)
-summary(hw8Model, robust=T)
+robust_summary(hw8Model)
 
 
 hw8Model_log_lin <- lm(log(ahe)~age+female+bachelor, hw8)
-summary(hw8Model_log_lin, robust=T)
+robust_summary(hw8Model_log_lin)
 
 
 hw8Model_log_log <- lm(log(ahe)~log(age)+female+bachelor, hw8)
-summary(hw8Model_log_log, robust=T)
+robust_summary(hw8Model_log_log)
 
 hw8Model_2 <- lm(ahe~age+I(age*age)+female+bachelor, hw8)
 summary(hw8Model_2)

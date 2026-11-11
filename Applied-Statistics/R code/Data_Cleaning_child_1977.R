@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("lattice"))
+
 ################################################################################
 #
 #Author: Xinyi (Anny) Cui
@@ -10,7 +14,7 @@
 ################################################################################
 #
 #Import the data of children downloaded on PC and see the first six rows
-child<-read.csv(file.choose(),header=TRUE)
+child<-read_data("child_anthro_1977.csv")
 head(child)
 attach(child)
 #

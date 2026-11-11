@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("lattice", "car"))
+
 #########################
 #
 #Author: Xinyi (Anny) Cui
@@ -26,7 +30,7 @@
 #
 ##############################
 #
-df<-read.csv(file.choose(), header=TRUE)
+df <- read_data("Energy.csv")
 head(df)
 str(df)
 

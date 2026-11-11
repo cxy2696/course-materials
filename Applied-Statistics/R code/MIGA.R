@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("lattice"))
+
 ############################################################
 #
 #Author: Anny Cui and Jiafeng Gu
@@ -27,7 +31,7 @@
 #############################################################
 #
 #import the dataset and do adjustments
-MIGA<-read.csv(file.choose(), header=TRUE)
+MIGA<-read_data("MIGA_Issued_Projects.csv")
 head(MIGA)
 str(MIGA)
 

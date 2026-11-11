@@ -1,0 +1,41 @@
+name: Quality checks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.md"
+      - "**/*.py"
+      - "**/*.R"
+      - "**/*.jl"
+      - "**/*.ipynb"
+      - "tools/**"
+      - "requirements*.txt"
+      - ".github/workflows/quality.yml"
+  pull_request:
+    paths:
+      - "**/*.md"
+      - "**/*.py"
+      - "**/*.R"
+      - "**/*.jl"
+      - "**/*.ipynb"
+      - "tools/**"
+      - "requirements*.txt"
+
+permissions:
+  contents: read
+
+jobs:
+  hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check notebooks, links, secrets, and Python syntax
+        run: python tools/check_repo.py --skip-code

@@ -1,3 +1,7 @@
+# --- Shared setup (data paths + package checks) -----------------------------
+source("_setup.R")
+require_packages(c("lattice", "palmerpenguins"))
+
 ###################################################################
 #
 #Author: Xinyi (Anny) Cui
@@ -16,8 +20,7 @@
 ####################################################################
 #
 #Install the released version of palmerpenguins from CRAN 
-install.packages("palmerpenguins")
-
+# install.packages("palmerpenguins")  # install once, then rerun
 library(palmerpenguins)
 data(package='palmerpenguins')
 #
@@ -25,8 +28,8 @@ data(package='palmerpenguins')
 head(penguins)
 head(penguins_raw)
 
-?penguins
-?penguins_raw
+# help(penguins)
+# help(penguins)_raw
 
 str(penguins)
 str(penguins_raw)
