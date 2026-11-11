@@ -1,19 +1,20 @@
 # Econometrics (Fall 2023)
 
-Applied econometrics in R: simple and multiple regression, robust inference,
-dummy variables, interactions, log specifications, and panel/fixed-effects
-intuitions. The folder includes the datasets, the R scripts, and the exams.
+I took Econometrics in fall 2023. The course moved from simple regression to
+multiple regression, dummy variables, interactions, log specifications, and a
+first look at panel/fixed-effects ideas. I kept the R scripts, the data, and the
+exams.
 
-## What is inside
+## What I kept
 
-| Path | Description |
+| Path | What it is |
 | --- | --- |
-| `classCode.R` | Main lecture script: class size, wage gaps, beer taxes, functional forms |
+| `classCode.R` | The main lecture script: class size, wage gaps, beer taxes, functional forms |
 | `earnheight.R` | Earnings vs. sex |
 | `hw.R` | Homework 8: returns to education with logs and quadratics |
-| `Ed.R` | Simple regression of education on distance (dataset not included) |
-| `f23 284_384 SW CH11.R` | Stock & Watson chapter 11: HMDA loan denials (AER data) |
-| `f23 Ch13 .R` | Stock & Watson chapter 13: STAR experiment (AER data) |
+| `Ed.R` | Education vs. distance (the dataset wasn't included) |
+| `f23 284_384 SW CH11.R` | Stock & Watson chapter 11: HMDA loan denials, using AER data |
+| `f23 Ch13 .R` | Stock & Watson chapter 13: the STAR experiment |
 | `Data/` | `caschool`, `wage2`, `fatality`, `mlb1`, `earnheight`, `wageData`, homework CSVs, `cps08.xlsx` |
 | `Appendix/` | Textbook appendix, exam practice, figures |
 | `F23 Exam 1-key.pdf` | Exam 1 answer key |
@@ -24,17 +25,17 @@ intuitions. The folder includes the datasets, the R scripts, and the exams.
 | --- | --- |
 | `Data/caschool.csv` | California school districts: test scores, class size, income |
 | `Data/wage2.csv` | 1980 National Longitudinal Survey wage data |
-| `Data/fatality.csv` | State-year traffic fatality panel (beer taxes, etc.) |
-| `Data/mlb1.csv` | Major League Baseball salaries and performance |
+| `Data/fatality.csv` | State-year traffic fatalities and beer taxes |
+| `Data/mlb1.csv` | MLB salaries and performance |
 | `Data/earnheight.CSV` | Earnings, height, sex, age |
 | `Data/wageData.CSV` | Current Population Survey wage extract |
-| `Data/hw5-1.CSV`, `hw5-5.CSV`, `hw7-6.CSV`, `hw 8-5.CSV` | Homework datasets |
+| `Data/hw5-1.CSV`, `hw5-5.CSV`, `hw7-6.CSV`, `hw 8-5.CSV` | Homework data |
 | `Data/cps08.xlsx` | CPS 2008 extract |
 
-`Ed.R` uses a “distance” dataset that was not distributed with the course. Set
-`ECON284_DISTANCE_DATA` to your local copy or put `distance.csv` in `Data/`.
+`Ed.R` needs a “distance” dataset that never came with the course. Set
+`ECON284_DISTANCE_DATA` to a local copy, or put `distance.csv` in `Data/`.
 
-## Run it
+## Running it
 
 ```r
 install.packages(c("AER", "mfx", "stargazer", "lmtest", "sandwich"))
@@ -45,20 +46,20 @@ cd ECON284
 Rscript classCode.R
 ```
 
-The scripts source `_setup.R`, which loads the shared helpers in
+The scripts load `_setup.R`, which points at the shared helpers in
 [`../R/course_utils.R`](../R/course_utils.R). `read_data()` finds files in
-`Data/`; `read_external()` is available for cached public data.
+`Data/`.
 
 ## A note on robust standard errors
 
-The course originally used `summary(model, robust = TRUE)`, which relies on a
-custom helper. Base R's `summary()` silently ignores that argument, so the
-archive replaces those calls with `robust_summary()` (HC1 via
-`sandwich`/`lmtest`). Re-run a script to get robust tables; the original exam
-keys and reports may show conventional standard errors.
+We used `summary(model, robust = TRUE)` in class. That relies on a course-local
+helper; base R's `summary()` silently ignores the argument. I replaced those
+calls with `robust_summary()` (HC1 via `sandwich`/`lmtest`). The exam keys and
+reports I kept may show conventional standard errors. Re-run a script if you
+need the robust tables.
 
 ## Notes
 
-* The AER-based scripts (`HMDA`, `STAR`) download/load package data, so they do
-  not need the `Data/` folder.
-* The textbook PDF and exam keys are instructor material.
+- The AER scripts (`HMDA`, `STAR`) load package data, so they don't need the
+  `Data/` folder.
+- The textbook PDF and exam keys are course material.

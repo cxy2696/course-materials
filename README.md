@@ -2,116 +2,101 @@
 
 [![Quality checks](https://github.com/cxy2696/course-materials/actions/workflows/quality.yml/badge.svg)](https://github.com/cxy2696/course-materials/actions/workflows/quality.yml)
 
-This repository collects my university coursework in information science,
-computer science, statistics, economics, and business (2022–2026): lecture
-notes, lab reports, problem sets, presentations, and the code and data behind
-them.
+I keep my university coursework here: lecture notes, lab reports, problem sets,
+slides, and the code and data behind them. Most of the later INFO, CS, and MATH
+folders are from Cornell; the earlier economics, business, and statistics
+courses and the code archive come from elsewhere.
 
-Most folders have a README with the files and commands that matter. Data paths
-are relative, public datasets are cached where possible, and two commands cover
-the main checks:
+I've tried to make the material easy to pick up. Each course has a README, data
+paths are relative, and the public datasets I could cache are in the repo.
 
 ```bash
 git clone https://github.com/cxy2696/course-materials.git
 cd course-materials
-make check          # repository hygiene, links, syntax
-make check-code     # Java tests, C++ build, merged Python tests
+make check          # notebooks, links, secrets, syntax
+make check-code     # Java tests, C++ build, Python tests
 ```
 
-## What is inside
+## Courses
 
-| Folder | Course | Term | Highlights | Code |
-| --- | --- | --- | --- | --- |
-| [`2025Spring/`](<2025Spring/README.md>) | Eight-course Spring 2025 archive: STSCI 3080, INFO 5905, INFO 4940/5940, INFO 4220/6220, 6820, INFO 6940, STSCI 5090/5740 | Spring 2025 | probability notes, copyright case reflections, market-design simulations | R, Python, LaTeX |
-| [`AI in Organizations/`](<AI in Organizations/README.md>) | INFO 1170/5170 · AI in Organizations | Fall 2025 | LLM prompting, RAG chatbot, final project | Python |
-| [`Applied-Statistics/`](<Applied-Statistics/README.md>) | Applied statistics | Fall 2022 | nine lab reports, 38 R scripts, energy-efficiency project | R |
-| [`BI Systems/`](<BI Systems/README.md>) | INFO 4555/5556 · Business Intelligence Systems | Fall 2025 | data-warehouse project, Tableau, WhereScape, SQL | SQL, Tableau |
-| [`BUS435/`](<BUS435/README.md>) | International Financial Management | Fall 2023 | AIFS currency-hedging case, FX notes | Python |
-| [`Basins-of-Attraction/`](<Basins-of-Attraction/README.md>) | MATH 310 · Lab 1 | Spring 2024 | Newton's-method fractals | Python |
-| [`CS_5320/`](<CS_5320/README.md>) | Database Systems | Fall 2024 | storage, indexes, query optimization, SQL lab | SQL |
-| [`Category Theory (Programming Languages)/`](<Category Theory (Programming Languages)/README.md>) | Programming-languages seminar | Fall 2025 | eight problem sets, papers, commutative diagrams | LaTeX |
-| [`ECON284/`](<ECON284/README.md>) | Econometrics | Fall 2023 | R labs, exams, AER replications | R |
-| [`ECON411/`](<ECON411/README.md>) | Econometrics research thesis | Fall 2023 | mobile-RPG panel study, poster, data collection | R, Python |
-| [`INFO_5355/`](<INFO_5355/README.md>) | INFO 5355 · Human-Computer Interaction Design | Fall 2024 | UX assignments, interview study | — |
-| [`INFO_6850/`](<INFO_6850/README.md>) | INFO 6850 · Information Networks | Fall 2024 | problem sets, spectral/random-walk notes, reaction paper | Python |
-| [`InfoNetworks/`](<InfoNetworks/README.md>) | CS 6850 project | Fall 2024 | coauthorship graph, hybrid-contagion simulations, HNL voter model | Python |
-| [`Matrix Computations/`](<Matrix Computations/README.md>) | CS 6210 · Matrix Computations | Fall 2025 | ten Pluto problem sets, Bayesian-optimization tutorial | Julia |
-| [`Numerical-Analysis-Lab/`](<Numerical-Analysis-Lab/README.md>) | MATH 310 · Numerical Analysis Lab | 2024 | four labs, two projects, PCA face recognition | Python |
-| [`MATH-Modeling/`](<MATH-Modeling/README.md>) | MATH 310 · Numerical Analysis and Modeling (full archive) | Spring 2024 | 74 notebooks, eight problem sets, modeling notes, cross-entropy project | Python |
-| [`exercises/`](<exercises/README.md>) | Take-home data exercise | 2025 | messy publication data, Gemini and Semantic Scholar APIs | Python |
-| [`mobile-RPG-observation/`](<mobile-RPG-observation/README.md>) | Independent thesis | 2024 | otaku culture and the mobile-RPG market | R |
-| [`CSCI 161/`](<CSCI 161/README.md>) | CSCI 161 · Java labs | 2021 | console labs, sorting, cards, graphics, 301 self-tests | Java |
-| [`Machine Learning/`](<Machine Learning/README.md>) | Machine learning assignments | — | kNN, perceptron, kernel SVM, naive Bayes, SGD/CNN | Python |
-| [`MITx 6.00.1x/`](<MITx 6.00.1x/README.md>) | MITx 6.00.1x | 2023 | lecture code, handouts, Problem Set 4 | Python |
-| [`INFO 4100/`](<INFO 4100/README.md>) | INFO 4100 · R setup | — | R Markdown environment assignment | R |
-| [`Practice Notebooks/`](<Practice Notebooks/README.md>) | Standalone analyses | — | equilibrium, decision boundaries, model comparison, flow chart | Python |
-| [`Creative Project (CS 3780-5780)/`](<Creative Project (CS 3780-5780)/README.md>) | CS 3780/5780 creative project | — | emotion-classification template and sample data | Python |
-| [`C++/`](C++/README.md) | C++ example | — | C++17 hello-world with Makefile | C++ |
+| Folder | What I did there | Main code |
+| --- | --- | --- |
+| [`2025Spring/`](<2025Spring/README.md>) | Eight Spring 2025 courses: probability, career prep, copyright, market design, materials KGs, history of AI, inference, statistical learning | R, Python, LaTeX |
+| [`AI in Organizations/`](<AI in Organizations/README.md>) | INFO 1170/5170; built a creative chatbot prototype and compared a base model with a RAG assistant for law and healthcare | Python |
+| [`Applied-Statistics/`](<Applied-Statistics/README.md>) | Regression and ANOVA labs, an energy-efficiency project, and a development-finance analysis | R |
+| [`BI Systems/`](<BI Systems/README.md>) | INFO 4555/5556; dimensional models, WhereScape recipes, Tableau dashboards, and SQL exercises | SQL, Tableau |
+| [`BUS435/`](<BUS435/README.md>) | International financial management; FX notes, case write-ups, and an AIFS hedging model | Python |
+| [`Basins-of-Attraction/`](<Basins-of-Attraction/README.md>) | MATH 310 Lab 1; Newton's method on real and complex polynomials | Python |
+| [`CS_5320/`](<CS_5320/README.md>) | Database systems; storage, indexes, query optimization, and a PostgreSQL lab | SQL |
+| [`Category Theory (Programming Languages)/`](<Category Theory (Programming Languages)/README.md>) | A reading seminar: monads, fixed points, type theory, and eight problem sets | LaTeX |
+| [`ECON284/`](<ECON284/README.md>) | Econometrics; class-size, wage, and beer-tax examples, plus homework and exams | R |
+| [`ECON411/`](<ECON411/README.md>) | My econometrics thesis on mobile-RPG revenue and otaku culture | R, Python |
+| [`INFO_5355/`](<INFO_5355/README.md>) | HCI design; usability assignments, interview guides, and an interview study | — |
+| [`INFO_6850/`](<INFO_6850/README.md>) | Information networks; problem sets, spectral/random-walk notes, and a reaction paper | Python |
+| [`InfoNetworks/`](<InfoNetworks/README.md>) | CS 6850 project; coauthorship graphs, hybrid-contagion simulations, and the HNL voter model | Python |
+| [`Matrix Computations/`](<Matrix Computations/README.md>) | CS 6210; ten Pluto problem sets and a Bayesian-optimization tutorial | Julia |
+| [`Numerical-Analysis-Lab/`](<Numerical-Analysis-Lab/README.md>) | MATH 310 labs on basins, climate data, LU, and PCA face recognition | Python |
+| [`MATH-Modeling/`](<MATH-Modeling/README.md>) | My full MATH 310 archive: 74 notebooks, eight problem sets, modeling notes, and a cross-entropy project | Python |
+| [`mobile-RPG-observation/`](<mobile-RPG-observation/README.md>) | The standalone version of my mobile-RPG thesis | R |
 
-Shared infrastructure:
+## Code and practice
 
-* [`docs/`](docs/README.md) — catalog, running guide, conventions, privacy, licensing, security.
-* [`R/`](R/README.md) — shared R helpers used by the course scripts.
-* [`tools/check_repo.py`](tools/check_repo.py) — the hygiene and syntax checker.
-* [`docs/code-merge.md`](docs/code-merge.md) — mapping from the merged `code` archive.
-* [`docs/math-modeling.md`](docs/math-modeling.md) — notes on the MATH-Modeling migration.
+| Folder | What I did there | Main code |
+| --- | --- | --- |
+| [`CSCI 161/`](<CSCI 161/README.md>) | Java labs from an intro course: console programs, sorting, cards, and graphics | Java |
+| [`Machine Learning/`](<Machine Learning/README.md>) | Five assignments: kNN, perceptron, kernel SVM, naive Bayes, and SGD/CNN | Python |
+| [`MITx 6.00.1x/`](<MITx 6.00.1x/README.md>) | Lecture code, handouts, and Problem Set 4 from MITx 6.00.1x | Python |
+| [`INFO 4100/`](<INFO 4100/README.md>) | An R Markdown setup assignment | R |
+| [`Practice Notebooks/`](<Practice Notebooks/README.md>) | Four short notebooks I kept for reference | Python |
+| [`Creative Project (CS 3780-5780)/`](<Creative Project (CS 3780-5780)/README.md>) | An emotion-classification template and sample data | Python |
+| [`C++/`](<C++/README.md>) | A small C++17 example with a Makefile | C++ |
+| [`exercises/`](<exercises/README.md>) | A take-home exercise on messy publication data and two APIs | Python |
 
-## Start here
+I also keep a few things that are not courses:
 
-**Looking for a specific course?** Use the table above, then open that folder's
-`README.md`. The detailed semester-by-semester catalog is in
-[`docs/catalog.md`](docs/catalog.md).
+- [`docs/`](docs/README.md) — the catalog, running guide, and notes on how I
+  keep the repo tidy.
+- [`R/`](R/README.md) — the helpers the R scripts share.
+- [`tools/check_repo.py`](tools/check_repo.py) — the checker I run before pushing.
 
-**Want to run something?**
+## Where to start
 
-| I want to… | Go to |
-| --- | --- |
-| analyse a coauthorship network | [`InfoNetworks/`](<InfoNetworks/README.md>) |
-| reproduce a statistics lab | [`Applied-Statistics/README.md`](<Applied-Statistics/README.md>) |
-| open the Julia homework | [`Matrix Computations/README.md`](<Matrix Computations/README.md>) |
-| run the SQL exercises | [`CS_5320/README.md`](<CS_5320/README.md>) |
-| see the numerical-methods labs | [`Numerical-Analysis-Lab/README.md`](<Numerical-Analysis-Lab/README.md>) |
-| work through the full numerical-analysis course | [`MATH-Modeling/README.md`](<MATH-Modeling/README.md>) |
-| run the RAG/LLM assignment | [`AI in Organizations/README.md`](<AI in Organizations/README.md>) |
-| run the Java labs | [`CSCI 161/README.md`](<CSCI 161/README.md>) |
-| work on the ML assignments | [`Machine Learning/README.md`](<Machine Learning/README.md>) |
-| run the HNL model | [`InfoNetworks/hnl_voter_model/README.md`](InfoNetworks/hnl_voter_model/README.md) |
-| work through MITx 6.00.1x | [`MITx 6.00.1x/README.md`](<MITx 6.00.1x/README.md>) |
+If you only open a few folders, I'd suggest:
 
-Full setup instructions for Python, Java, C++, R, Julia, PostgreSQL, Tableau, and LaTeX are
-in [`docs/running-code.md`](docs/running-code.md).
+- `InfoNetworks/pythonCoauthorship/` for the graph analysis and the parser fix;
+- `MATH-Modeling/notebooks/` for the numerical-methods sequence;
+- `Applied-Statistics/R code/` for the R labs;
+- `Matrix Computations/hw/` for the Julia/Pluto homework;
+- `AI in Organizations/hw4/` for the RAG comparison.
 
-## Recent changes
+The semester-by-semester list is in [`docs/catalog.md`](docs/catalog.md), and
+[`docs/running-code.md`](docs/running-code.md) has the setup for Python, R,
+Julia, SQL, Java, C++, Tableau, and LaTeX.
 
-The merge of the standalone `code` and `MATH-Modeling` archives is recorded in
-[`CHANGELOG.md`](CHANGELOG.md). Mapping notes are in
-[`docs/code-merge.md`](docs/code-merge.md) and
-[`docs/math-modeling.md`](docs/math-modeling.md).
+## Checks
+
+`make check` runs the repository checker and the MATH-Modeling checker. It
+looks at notebook JSON, relative links, tracked junk, secrets, and Python/R/Julia
+syntax. `make check-code` runs the Java self-tests, builds the C++ example, and
+runs the Python tests.
 
 ## Data and privacy
 
-* **Code and original writing** are MIT-licensed (see [`LICENSE`](LICENSE)).
-* **Human-subjects material**: `INFO_5355/Interview Recording (Anny)-…zip`
-  contains interview transcripts and notes. Review
-  [`docs/data-and-privacy.md`](docs/data-and-privacy.md) before redistributing
-  or reusing it.
-* Some datasets referenced by the R labs were not distributed with the course
-  and are not in the repository (for example the "roots" data). The course
-  READMEs explain how to supply them.
+The code and my own writing are MIT-licensed (see [`LICENSE`](LICENSE)).
 
-## Repository conventions
+The one thing I'd review before reusing is
+`INFO_5355/Interview Recording (Anny)-…zip`: it contains interview transcripts
+and notes from a UX study. I wrote about that in
+[`docs/data-and-privacy.md`](docs/data-and-privacy.md).
 
-* Course folders keep their original names and semester structure so old links
-  continue to work.
-* Each course folder has a `README.md` describing what is inside and how to run
-  it.
-* Data lives in a `data/`, `csv files/`, or `Data/` folder next to the code;
-  generated plots go to an ignored `outputs/` folder.
-* New code should be runnable from its own folder and should not depend on
-  absolute paths or interactive file pickers.
-* Run `make check` before committing. See
-  [`docs/repository-conventions.md`](docs/repository-conventions.md).
+A few datasets used by the R labs were never distributed with the course, so
+those scripts stop and tell you what is missing.
 
-## Maintenance
+## A note on the state of the repo
 
-The archive is maintained by [@cxy2696](https://github.com/cxy2696).
+I merged the standalone `code` and `MATH-Modeling` repositories into this one in
+November 2026. The mapping notes are in [`docs/code-merge.md`](docs/code-merge.md)
+and [`docs/math-modeling.md`](docs/math-modeling.md), and the full list of
+changes is in [`CHANGELOG.md`](CHANGELOG.md).
+
+If something doesn't run, open an issue on GitHub and I'll take a look.

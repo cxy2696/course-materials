@@ -1,8 +1,8 @@
-# MATH-Modeling conventions
+# How I keep this folder
 
-The repository-wide layout and commit rules are in
+I follow the repo-wide layout and commit rules in
 [`../../docs/repository-conventions.md`](../../docs/repository-conventions.md).
-This page only covers the numerical-analysis folder.
+These notes are only about the numerical-analysis folder.
 
 ## Notebooks
 

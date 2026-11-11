@@ -1,12 +1,12 @@
 # HNL voter model
 
-Binary-opinion dynamics on a hypergraph. Each hyperedge contributes a weighted
+I wrote this for the hybrid-contagion project: binary-opinion dynamics on a hypergraph. Each hyperedge contributes a weighted
 influence score for both opinions; the scores are raised to `q` and turned into
 an update probability. Node latencies limit how often a node can change. The run
 stops when the largest opinion share reaches `consensus_threshold`.
 
-This is the standalone model used with the sentiment dataset from the hybrid
-contagion project, not the notebook-local prototype.
+This is the standalone version I used with the sentiment dataset; it is not the
+notebook-local prototype.
 
 ## Files
 

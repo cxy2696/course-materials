@@ -1,60 +1,55 @@
 # INFO 1170/5170 · AI in Organizations (Fall 2025)
 
-Course materials for *AI in Organizations*, a Cornell course on how AI systems
-shape work, decision-making, and organizations. The archive contains the
-syllabus, two hands-on assignments, the mid-semester check-in, and the final
-project.
+I took *AI in Organizations* in fall 2025. The course was about how AI systems
+change work and decision-making, and the assignments were mostly hands-on: build
+something small, test it, then explain what you learned about the system and the
+organization around it.
 
-## What is inside
+## What I kept
 
-| Path | Description |
+| Folder | What it is |
 | --- | --- |
-| `lesson.pdf` | Course syllabus: schedule, teaching team, readings, grading |
-| `hw3/` | Mini-prototype and mini-audit of a creative chatbot |
-| `hw4/` | “Can we trust AI in law and healthcare?”: base model vs. RAG |
-| `mid-term-check-in/` | Proposal, annotated feedback, slide deck |
-| `FinalReport/` | Final project report (PDF) |
-| `FinalShowcase/` | Final showcase slides (PDF export) |
+| `lesson.pdf` | Syllabus: schedule, teaching team, readings, grading |
+| `hw3/` | A creative-chatbot prototype and a mini-audit of it |
+| `hw4/` | A base-model vs. RAG comparison for law and healthcare questions |
+| `mid-term-check-in/` | My proposal, the annotated feedback, and the slide deck |
+| `FinalReport/` | Final project report |
+| `FinalShowcase/` | Final showcase slides |
 
-### Homework 3 — creative chatbot
+## Homework 3
 
-Students design a small assistant, test it, and reflect on the invisible
-decisions (prompts, affordances, creative constraints, data flows). The folder
-contains the starter notebook, the submitted notebook, and a Colab PDF export.
-It uses a low-code/chatbot stack and an LLM API; check the notebook for the
-exact provider.
+I designed a small assistant from a low-code template, tested it, and wrote
+about the choices that are easy to miss: prompts, affordances, creative
+constraints, and data flow. The folder has the starter notebook, my submitted
+notebook, and a Colab PDF export.
 
-### Homework 4 — trust and RAG
+## Homework 4
 
-Students compare a base language model with a retrieval-augmented generation
-(RAG) assistant over a small legal/health corpus. `docs/` holds five public
-legal-information documents (`law_1.txt`–`law_5.txt`, Cornell LII sources), and
-`file.ipynb` rebuilds the document set. The submitted notebook is
-`Copy_of_Homework_4.ipynb`; the assignment prompt is
-`Homework 4_ Getting Started.pdf`.
+This one compared a plain language model with a RAG assistant over a small
+legal/health corpus. `docs/` has the five public legal-information files
+(`law_1.txt`–`law_5.txt`, Cornell LII), and `file.ipynb` rebuilds that folder.
+The submitted notebook is `Copy_of_Homework_4.ipynb`; the assignment prompt is
+in `Homework 4_ Getting Started.pdf`.
 
-The assignment was originally run in Google Colab and mounts Google Drive.
-To run it locally, replace the `google.colab` cell with a local `docs/` path and
-set the API key in the environment.
+I ran it in Google Colab, so the notebook mounts Drive. To run it locally,
+replace that cell with a local `docs/` path and put the key in the environment.
 
-## Run it
+## Running it
 
 ```bash
 pip install -r requirements-ai.txt
-export OPENAI_API_KEY=...        # or the provider named in the notebook
+export OPENAI_API_KEY=...        # or whichever provider the notebook uses
 jupyter lab
 ```
 
-The notebooks are self-contained but were written for Colab. If a cell imports
-`google.colab`, either run it in Colab or skip that cell and point the
-document-loading code at the local `docs/` folder.
+If a cell imports `google.colab`, either use Colab or skip that cell and point
+the document loader at the local `docs/` folder.
 
 ## Notes
 
-* The `docs/` texts are public legal information, included for the RAG
-  exercise. They are not legal advice.
-* LLM outputs in the notebooks are from the original runs and may contain
-  model-specific text; re-running with a different model will change them.
-* Do not commit API keys or `.env` files. See
+- The legal texts are public information I used for the exercise, not legal
+  advice.
+- The model outputs are from my original runs. A different model will produce
+  different text.
+- Don't commit a key or a `.env` file. I learned that the hard way; see
   [`../docs/security.md`](../docs/security.md).
-* The syllabus and lecture material are course content.

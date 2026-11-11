@@ -1,45 +1,42 @@
 # INFO 4555/5556 · Business Intelligence Systems (Fall 2025)
 
-A data-warehouse and business-intelligence course project for Cornell's
-enterprise data team: model the university's data-warehouse access and usage,
-build the ETL, and present dashboards.
+I took Business Intelligence Systems in fall 2025. The class project was a
+data-warehouse and lakehouse reporting layer for Cornell's data-warehouse
+access and usage data. My team worked with sponsors from the CIO's office, the
+registrar, the audit office, and alumni affairs.
 
-## What is inside
+## What I kept
 
-| Path | Description |
+| Path | What it is |
 | --- | --- |
-| `2025 Class Project Description.pdf` | Project brief: sponsors, key dates, deliverables |
-| `lecture/` | 16 lecture PDFs: dimensional modeling, retail/inventory/procurement, data profiling, ETL, WhereScape, Boomi, AWS guest lecture |
-| `done/` | Submitted assignments: grocery-store model, SQL exercises 2–3, Boomi lab, Tableau dashboard, WhereScape assignment |
-| `milestone/` | WhereScape “recipes” for the fact and dimension tables (`ACCESS_USAGE_FACT`, `ACCOUNT_DIM`, …) |
-| `Team08_milestone2.pdf` | Team milestone report |
+| `2025 Class Project Description.pdf` | The project brief: sponsors, dates, deliverables |
+| `lecture/` | 16 lecture PDFs: dimensional modeling, retail/inventory/procurement, data profiling, ETL, WhereScape, Boomi, an AWS guest lecture |
+| `done/` | My submitted assignments: grocery-store model, SQL exercises 2–3, Boomi lab, Tableau dashboard, WhereScape assignment |
+| `milestone/` | WhereScape recipes for the fact and dimension tables (`ACCESS_USAGE_FACT`, `ACCOUNT_DIM`, …) |
+| `Team08_milestone2.pdf` | Team milestone 2 report |
 | `Account Status.twb`, `done/xc535_financial.twb` | Tableau workbooks (XML) |
-| Various assignment PDFs | Tableau financial dashboard, WhereScape setup, audit table, milestone 3 |
+| Other PDFs | Tableau financial dashboard, WhereScape setup, audit table, milestone 3 |
 
-## Project theme
-
-The class project asks students to build a **data warehouse and lakehouse
-reporting layer** for access and usage data, working with sponsors from the
-CIO's office, the registrar, the audit office, and alumni affairs. The
-deliverables are a dimensional model, ETL recipes, a data mart, and a
-stakeholder presentation.
+The project asked us to model access and usage, build the ETL, and present the
+result to a non-technical audience. The WhereScape recipes in `milestone/` are
+the part I'd look at first if you want to see how the dimensional model was
+built.
 
 ## Opening the work
 
-* **PDFs** — read directly.
-* **Tableau** — open the `.twb` files with Tableau Desktop or Tableau Public.
-  They reference local extracts from the original project; reconnect or replace
-  the data source if Tableau cannot find it.
-* **SQL** — the SQL exercises are embedded in the Word/PDF worksheets under
-  `done/`. The course did not keep the `.sql` files separately.
-* **Boomi** — `done/Boomi Lab[xc535].html` is a saved HTML export of the lab.
+- The PDFs are readable as-is.
+- The `.twb` files need Tableau Desktop or Tableau Public. They point at local
+  files from the original project, so reconnect the data source if Tableau
+  can't find it. The PDFs in `done/` show the submitted dashboards.
+- The SQL exercises are inside the Word/PDF worksheets; I didn't keep separate
+  `.sql` files.
+- `done/Boomi Lab[xc535].html` is a saved HTML export of the Boomi lab.
 
-No build step is required; this is a document-and-dashboard folder rather than
-a runnable application.
+There's no build step here. It's a document-and-dashboard folder.
 
 ## Notes
 
-* The project briefs, lecture slides, and WhereScape screenshots are course
-  material and may reference Cornell systems. They are included for study only.
-* Tableau workbooks can contain connection strings or server names. Review them
-  before sharing a fork publicly.
+- The project briefs, lecture slides, and WhereScape screenshots are course
+  material and may reference Cornell systems.
+- The Tableau workbooks can contain connection strings or server names. Check
+  them before sharing a fork.

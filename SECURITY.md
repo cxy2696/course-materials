@@ -1,23 +1,26 @@
-# Security policy
+# Security
 
-## Reporting a vulnerability
+## Reporting a problem
 
-If you find a credential, private data, or another security issue in this
-repository, please contact the maintainer privately (see the GitHub profile)
-rather than opening a public issue with the details.
+If you find a credential, private data, or another security problem in this
+repo, please contact me privately (see my GitHub profile) instead of opening a
+public issue with the details.
 
-## Known incident
+## The key I committed
 
-A Google API key was committed in `exercises/questions.ipynb` and removed from
-the current tree during the November 2026 cleanup. **It remains in git history.**
-Revoke the key in Google Cloud; see [`docs/security.md`](docs/security.md) for
-the full incident notes and the optional history-purge procedure.
+I left a Google API key in `exercises/questions.ipynb` and removed it from the
+current tree in November 2026. **It is still in git history.** I need to revoke
+it in Google Cloud; the full story and the optional history purge are in
+[`docs/security.md`](docs/security.md).
 
-## Practices
+## How I handle keys now
 
-* Secrets are read from environment variables or a local, git-ignored `.env`.
-* `python3 tools/check_repo.py` scans tracked text files for common key formats.
-* Pull requests should not add `.env` files, keys, tokens, personal data, or
-  human-subjects material.
-* Secret scanning and push protection should be enabled in the repository
-  settings; they are not a substitute for rotating an exposed credential.
+- Keys live in environment variables or a local `.env` that git ignores. Only
+  `.env.example` with empty values is committed.
+- I don't paste keys into notebooks, comments, shell examples, or output cells.
+- I run `python3 tools/check_repo.py` before publishing; it scans tracked text
+  for common key formats.
+- I rotate first if something leaks. Deleting the file is secondary.
+
+I should also turn on secret scanning and push protection in the repository
+settings. They catch new keys at push time; they don't clean up old history.

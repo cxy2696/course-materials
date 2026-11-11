@@ -1,18 +1,18 @@
 # Publication-data exercise
 
-A three-part take-home exercise on messy publication data. It is intentionally
-small and self-contained: one CSV/Parquet pair, one notebook, and raw API
-responses for reproducibility.
+I worked through this as a take-home exercise. It has three parts: clean a
+messy author/paper pair and plot papers per author, pull acknowledged names out
+of a paragraph with the Gemini API, and sample papers from Semantic Scholar.
 
-## Tasks
+## The three tasks
 
-| Task | Input | Output |
+| Task | What I start with | What I produce |
 | --- | --- | --- |
 | 1. Author productivity | `authors.csv`, `papers.parquet` | bar chart of papers per author |
-| 2. Acknowledgement extraction | acknowledgement text | JSON names + reasons (Gemini API) |
-| 3. Semantic Scholar sample | live API (100 papers) | `raw_papers.json`, `raw_papers.csv`, author-count plot |
+| 2. Acknowledgement extraction | an acknowledgement paragraph | JSON names and reasons (Gemini) |
+| 3. Semantic Scholar sample | the live API (100 papers) | `raw_papers.json`, `raw_papers.csv`, author-count plot |
 
-## Run it
+## Running it
 
 ```bash
 cd exercises
@@ -25,20 +25,19 @@ jupyter lab questions.ipynb
 `GEMINI_API_KEY` is required for task 2. `SEMANTIC_SCHOLAR_API_KEY` is optional;
 the public endpoint works without a key at lower rate limits.
 
-## Data notes
+## About the data
 
-* `authors.csv` — one row per author with a (synthetic) ORCID identifier.
-* `papers.parquet` — one row per paper; `Authors` is a list of dicts.
-* `raw_papers.json` / `raw_papers.csv` — cached Semantic Scholar responses from
-  the original run, kept so the plots can be reproduced without another call.
+- `authors.csv` — one row per author with a synthetic ORCID.
+- `papers.parquet` — one row per paper; `Authors` is a list of dicts.
+- `raw_papers.json` / `raw_papers.csv` — the Semantic Scholar responses I saved
+  from the original run, so the plots can be reproduced without another call.
 
-The ORCID values in the supplied data use the placeholder domain `xxxx.org` and
-contain 22-character identifiers. The cleaning code therefore strips any URL
-prefix and accepts ORCID-like strings rather than enforcing the real 16-digit
-checksum.
+The ORCID values use the placeholder domain `xxxx.org` and 22-character IDs.
+That's why my cleaning code strips any URL prefix and accepts ORCID-like
+strings instead of enforcing the real 16-digit format.
 
-## Security
+## The key I left in the notebook
 
-An earlier version of `questions.ipynb` contained a hard-coded Google API key.
-It has been removed, but it remains in the git history. **Revoke that key** and
-read [`docs/security.md`](../docs/security.md) before reusing this material.
+An earlier version of `questions.ipynb` had a hard-coded Google API key. I
+removed it, but it's still in the git history. Please revoke it if you can, and
+read [`../docs/security.md`](../docs/security.md) before reusing the notebook.

@@ -1,31 +1,29 @@
 # Applied Statistics (Fall 2022)
 
-A semester of applied regression and ANOVA in R: ten lab reports, a
-multiple-regression project on building energy use, a development-finance
-analysis, and the datasets that drive them.
+This was my first serious R course. I wrote ten lab reports on regression and
+ANOVA, a multiple-regression project on building energy use, and a
+development-finance analysis with a partner.
 
-## What is inside
+## What I kept
 
-| Path | Description |
+| Path | What it is |
 | --- | --- |
-| `Lab reports/` | Nine lab reports (PDF): R basics, data cleaning, SLR, MLR I/II, ANOVA, two-way ANOVA, ANCOVA, car prices |
-| `R code/` | 38 analysis scripts plus a shared `_setup.R` wrapper |
-| `csv files/` | 15 course datasets (cars, houses, penguins, snow petrels, choir, chocolate, ice cores, …) |
-| `data/external/` | Five public statsci.org datasets cached for offline use |
-| `Project_3/` | Building energy-efficiency regression: `Project_3.R`, report, slide deck, `Energy.csv` |
-| `MIGA_Issued_Projects.csv` | World Bank/MIGA development-finance extract used by `MIGA.R` |
-| `Stat2RCompanion.pdf` | The course's R companion to *Stat2* |
+| `Lab reports/` | Nine PDF reports: R basics, data cleaning, SLR, MLR I/II, ANOVA, two-way ANOVA, ANCOVA, car prices |
+| `R code/` | 38 analysis scripts and the shared `_setup.R` |
+| `csv files/` | 15 datasets I used in the labs (cars, houses, penguins, snow petrels, choir, chocolate, ice cores, …) |
+| `data/external/` | Five public statsci.org datasets I cached so the scripts run offline |
+| `Project_3/` | The building energy-efficiency project: script, report, slides, `Energy.csv` |
+| `MIGA_Issued_Projects.csv` | World Bank/MIGA extract I used in `MIGA.R` |
+| `Stat2RCompanion.pdf` | The course's R companion |
 
-### What the labs cover
-
-* simple and multiple linear regression, diagnostics, transformations;
-* ANOVA, two-way ANOVA, ANCOVA, effect sizes, and multiple comparisons;
-* model selection (SAT data) and correlated predictors;
-* a full project predicting heating load from building characteristics.
+The labs started with simple regression and diagnostics, then moved through
+multiple regression, transformations, ANOVA, two-way ANOVA, ANCOVA, effect
+sizes, and model selection. The project was the first time I fit a model to a
+real dataset with more than a handful of columns.
 
 ## Running the scripts
 
-Install the packages once:
+I installed the packages once:
 
 ```r
 install.packages(c(
@@ -34,25 +32,22 @@ install.packages(c(
 ))
 ```
 
-Then run a script from the `R code` folder:
+Then ran a script from `R code`:
 
 ```bash
 cd "Applied-Statistics/R code"
 Rscript "ANOVA Inference.R"
 ```
 
-Every script starts with `source("_setup.R")`, which loads the shared helpers in
-[`../R/course_utils.R`](../R/course_utils.R):
+Each script starts with `source("_setup.R")`, which loads the helpers in
+[`../R/course_utils.R`](../R/course_utils.R). `read_data()` searches `csv files/`,
+`Data/`, `data/`, and `data/external/`; `require_packages()` gives an install
+command instead of a load error.
 
-* `read_data("93cars.csv")` searches `csv files/`, `Data/`, `data/`, and
-  `data/external/` relative to the course;
-* `read_external("sleep.txt")` reads a cached public dataset;
-* `require_packages()` gives an install command instead of a cryptic load error.
+I got tired of the file picker, so the scripts now use explicit filenames. That
+also makes them safe to run from a terminal.
 
-The original scripts opened a file picker with `file.choose()`. They now use
-explicit filenames, so they are reproducible and safe to run non-interactively.
-
-### Which script uses which dataset
+### Which script uses which data
 
 | Script(s) | Dataset |
 | --- | --- |
@@ -67,18 +62,18 @@ explicit filenames, so they are reproducible and safe to run non-interactively.
 | `MIGA.R` | `MIGA_Issued_Projects.csv` |
 | `Project_3/Project_3.R` | `Project_3/Energy.csv` |
 | `ANCOVA.R`, `CAR PRICES.R`, `MLR Lab Report I.R`, `SLR Lab Report.R`, `mammalMLR.R`, `Correlated Predictors…R` | cached `data/external/*.txt` |
-| `Effect Sizes.R`, `Reexpression.R`, `effectSizes.R`, `reexpression-multipleComparison.R`, `ANOVA and Regression with Indicators.R` | **`roots.csv` — not included** |
+| `Effect Sizes.R`, `Reexpression.R`, `effectSizes.R`, `reexpression-multipleComparison.R`, `ANOVA and Regression with Indicators.R` | **`roots.csv` — I never had it** |
 
-The “roots” dataset (fine-root diameter by fertilizer treatment) was not
-distributed with the course materials. Put a copy in `csv files/` or point the
-script at your own file; the helper will explain what is missing.
+The “roots” data (fine-root diameter by fertilizer treatment) was never
+distributed with the course. If you have a copy, put it in `csv files/`; the
+helper will tell you what's missing if you don't.
 
 ## Notes
 
-* The reports are the original submissions. Some scripts were later cleaned up
-  (explicit paths, package checks); the statistical methods are unchanged.
-* The `summary(model, robust = TRUE)` idiom used in the course relied on a
-  course-local helper. Base R silently ignores that argument, so this archive
-  provides `robust_summary()` (HC1 via `sandwich`/`lmtest`) in
-  `R/course_utils.R` for scripts that need robust standard errors.
-* `Stat2RCompanion.pdf` is the course's R companion, kept for study.
+- The reports are the ones I submitted. I later cleaned up the scripts and data
+  paths, but the statistical methods are unchanged.
+- The course used `summary(model, robust = TRUE)`, which base R silently
+  ignores. I added `robust_summary()` (HC1) in `R/course_utils.R` for scripts
+  that need robust standard errors. If a report looked different from what you'd
+  get now, that's why.
+- `Stat2RCompanion.pdf` is course material.

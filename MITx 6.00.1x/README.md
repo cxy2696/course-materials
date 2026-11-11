@@ -1,7 +1,8 @@
 # MITx 6.00.1x
 
-Lecture code, handouts, and Problem Set 4 from MITx 6.00.1x (2023). The original
-`asset-v1_...LectureN` folders are now `lecture01`–`lecture12`.
+I worked through MITx 6.00.1x in 2023 and kept the lecture code, handouts, and
+Problem Set 4. The original `asset-v1_...LectureN` folders are now
+`lecture01`–`lecture12`.
 
 ```text
 MITx 6.00.1x/
@@ -11,7 +12,7 @@ MITx 6.00.1x/
 └── reference/python-cheatsheet.pdf
 ```
 
-## Run
+## Running things
 
 ```bash
 cd "MITx 6.00.1x/practice"
@@ -27,10 +28,10 @@ python3 ps4a.py
 python3 ps4a_checks.py
 ```
 
-`words.txt` must stay next to the scripts. The original `test_ps4a.py` is now
-`ps4a_checks.py` so the repository's pytest collection does not pick it up.
+`words.txt` has to stay next to the scripts. I renamed the original
+`test_ps4a.py` to `ps4a_checks.py` so pytest doesn't collect it.
 
-## Files
+## What's in the practice folder
 
 | File | Topic |
 | --- | --- |
@@ -42,5 +43,5 @@ python3 ps4a_checks.py
 | `exam_practice.py` | `closest_power`, `getSublists`, and similar |
 | `inheritance_spells.py` | inheritance and polymorphism |
 
-Most lecture files are course-provided examples and run directly; some use
-`input()`. They were renamed or fixed only where needed for Python 3.
+Most lecture files are course-provided examples and run directly; a few use
+`input()`. I only renamed or fixed what Python 3 needed.

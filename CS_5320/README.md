@@ -1,24 +1,24 @@
 # CS 5320 · Database Systems (Fall 2024)
 
-Lecture material and a hands-on SQL lab on database storage, indexing, query
-processing, and optimization.
+I took Database Systems in fall 2024. The lectures covered storage, indexes,
+query processing, and optimization; the SQL lab is the part I can run and show.
 
-## What is inside
+## What I kept
 
-| Path | Description |
+| Path | What it is |
 | --- | --- |
 | `5_Data_Storage.pdf` | Pages, records, buffer management |
 | `6_Tree_Indexes.pdf`, `7_Hash_Indexes.pdf` | B+ trees and hash indexes |
 | `8_Processing_Overview.pdf`, `9_Operator_Implementations.pdf` | Query execution operators |
 | `10_Query_Optimization.pdf` | Cost-based optimization |
-| `SQLfolder/bars.pgsql` | PostgreSQL lab: schema, data load, ten queries |
+| `SQLfolder/bars.pgsql` | The PostgreSQL lab: schema, data load, ten queries |
 | `csv/chocolate_bars.csv` | 2,530 chocolate-bar reviews |
-| `csv/{courses,students,enrollment}.csv` | Small relational example for joins |
+| `csv/{courses,students,enrollment}.csv` | Small join example |
 
-## Run the SQL lab
+## Running the SQL lab
 
-The script uses PostgreSQL's client-side `\copy`, so it does not need
-server-side file permissions. Run it from the `CS_5320` folder:
+The script uses psql's client-side `\copy`, so it doesn't need server-side file
+permissions. Run it from `CS_5320`:
 
 ```bash
 cd CS_5320
@@ -40,11 +40,11 @@ answers to ten labelled queries:
 9. average rating above vs. below the mean cocoa percentage;
 10. bars reviewed in every year represented in the data.
 
-The queries were syntax-checked with DuckDB during the 2026 cleanup (same
-`SELECT` logic; the `\copy` line is psql-specific).
+I checked the `SELECT` statements with DuckDB during the cleanup. The `\copy`
+line is psql-only.
 
 ## Notes
 
-* The lecture slides are by Immanuel Trummer (Cornell).
-* The original version of `bars.pgsql` loaded from
-  `/Users/xinyi/Downloads/...`; the relative path makes the lab portable.
+- The lecture slides are by Immanuel Trummer (Cornell).
+- The original script loaded from `/Users/xinyi/Downloads/...`; the relative
+  path makes the lab portable.

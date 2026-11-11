@@ -1,8 +1,8 @@
 # A Tutorial on Bayesian Optimization
 
-A self-contained Julia tutorial on Bayesian optimization, adapted from Peter
-Frazier's paper [*A Tutorial on Bayesian Optimization*](https://arxiv.org/abs/1807.02811).
-It builds the pieces from scratch: a lazy-evaluation helper, a trust-region
+I worked through this Julia tutorial while learning Bayesian optimization. It is
+adapted from Peter Frazier's paper [*A Tutorial on Bayesian Optimization*](https://arxiv.org/abs/1807.02811).
+The code builds the pieces from scratch: a lazy-evaluation helper, a trust-region
 subproblem solver, radial-basis-function surrogates, test functions, and a
 simple expected-improvement loop.
 

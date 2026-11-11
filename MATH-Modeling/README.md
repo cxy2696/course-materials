@@ -1,6 +1,6 @@
 # MATH-Modeling
 
-> This folder is part of the [`course-materials`](../README.md) archive. It was migrated from the standalone `cxy2696/MATH-Modeling` repository; the layout is preserved so the notebooks keep working.
+> I moved this folder out of my standalone [`cxy2696/MATH-Modeling`](https://github.com/cxy2696/MATH-Modeling) repo and into [`course-materials`](../README.md) in November 2026. I kept the layout and docs so the notebooks keep working.
 
 This is my MATH 310 (Numerical Analysis) and mathematical-modeling coursework:
 notebooks, problem sets, lecture notes, and reference books. The numerical

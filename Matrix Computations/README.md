@@ -1,52 +1,52 @@
 # CS 6210 · Matrix Computations (Fall 2025)
 
-Graduate numerical linear algebra: matrix-vector products, floating-point error,
-LU/QR factorizations, least squares, eigenvalues, iterative methods, and
-optimization. The coursework is written in Julia, mostly as Pluto notebooks.
+I took Matrix Computations in fall 2025. The course was numerical linear
+algebra: floating-point error, LU/QR, least squares, eigenvalues, iterative
+methods, and a little optimization. We wrote the homework in Julia, mostly as
+Pluto notebooks.
 
-## What is inside
+## What I kept
 
-| Path | Description |
+| Path | What it is |
 | --- | --- |
-| `lecture/` | 27 lecture PDFs (August–December 2025) |
-| `hw/` | Ten problem sets (`hw1.jl`–`hw10.jl`), midterm, final, and matching PDFs |
+| `lecture/` | 27 lecture PDFs, August–December 2025 |
+| `hw/` | Ten problem sets (`hw1.jl`–`hw10.jl`), midterm, final, and the matching PDFs |
 | `final.jl`, `hw8.jl`, `hw9.jl`, `hw10.jl` | Earlier working copies of selected notebooks |
-| `cs_6210.pdf` | Course notes/slides (David Bindel's 2019 offering) |
+| `cs_6210.pdf` | Course notes/slides from David Bindel's 2019 offering |
 | `2013 Matrix Computations 4th.pdf`, `Applied Numerical Linear Algebra 1st Edition.pdf` | Golub & Van Loan; Demmel |
-| `bo-tutorial/` | Self-contained Bayesian-optimization tutorial in Julia |
+| `bo-tutorial/` | A Bayesian-optimization tutorial in Julia |
 | `Project.toml` | Julia environment for the problem sets |
 
-The canonical problem sets are in `hw/` because they are paired with the
-submitted PDFs. The root-level `final.jl` and `hw8–10.jl` are earlier versions
-that differ from the `hw/` copies; they are kept for history, not as the entry
-points.
+The canonical problem sets are in `hw/` because that's where they sit next to
+the submitted PDFs. The root-level `final.jl` and `hw8–10.jl` are earlier
+versions that differ from the `hw/` copies; I kept them for history, not as the
+entry points.
 
-## Run the problem sets
+## Running the problem sets
 
-The `.jl` files are **Pluto notebooks** (they start with
-`### A Pluto.jl notebook ###`), not plain scripts. Instantiate the project once:
+The `.jl` files are Pluto notebooks, not plain scripts. Instantiate the project
+once:
 
 ```bash
 julia --project="Matrix Computations" -e 'using Pkg; Pkg.instantiate()'
 julia --project="Matrix Computations" -e 'using Pluto; Pluto.run()'
 ```
 
-Then open `hw/hw1.jl` (or any other) in the Pluto window. Edit the cells and
-run them; Pluto records the dependency graph.
+Then open `hw/hw1.jl` (or any other) in the Pluto window.
 
-If you prefer Jupyter, `bo-tutorial/vanilla_bo.ipynb` is a normal notebook; it
-needs a Julia kernel (`IJulia`) and the tutorial environment.
+If you'd rather use Jupyter, `bo-tutorial/vanilla_bo.ipynb` is a regular
+notebook; it needs a Julia kernel (`IJulia`) and the tutorial environment.
 
 ## Bayesian-optimization tutorial
 
 `bo-tutorial/` is adapted from Peter Frazier's *A Tutorial on Bayesian
-Optimization* (arXiv:1807.02811). It includes:
+Optimization* (arXiv:1807.02811). It has:
 
-* `src/` — `LazyStruct`, trust-region solver, RBF surrogate, test functions, and
-  the tutorial driver;
-* `vanilla_bo.ipynb` — a notebook walkthrough;
-* `docs/` — the tutorial paper and a longer PDF;
-* `Project.toml` — Plots + LinearAlgebra.
+- `src/` — `LazyStruct`, a trust-region solver, an RBF surrogate, test
+  functions, and the tutorial driver;
+- `vanilla_bo.ipynb` — the notebook walkthrough;
+- `docs/` — the paper and a longer companion PDF;
+- `Project.toml` — Plots + LinearAlgebra.
 
 ```bash
 julia --project="Matrix Computations/bo-tutorial" -e 'using Pkg; Pkg.instantiate()'
@@ -55,8 +55,8 @@ julia --project="Matrix Computations/bo-tutorial" "Matrix Computations/bo-tutori
 
 ## Notes
 
-* The textbook PDFs are course references.
-* Pluto notebooks contain their own package imports; if a cell reports a missing
+- The textbook PDFs are course references.
+- Pluto notebooks carry their own package imports. If a cell reports a missing
   package, add it to `Matrix Computations/Project.toml` and re-instantiate.
-* The `hw/*.pdf` files are the submitted write-ups; the `.jl` files are the
+- The `hw/*.pdf` files are the write-ups I submitted; the `.jl` files are the
   code that produced them.

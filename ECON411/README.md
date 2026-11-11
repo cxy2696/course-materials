@@ -1,37 +1,34 @@
 # Econometrics Research Thesis (Fall 2023)
 
-A panel-data study of the mobile-RPG market: do otaku-culture indicators (anime
-conventions, anime/manga sales, anime availability) help explain RPG revenue
-and downloads after controlling for GDP, mobile penetration, and country/year
-fixed effects?
+This was my econometrics thesis: does otaku culture help explain mobile-RPG
+revenue and downloads, after controlling for GDP, mobile penetration, and
+country/year effects? I built a country-year panel from public data and ran
+fixed-effects specifications.
 
-The same project is mirrored in
-[`../mobile-RPG-observation/`](../mobile-RPG-observation/), which was published
-as a standalone repository. This folder is the course version, including the
-data-collection notes and the poster.
+I also keep the standalone copy in
+[`../mobile-RPG-observation/`](../mobile-RPG-observation/README.md). This folder
+is the course version, with the data-collection notes and poster.
 
-## What is inside
+## What I kept
 
-| Path | Description |
+| Path | What it is |
 | --- | --- |
 | `Thesis.R` | Main regressions, scatterplot matrices, stargazer tables |
 | `rpgD.R` | Panel/fixed-effects specifications with `plm`, diagnostics, coefficient plots |
-| `panel plot.R` | Correlation/scatterplot matrix helpers |
+| `panel plot.R` | Correlation/scatterplot helpers |
 | `f23 Econometrics Review.R` | Course review scripts (class size, MLB salaries) |
-| `rpgObservation.CSV` | Country-year panel used by the thesis |
+| `rpgObservation.CSV` | The country-year panel |
 | `DataCollection/` | Raw Statista, World Bank, anime-industry, and mobile-market extracts |
-| `Poster pictures/` | Figures, model tables, and `data.py` (AnimeCons scraper template) |
-| `MyTable1.htm`, `MyTable2.htm` | Stargazer HTML regression tables |
-| `Continet&Country.png` | Map/figure used in the poster |
+| `Poster pictures/` | Figures, model tables, and `data.py` |
+| `MyTable1.htm`, `MyTable2.htm` | Stargazer HTML tables |
+| `Continet&Country.png` | Map used in the poster |
 
-### Panel variables
-
-`rpgR` (RPG revenue), `rpgD` (downloads), `user` (active mobile users),
-`con` (anime/manga conventions), `amsale` (anime/manga sales), `amR` (anime
+The panel variables are `rpgR` (revenue), `rpgD` (downloads), `user` (active
+mobile users), `con` (conventions), `amsale` (anime/manga sales), `amR` (anime
 availability), `anime` (combined culture index), `gdp`, `gdpperson`, `mobile`,
-`country`, `year`.
+`country`, and `year`.
 
-## Run it
+## Running it
 
 ```r
 install.packages(c("plm", "stargazer", "ggplot2", "coefplot", "car",
@@ -45,17 +42,17 @@ Rscript Thesis.R
 Rscript rpgD.R
 ```
 
-The scripts read `rpgObservation.CSV` through `_setup.R`. `rpgD.R` builds a
-`pdata.frame` and estimates country/year fixed-effect models; it previously
-created `ndata` but referenced an undefined `pdata`, which is fixed.
+Both read `rpgObservation.CSV` through `_setup.R`. `rpgD.R` builds a
+`pdata.frame` and estimates the country/year fixed-effect models. I fixed a bug
+where it created `ndata` but then used an undefined `pdata`.
 
 ## Notes
 
-* The panel is short and unbalanced; the thesis is an exploratory observational
+- The panel is short and unbalanced. This is an exploratory observational
   study, not a causal estimate.
-* `DataCollection/` preserves original filenames (including Statista statistic
-  IDs). Check the source terms before reusing the data commercially.
-* `Poster pictures/data.py` is a template for parsing a saved AnimeCons events
-  page; the live site blocks scripted requests with Cloudflare.
-* The thesis text is in `../mobile-RPG-observation/Thesis (1).docx`; the poster
+- `DataCollection/` keeps the original file names, including the Statista
+  statistic IDs. Check the source terms before commercial reuse.
+- `Poster pictures/data.py` parses a saved AnimeCons events page. The live site
+  blocks scripted requests with Cloudflare.
+- The thesis text is in `../mobile-RPG-observation/Thesis (1).docx`; the poster
   figures here match it.

@@ -1,6 +1,6 @@
 # Where the material comes from
 
-The material here is course work. Below is where each part came from, so the sources and the copyright status stay clear.
+This is my course work. I wrote down where each part came from so the sources are clear.
 
 ## Numerical analysis notebooks and homework
 

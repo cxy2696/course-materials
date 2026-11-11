@@ -1,12 +1,13 @@
-# Merged `code` archive
+# Moving the `code` repository into this one
 
-The separate [`cxy2696/code`](https://github.com/cxy2696/code) repository was
-folded into this archive in November 2026. The code is now maintained here;
-the old repository is no longer the canonical location.
+I had a separate [`cxy2696/code`](https://github.com/cxy2696/code) repository
+with Java, machine-learning, MITx, R, C++, and practice notebooks. In November
+2026 I merged it into this archive. The code now lives here; the old repository
+is no longer the canonical copy.
 
-## Mapping
+## Where things went
 
-| Original `code` path | New location |
+| Old path | New path |
 | --- | --- |
 | `java/` | `CSCI 161/` |
 | `python/machine_learning/` | `Machine Learning/` |
@@ -19,32 +20,29 @@ the old repository is no longer the canonical location.
 | `python/coauthorship/` | Merged into `InfoNetworks/pythonCoauthorship/` |
 | `python/tests/` | Split into `InfoNetworks/tests/` and `Machine Learning/tests/` |
 
-## History
+I did not import the old git history. The files came in as one merge commit, so
+deleting the old repository would also delete that history. I'll export a bundle
+first if I ever need it.
 
-The source repository's git history was not imported. The files were added to
-this archive in one merge commit, so deleting the old repository would also
-delete its commit history. Export a bundle first if that history matters.
+## What I changed while merging
 
-## What changed during the merge
-
-- The Java graphics helper now writes headless output to `CSCI 161/out/` instead
-  of the old `java/out/`.
-- The CS 6850 coauthorship parser accepts records without a citation-count
-  column. The graph is now 34,259 nodes / 96,582 edges (largest component
-  25,269); single-author papers are kept as isolated nodes.
-- The duplicate 12 MB `ps1data.txt` in
-  `InfoNetworks/pythonCoauthorship_customBFStree/` was removed. Both entry
-  points share the file in `pythonCoauthorship/`.
+- The Java graphics helper writes headless output to `CSCI 161/out/` instead of
+  `java/out/`.
+- The coauthorship parser now accepts records without a citation-count column.
+  The graph is 34,259 nodes / 96,582 edges, with a 25,269-node largest
+  component; single-author papers stay as isolated nodes.
+- I removed the duplicate 12 MB `ps1data.txt` from
+  `InfoNetworks/pythonCoauthorship_customBFStree/`. Both entry points now use
+  the file in `pythonCoauthorship/`.
 - The HNL model uses the existing sentiment CSV in
-  `InfoNetworks/pythonCS6850_Project/PythonHybrid/`; its duplicate data file and
-  two duplicate notebooks were not copied.
-- The source repository's own `README.md`, `Makefile`, `docs/`, and CI workflow
-  were not copied. Their content is covered by this archive's README,
-  `docs/`, `Makefile`, and `quality.yml`.
-- Python tests for the HNL model, coauthorship parser, and ML utilities are now
-  part of the repository test run.
+  `InfoNetworks/pythonCS6850_Project/PythonHybrid/`; I didn't copy its duplicate
+  data file or the two duplicate notebooks.
+- I didn't copy the old repository's README, Makefile, docs, or CI workflow.
+  The root README, `docs/`, `Makefile`, and `quality.yml` cover them.
+- The HNL model, coauthorship parser, and ML utilities now have tests in the
+  repo.
 
-## Verification
+## How I check it
 
 ```bash
 make check-code
@@ -52,4 +50,4 @@ python tools/check_repo.py --skip-code
 ```
 
 `make check-code` runs 301 Java assertions, the C++ build, and 25 Python tests
-(one optional PyTorch test is skipped when torch is not installed).
+(one optional PyTorch test is skipped when torch isn't installed).

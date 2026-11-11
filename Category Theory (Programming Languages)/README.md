@@ -1,40 +1,32 @@
 # Category Theory (Programming Languages) — Fall 2025
 
-A reading seminar on category theory and its applications to programming-language
-semantics: monads, fixed points of functors, algebraic theories, and type
-theory. The folder is mostly papers and eight problem-set solutions, plus a
-LaTeX document with commutative diagrams.
+I took this as a reading seminar in fall 2025. We worked through basic category
+theory, then monads, fixed points of functors, categorical semantics, and a bit
+of type theory. I kept the papers and my eight problem-set solutions.
 
-## What is inside
+## What's here
 
-| Path | Description |
+| Path | What it is |
 | --- | --- |
-| `hw/a1-solution.pdf` … `hw/a8-solution.pdf` | Eight problem-set solutions |
-| `hw/quiver-doc.tex`, `hw/quiver.sty` | LaTeX notes/examples using the `quiver` diagram package |
-| `Basic Category Theory.pdf` | Tom Leinster's textbook |
+| `hw/a1-solution.pdf` … `hw/a8-solution.pdf` | My eight problem sets |
+| `hw/quiver-doc.tex`, `hw/quiver.sty` | LaTeX notes with commutative diagrams |
+| `Basic Category Theory.pdf` | Leinster's textbook |
 | `AMM.pdf` | Adámek, Milius & Moss, *Fixed points of functors* |
-| `Fixed points of functors.pdf` | Related fixed-point reading |
-| `Moggi.pdf` | Moggi's monad-based semantics of computation |
-| `Benton.pdf`, `Bauer.pdf`, `Métayer.pdf` | Type theory, computation, and categorical semantics readings |
+| `Fixed points of functors.pdf` | More fixed-point reading |
+| `Moggi.pdf` | Moggi on monads and computation |
+| `Benton.pdf`, `Bauer.pdf`, `Métayer.pdf` | Type theory and categorical semantics |
 | `PROOFS AND TYPES.pdf` | Girard's proof theory text |
-| `Homotopy Type Theory- Univalent Foundations of Mathematics.pdf` | HoTT book |
-| `cat.pdf`, `CategoryTheory.pdf`, `categories-for-types-byRoyCrole.pdf`, `SP.pdf`, `VVM.pdf`, `sized-types.pdf` | Additional lecture/reading material |
+| `Homotopy Type Theory- Univalent Foundations of Mathematics.pdf` | The HoTT book |
+| `cat.pdf`, `CategoryTheory.pdf`, `categories-for-types-byRoyCrole.pdf`, `SP.pdf`, `VVM.pdf`, `sized-types.pdf` | Other readings |
 
-## Reading map
+The rough order was: categories and functors, monads, fixed points and
+recursive types, categorical semantics, dependent types and HoTT, then sized
+types and termination.
 
-The likely order of the seminar, based on the files:
+## Compiling the notes
 
-1. categories, functors, natural transformations (*Basic Category Theory*);
-2. monads and computational effects (Moggi; Bauer; Benton);
-3. fixed points and recursive types (AMM; *Fixed points of functors*);
-4. categorical semantics of type theory (*Proofs and Types*; Roy Crole);
-5. dependent types and univalent foundations (HoTT book);
-6. sized types and termination (`sized-types.pdf`).
-
-## Compiling the LaTeX notes
-
-`hw/quiver-doc.tex` uses `tcolorbox` with `minted`, so compile with shell escape
-and install Pygments first:
+`hw/quiver-doc.tex` uses `tcolorbox` with `minted`, so it needs shell escape and
+Pygments:
 
 ```bash
 cd "Category Theory (Programming Languages)/hw"
@@ -43,11 +35,10 @@ pdflatex -shell-escape quiver-doc.tex
 pdflatex -shell-escape quiver-doc.tex
 ```
 
-If you only want to read the solutions, the PDFs are already compiled; no LaTeX
-installation is needed.
+If you only want the problem sets, the PDFs are already compiled.
 
 ## Notes
 
-* Every paper and textbook here is included as study material.
-* The problem-set solutions are original work; the questions themselves may be
-  from the instructor and are not always included.
+- The papers and textbooks are course readings; I kept them for study.
+- The problem-set solutions are mine. The questions themselves came from the
+  instructor and aren't always included.

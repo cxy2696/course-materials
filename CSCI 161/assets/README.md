@@ -1,5 +1,8 @@
 # Graphics assets
 
+I generated most of these for the Java graphics programs; `meme.png` came from
+the original archive.
+
 | File | Source | Used by |
 | --- | --- | --- |
 | `meme.png` | original archive | `PrettyPicture` |
@@ -15,7 +18,7 @@ Sizes must match the Java constants:
 - `terrain.png`: 384×64, six 64×64 tiles;
 - `wizard.png`: 64×64.
 
-Regenerate the generated files with:
+To regenerate the generated files:
 
 ```bash
 python -m pip install Pillow

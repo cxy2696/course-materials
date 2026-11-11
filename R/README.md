@@ -1,39 +1,39 @@
 # Shared R helpers
 
-`course_utils.R` is the small standard library used by the R course scripts.
-Each R course folder has a `_setup.R` wrapper that finds the repository root and
-sources this file.
+I got tired of editing the same data paths in every R script, so I put the
+common bits in `course_utils.R`. Each R course folder has a `_setup.R` that
+finds the repo root and sources it.
 
-## What it provides
+## What's in it
 
-| Function | Purpose |
+| Function | What it does |
 | --- | --- |
-| `read_data("file.csv")` | Find and read a course CSV in `csv files/`, `Data/`, `data/`, or `data/external/` |
-| `read_external("sleep.txt")` | Read a cached public tab-separated dataset |
-| `read_env_data("VAR", "default.csv")` | Read a dataset supplied through an environment variable |
-| `require_packages(c("ggplot2"))` | Fail early with an actionable install command |
-| `robust_summary(model)` | HC1 heteroskedasticity-robust coefficient table via `lmtest` + `sandwich` |
+| `read_data("file.csv")` | Finds and reads a course CSV in `csv files/`, `Data/`, `data/`, or `data/external/` |
+| `read_external("sleep.txt")` | Reads a cached public tab-separated dataset |
+| `read_env_data("VAR", "default.csv")` | Reads a dataset I supply through an environment variable |
+| `require_packages(c("ggplot2"))` | Stops early with an install command |
+| `robust_summary(model)` | HC1 robust coefficient table via `lmtest` and `sandwich` |
 
-## Why it exists
+## Why I added it
 
-The original scripts used `file.choose()` (not reproducible), read absolute or
-remote paths, and called `summary(model, robust = TRUE)`. Base R's `summary.lm`
-silently ignores the `robust` argument, so those calls did **not** produce robust
-standard errors unless a course-local helper happened to be loaded. This module
-makes the intent explicit:
+The original scripts used `file.choose()` (not reproducible), absolute or remote
+paths, and `summary(model, robust = TRUE)`. Base R's `summary.lm` silently
+ignores the `robust` argument, so those calls were not producing robust standard
+errors unless a course-local helper happened to be loaded. I wanted the intent
+to be explicit:
 
 ```r
 source("_setup.R")
 cars <- read_data("93cars.csv")
 model <- lm(HMPG ~ Type, data = cars)
-robust_summary(model)          # HC1 coefficient table
+robust_summary(model)
 ```
 
 ## Adding a course
 
-Create a one-file `_setup.R` in the course folder that resolves the repository
-root and sources `R/course_utils.R`; copy the wrapper from an existing course
-and adjust nothing else. `read_data()` starts its search from the folder that
-contains `_setup.R`, so scripts can be run from their own directory.
+Copy the small `_setup.R` from an existing course into the new folder. It
+resolves the repo root and sources this file; `read_data()` starts its search
+from the folder that contains `_setup.R`, so scripts can run from their own
+directory.
 
-See [`../docs/running-code.md`](../docs/running-code.md) for the full R setup.
+See [`../docs/running-code.md`](../docs/running-code.md) for the R setup.

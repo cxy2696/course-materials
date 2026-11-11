@@ -1,10 +1,12 @@
 # CSCI 161 · Java labs
 
-30 Java classes and 301 self-test assertions. The examples cover console input,
-loops, sorting, a card deck, simple game/graphics programs, fractions, vectors,
-and a small program menu.
+I wrote these for CSCI 161, an intro Java course. There are 30 classes and 301
+self-test assertions covering console input, loops, sorting, a card deck, simple
+games and graphics, fractions, vectors, and a small program menu.
 
 ## Build and run
+
+From the repo root:
 
 ```bash
 ./CSCI\ 161/build.sh       # compile to CSCI 161/out
@@ -13,7 +15,7 @@ and a small program menu.
 ./CSCI\ 161/run.sh coursework.games.Chess
 ```
 
-From inside this folder, drop the `CSCI\ 161/` prefix:
+From inside the folder, drop the `CSCI\ 161/` prefix:
 
 ```bash
 ./build.sh
@@ -29,7 +31,7 @@ java -cp "CSCI 161/out" coursework.Coursework
 
 ## Packages
 
-| Package | Contents |
+| Package | What's in it |
 | --- | --- |
 | `coursework` | `Coursework`, the numbered menu for 20 programs |
 | `coursework.basics` | HelloWorld, arithmetic, calculator, conversation, conditionals, loops, strings |
@@ -47,7 +49,7 @@ programs.
 
 `Checkers`, `Chess`, `Fantasy`, `PrettyPicture`, and `Shuffler` use
 `GraphicsWindow`. With a display they open a Swing window; without one they save
-to `CSCI 161/out/<title>.png`.
+a PNG to `CSCI 161/out/`.
 
 ```bash
 java -Djava.awt.headless=true -cp "CSCI 161/out" coursework.games.Checkers
@@ -55,24 +57,17 @@ java -Djava.awt.headless=true -cp "CSCI 161/out" coursework.games.Chess < /dev/n
 ```
 
 Assets live in `assets/`; see [assets/README.md](assets/README.md). Chess
-positions use lines such as `WP a2`; pressing Enter uses the default opening.
+positions use lines like `WP a2`; pressing Enter uses the default opening.
 
 ## Tests
 
-`JavaSelfTest` is dependency-free and covers:
-
-- all three sorts (empty, one element, duplicates, reverse, random);
-- mean, variance, standard deviation, min/max, first occurrence;
-- sieve bounds, loop-math bounds and overflow;
-- name pairing and rabbit/fox validation;
-- `Fraction` reduction, arithmetic, comparison, zero denominator;
-- `Vector` dot/cross/normalization/angle, zero vector;
-- `Card` comparison, rank/suit, random cards, invalid input;
-- `CardSet` standard deck, shuffle, discard, unmodifiable view.
+`JavaSelfTest` has no dependencies. It covers the three sorts, statistics,
+sieve and loop bounds, name pairing, rabbit/fox validation, `Fraction`
+arithmetic, `Vector` operations, cards, and the deck operations.
 
 ```text
 $ ./test.sh
 All 301 Java checks passed.
 ```
 
-The implementation uses JDK 17 and no third-party libraries.
+The code uses JDK 17 and no third-party libraries.

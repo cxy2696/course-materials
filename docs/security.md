@@ -1,76 +1,67 @@
 # Security
 
-## Incident: committed Google API key (fixed)
+## The API key I committed
 
-An earlier version of `exercises/questions.ipynb` contained a hard-coded Google
-API key in a shell example (`X-goog-api-key: AIza…`). The key was committed in
-`96e7d77` and was publicly visible while the repository was public.
+I left a Google API key in `exercises/questions.ipynb` — it was pasted into a
+shell example in one of the cells. It went into commit `96e7d77` while the repo
+was public.
 
-**Status:** the key has been removed from the current notebook. It is **still
-present in git history**, so removing it from the working tree is not enough.
+I removed it from the notebook during the November 2026 cleanup, but **it is
+still in the git history**. Deleting the line from the current file doesn't
+undo the exposure.
 
-### What to do now
+### What I need to do
 
-1. **Revoke the key** in the [Google Cloud console](https://console.cloud.google.com/apis/credentials)
-   (APIs & Services → Credentials). Deleting or rotating it is the only step
-   that actually stops abuse.
-2. Check the project's usage and billing for unexpected calls.
-3. If the key came from a course or employer, tell the owner that it was
-   exposed.
-4. Optionally purge the key from git history (below), then force-push.
+1. Revoke the key in the [Google Cloud console](https://console.cloud.google.com/apis/credentials).
+   Rotating or deleting it is the only thing that actually stops abuse.
+2. Check the project's usage and billing for calls I don't recognize.
+3. If the key was issued by a course or an employer, tell them it was exposed.
+4. Optionally remove it from history (below), then force-push.
 
-### Purge the key from history (optional after revocation)
+### Removing it from history
 
-Install [`git-filter-repo`](https://github.com/newren/git-filter-repo), then
-create a local replacement file containing the literal key and a redaction:
+This is worth doing if I want the repo to be clean, but it changes every commit
+hash. I'd install [`git-filter-repo`](https://github.com/newren/git-filter-repo)
+and make a local replacement file with the literal key:
 
 ```bash
-# Do NOT commit this file. Copy the key from the notebook history.
+# Do not commit this file.
 printf '%s==>REDACTED_GOOGLE_API_KEY\n' 'THE_KEY_FROM_THE_OLD_NOTEBOOK' > /tmp/replacements.txt
 
 git filter-repo --replace-text /tmp/replacements.txt
 git push --force-with-lease origin main
 ```
 
-History rewriting changes every commit hash. Coordinate with anyone who has a
-clone or fork; they will need to re-clone. If the key is already revoked, the
-rewrite is optional — the credential is useless even though the string remains.
+Anyone with a clone or fork will need to re-clone. If the key is already revoked,
+the rewrite is optional — the credential is dead even if the string remains.
 
-### Harden the repository
+I should also enable **secret scanning** and **push protection** in the GitHub
+repository settings (Settings → Code security and analysis). They catch new
+key-shaped strings at push time; they don't clean up old history.
 
-Enable **secret scanning** and **push protection** in the GitHub repository
-settings (Settings → Code security and analysis). They catch future key-shaped
-strings at push time; they do not remove the existing history.
-
-### Verification
+Quick checks:
 
 ```bash
-git log --all -S 'AIza' --oneline       # should show only the old commit(s)
+git log --all -S 'AIza' --oneline       # should show only the old commits
 grep -rn 'AIza' --exclude-dir=.git .    # should be empty
-python3 tools/check_repo.py             # secret scan
+python3 tools/check_repo.py             # scans tracked text files
 ```
 
-## Secret-handling policy
+## How I handle keys now
 
-* Keys live in environment variables or a local `.env` file that is ignored by
-  git. Commit only `.env.example` with empty values.
-* Never paste a key into a notebook markdown cell, a code comment, a shell
-  example, or an output cell.
-* Use the smallest possible scope and rotate keys regularly.
-* Before publishing, run `python3 tools/check_repo.py`; it scans for common
-  key formats and private-key headers.
-* If a secret is exposed, **rotate first**, then clean the repository. Deleting
-  the file does not un-expose the secret.
-
-## Other credentials
+- Keys go in environment variables or a local `.env` that git ignores. Only
+  `.env.example` with empty values is committed.
+- I don't paste a key into a notebook cell, a comment, a shell example, or an
+  output cell.
+- I use the smallest scope I can and rotate keys when a course is over.
+- I run `python3 tools/check_repo.py` before publishing. It scans for common key
+  formats and private-key headers.
+- If I leak something, I rotate first. Removing the file is secondary.
 
 The exercise notebook reads `GEMINI_API_KEY` and `SEMANTIC_SCHOLAR_API_KEY` from
 the environment; both are empty by default. The AI-in-Organizations notebooks
-expect `OPENAI_API_KEY` (or equivalent) in the environment. No keys are stored
-in the repository.
+expect `OPENAI_API_KEY` (or the provider named in the notebook) in the
+environment. No keys are stored in the repo.
 
-## Reporting a problem
-
-If you find a credential or private data in this repository, please contact the
-maintainer privately (see the GitHub profile for contact details) instead of
-opening a public issue with the secret in it.
+If you find a credential or private data here, please contact me privately
+rather than opening a public issue with the secret in it.
