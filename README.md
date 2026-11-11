@@ -138,13 +138,6 @@ the difference is noted in the course README.
   [`docs/repository-conventions.md`](docs/repository-conventions.md) and
   [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
-## Citation
-
-If you reference this archive, use the metadata in [`CITATION.cff`](CITATION.cff):
-
-> Cui, Xinyi (Anny). *Course Materials: Information Science, Computer Science,
-> and Economics Coursework.* 2026. https://github.com/cxy2696/course-materials
-
 ## Maintenance
 
 The archive is maintained by [@cxy2696](https://github.com/cxy2696). Issues and
