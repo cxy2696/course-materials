@@ -19,6 +19,12 @@ the old repository is no longer the canonical location.
 | `python/coauthorship/` | Merged into `InfoNetworks/pythonCoauthorship/` |
 | `python/tests/` | Split into `InfoNetworks/tests/` and `Machine Learning/tests/` |
 
+## History
+
+The source repository's git history was not imported. The files were added to
+this archive in one merge commit, so deleting the old repository would also
+delete its commit history. Export a bundle first if that history matters.
+
 ## What changed during the merge
 
 - The Java graphics helper now writes headless output to `CSCI 161/out/` instead
