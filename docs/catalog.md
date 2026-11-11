@@ -22,7 +22,7 @@ help you decide where to look, not as a precise inventory.
 | [`CS_5320/`](../CS_5320/README.md) | Database systems | Storage/index/hash-index/query-optimization lectures, SQL lab | PostgreSQL script, CSV data |
 | [`INFO_5355/`](../INFO_5355/README.md) | Human-computer interaction design | Individual and group assignments, UX readings, interview study | Documents and interview data (review privacy) |
 | [`INFO_6850/`](../INFO_6850/README.md) | Information networks | Problem sets, spectral/random-walk/expander notes, reaction paper | LaTeX, PDFs |
-| [`InfoNetworks/`](../InfoNetworks/README.md) | CS 6850 project | Coauthorship analysis, hybrid-contagion simulations, reaction paper, final project | Python modules and notebooks |
+| [`InfoNetworks/`](../InfoNetworks/README.md) | CS 6850 project | Coauthorship analysis, hybrid-contagion simulations, HNL voter model, reaction paper, final project | Python modules and notebooks |
 | [`mobile-RPG-observation/`](../mobile-RPG-observation/README.md) | Independent thesis | Otaku culture and mobile-RPG adoption; thesis, poster, data | R scripts, panel CSV, images |
 
 ## Spring 2025
@@ -50,17 +50,31 @@ The [`2025Spring/`](../2025Spring/README.md) folder groups eight courses:
 | [`Category Theory (Programming Languages)/`](<../Category Theory (Programming Languages)/README.md>) | Programming-languages seminar | Eight problem-set solutions, category-theory papers, LaTeX diagrams | LaTeX |
 | [`exercises/`](../exercises/README.md) | Take-home data exercise | Publication data cleaning, Gemini extraction, Semantic Scholar sampling | Python notebook, CSV/Parquet |
 
+## Programming and standalone coursework
+
+| Folder | Course / focus | What is inside | Code and data |
+| --- | --- | --- | --- |
+| [`CSCI 161/`](<../CSCI 161/README.md>) | CSCI 161 · Java labs | Console exercises, sorting, cards, fractions/vectors, graphics programs, 301 tests | 30 Java classes, assets, build scripts |
+| [`Machine Learning/`](<../Machine Learning/README.md>) | Machine-learning assignments | kNN, perceptron, kernel SVM, naive Bayes, momentum SGD/MLP/CNN | Python notebooks, helpers, tests |
+| [`MITx 6.00.1x/`](<../MITx 6.00.1x/README.md>) | MITx 6.00.1x (2023) | Lecture PDFs and code, practice scripts, Problem Set 4 | Python |
+| [`INFO 4100/`](<../INFO 4100/README.md>) | INFO 4100 · R setup | R Markdown environment assignment | R Markdown |
+| [`Practice Notebooks/`](<../Practice Notebooks/README.md>) | Standalone analyses | Supply/demand, decision boundaries, model comparison, project flow chart | Python notebooks, one CSV |
+| [`Creative Project (CS 3780-5780)/`](<../Creative Project (CS 3780-5780)/README.md>) | CS 3780/5780 creative project | Emotion-classification template and sample data | Python notebook, 10k-row CSV |
+| [`C++/`](<../C++/README.md>) | C++ example | C++17 greeting program | C++ and Makefile |
+
 ## Languages and tools at a glance
 
 | Language / tool | Where it appears |
 | --- | --- |
-| **Python** | `InfoNetworks`, `AI in Organizations`, `Numerical-Analysis-Lab`, `exercises`, `ECON411`, `BUS435` |
-| **R** | `Applied-Statistics`, `ECON284`, `ECON411`, `2025Spring/6220`, `mobile-RPG-observation` |
+| **Python** | `InfoNetworks`, `Machine Learning`, `Practice Notebooks`, `AI in Organizations`, `Numerical-Analysis-Lab`, `exercises`, `ECON411`, `BUS435` |
+| **R** | `INFO 4100`, `Applied-Statistics`, `ECON284`, `ECON411`, `2025Spring/6220`, `mobile-RPG-observation` |
 | **Julia / Pluto** | `Matrix Computations` |
 | **SQL / PostgreSQL** | `CS_5320`, `BI Systems` |
 | **Tableau** | `BI Systems` |
 | **LaTeX** | `Category Theory (Programming Languages)`, `INFO_6850` |
-| **Jupyter** | 35 notebooks across the archive |
+| **Java** | `CSCI 161` |
+| **C++** | `C++` |
+| **Jupyter** | 46 notebooks across the archive |
 
 ## Datasets
 
@@ -74,7 +88,7 @@ The [`2025Spring/`](../2025Spring/README.md) folder groups eight courses:
 * `ECON284/Data/`, `ECON411/`, `mobile-RPG-observation/` — economics and
   thesis datasets.
 * `InfoNetworks/pythonCoauthorship/ps1data.txt` — 123k-line bibliography for
-  the coauthorship graph (12 MB; duplicated in the custom-BFS folder).
+  the coauthorship graph (12 MB; shared by both entry points).
 * `exercises/` — synthetic authors/papers tables plus cached API responses.
 
 Datasets that were **not** included with the course are called out in the

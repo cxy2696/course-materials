@@ -48,3 +48,11 @@ Rplots.pdf
 Manifest.toml
 *.jl.cov
 *.jl.mem
+# Java / C++ build output
+CSCI 161/out/
+CSCI 161/out-test/
+C++/hello-world/build/
+*.class
+
+# Downloaded MNIST for the ML notebook
+Machine Learning/sgd_neural_network/MNIST/

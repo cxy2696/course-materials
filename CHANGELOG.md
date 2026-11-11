@@ -18,6 +18,12 @@ No course content was rewritten; the changes are cleanup, fixes, and guides.
 * `CONTRIBUTING.md`, `CITATION.cff`, `LICENSE`, `.editorconfig`,
   `.gitattributes`, `.gitignore`.
 * `requirements.txt`, `requirements-ai.txt`, and `exercises/requirements.txt`.
+* Merged coursework from the separate `code` archive: `CSCI 161` Java labs,
+  five `Machine Learning` assignments, `MITx 6.00.1x`, `INFO 4100` R setup,
+  `Practice Notebooks`, `Creative Project (CS 3780-5780)`, a C++ example, and
+  the HNL voter model under `InfoNetworks`.
+* Python/Java/C++ test targets (`make check-code`) and a CI job for the merged
+  code.
 * `R/course_utils.R` plus per-course `_setup.R` wrappers (`read_data`,
   `read_external`, `require_packages`, `robust_summary`).
 * `Matrix Computations/Project.toml` and
@@ -41,7 +47,10 @@ No course content was rewritten; the changes are cleanup, fixes, and guides.
   `matchingMarkets` from Python and failed). Its averages match the R version.
 * `InfoNetworks/pythonCoauthorship` was refactored into a reusable module with a
   CLI. The parser now reads year/venue/author fields explicitly, so single-author
-  metadata no longer leaks into author names. Outputs were regenerated.
+  metadata no longer leaks into author names. Records without a citation count
+  are accepted; the graph is 34,259 nodes / 96,582 edges and outputs were
+  regenerated. The duplicated `ps1data.txt` in the custom-BFS folder was removed;
+  both entry points share the file in `pythonCoauthorship/`.
 * `InfoNetworks/pythonCoauthorship_customBFStree/test.py` became
   `custom_bfs.py`, a thin wrapper around the shared module.
 * `BUS435/CoursePack/AIFS Hedge Strategy.py` became

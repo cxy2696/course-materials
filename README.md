@@ -15,6 +15,7 @@ and a single command checks the repository's hygiene.
 git clone https://github.com/cxy2696/course-materials.git
 cd course-materials
 make check          # notebooks, links, secrets, Python/R/Julia syntax
+make check-code     # Java tests, C++ build, merged Python tests
 ```
 
 ## What is inside
@@ -33,17 +34,25 @@ make check          # notebooks, links, secrets, Python/R/Julia syntax
 | [`ECON411/`](<ECON411/README.md>) | Econometrics research thesis | Fall 2023 | mobile-RPG panel study, poster, data collection | R, Python |
 | [`INFO_5355/`](<INFO_5355/README.md>) | INFO 5355 · Human-Computer Interaction Design | Fall 2024 | UX assignments, interview study | — |
 | [`INFO_6850/`](<INFO_6850/README.md>) | INFO 6850 · Information Networks | Fall 2024 | problem sets, spectral/random-walk notes, reaction paper | Python |
-| [`InfoNetworks/`](<InfoNetworks/README.md>) | CS 6850 project | Fall 2024 | coauthorship graph, hybrid-contagion simulations | Python |
+| [`InfoNetworks/`](<InfoNetworks/README.md>) | CS 6850 project | Fall 2024 | coauthorship graph, hybrid-contagion simulations, HNL voter model | Python |
 | [`Matrix Computations/`](<Matrix Computations/README.md>) | CS 6210 · Matrix Computations | Fall 2025 | ten Pluto problem sets, Bayesian-optimization tutorial | Julia |
 | [`Numerical-Analysis-Lab/`](<Numerical-Analysis-Lab/README.md>) | MATH 310 · Numerical Analysis Lab | 2024 | four labs, two projects, PCA face recognition | Python |
 | [`exercises/`](<exercises/README.md>) | Take-home data exercise | 2025 | messy publication data, Gemini and Semantic Scholar APIs | Python |
 | [`mobile-RPG-observation/`](<mobile-RPG-observation/README.md>) | Independent thesis | 2024 | otaku culture and the mobile-RPG market | R |
+| [`CSCI 161/`](<CSCI 161/README.md>) | CSCI 161 · Java labs | 2021 | console labs, sorting, cards, graphics, 301 self-tests | Java |
+| [`Machine Learning/`](<Machine Learning/README.md>) | Machine learning assignments | — | kNN, perceptron, kernel SVM, naive Bayes, SGD/CNN | Python |
+| [`MITx 6.00.1x/`](<MITx 6.00.1x/README.md>) | MITx 6.00.1x | 2023 | lecture code, handouts, Problem Set 4 | Python |
+| [`INFO 4100/`](<INFO 4100/README.md>) | INFO 4100 · R setup | — | R Markdown environment assignment | R |
+| [`Practice Notebooks/`](<Practice Notebooks/README.md>) | Standalone analyses | — | equilibrium, decision boundaries, model comparison, flow chart | Python |
+| [`Creative Project (CS 3780-5780)/`](<Creative Project (CS 3780-5780)/README.md>) | CS 3780/5780 creative project | — | emotion-classification template and sample data | Python |
+| [`C++/`](C++/README.md) | C++ example | — | C++17 hello-world with Makefile | C++ |
 
 Shared infrastructure:
 
 * [`docs/`](docs/README.md) — catalog, running guide, conventions, privacy, licensing, security.
 * [`R/`](R/README.md) — shared R helpers used by the course scripts.
 * [`tools/check_repo.py`](tools/check_repo.py) — the hygiene and syntax checker.
+* [`docs/code-merge.md`](docs/code-merge.md) — mapping from the merged `code` archive.
 
 ## Start here
 
@@ -61,15 +70,19 @@ Shared infrastructure:
 | run the SQL exercises | [`CS_5320/README.md`](<CS_5320/README.md>) |
 | see the numerical-methods labs | [`Numerical-Analysis-Lab/README.md`](<Numerical-Analysis-Lab/README.md>) |
 | run the RAG/LLM assignment | [`AI in Organizations/README.md`](<AI in Organizations/README.md>) |
+| run the Java labs | [`CSCI 161/README.md`](<CSCI 161/README.md>) |
+| work on the ML assignments | [`Machine Learning/README.md`](<Machine Learning/README.md>) |
+| run the HNL model | [`InfoNetworks/hnl_voter_model/README.md`](InfoNetworks/hnl_voter_model/README.md) |
+| work through MITx 6.00.1x | [`MITx 6.00.1x/README.md`](<MITx 6.00.1x/README.md>) |
 
-Full setup instructions for Python, R, Julia, PostgreSQL, Tableau, and LaTeX are
+Full setup instructions for Python, Java, C++, R, Julia, PostgreSQL, Tableau, and LaTeX are
 in [`docs/running-code.md`](docs/running-code.md).
 
 ## Highlights
 
 * **Numerical analysis** — Newton basins of attraction, climate calculus, LU
   factorization, and PCA-based face recognition, with reports and notebooks.
-* **Network science** — a 32k-node coauthorship analysis (degree distribution,
+* **Network science** — a 34k-node coauthorship analysis (degree distribution,
   components, BFS levels) and hybrid-contagion simulations.
 * **Matrix computations** — Julia/Pluto problem sets plus a self-contained
   Bayesian-optimization tutorial adapted from Peter Frazier's paper.
@@ -79,12 +92,17 @@ in [`docs/running-code.md`](docs/running-code.md).
   models, ETL, Tableau dashboards, and a WhereScape case.
 * **Applied AI** — retrieval-augmented generation (RAG) over legal/health
   documents and LLM API exercises.
+* **Programming coursework** — CSCI 161 Java labs, five machine-learning
+  assignments, MITx 6.00.1x, an INFO 4100 R setup, standalone analysis
+  notebooks, and a creative-project template, merged from the separate `code`
+  repository. The CS 6850 coauthorship parser was updated and its duplicate
+  dataset removed.
 
 ## What this cleanup changed
 
 This repository was refreshed in November 2026. The main changes:
 
-* **Documentation** — a real landing page, 17 course-guide READMEs, and a
+* **Documentation** — a landing page, a README for every course/project, and a
   `docs/` set covering the catalog, running code, conventions, privacy, and
   third-party material.
 * **Reproducibility** — `file.choose()` prompts replaced by explicit data

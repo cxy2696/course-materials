@@ -10,6 +10,8 @@ the November 2026 cleanup.
 | Tool | Version used for verification | Needed for |
 | --- | --- | --- |
 | Python | 3.11+ (3.13 tested) | notebooks, scripts, `tools/check_repo.py` |
+| JDK | 17 | `CSCI 161` Java labs |
+| C++ | C++17 | `C++` example |
 | R | 4.4 | `Applied-Statistics`, `ECON284`, `ECON411`, `2025Spring/6220` |
 | Julia | 1.10+ (1.11 tested) | `Matrix Computations` |
 | PostgreSQL | 15 client (server optional) | `CS_5320` |
@@ -61,7 +63,25 @@ python custom_bfs.py --output-dir outputs
 ```
 
 Both use the same parsing and graph code; the second selects the explicit
-FIFO-queue implementation for Problems 3 and 4.
+FIFO-queue implementation for Problems 3 and 4. They share
+`pythonCoauthorship/ps1data.txt`.
+
+### HNL voter model
+
+```bash
+cd InfoNetworks/hnl_voter_model
+python -m hnl_voter_model --nodes 100 --edges 20 --steps 100 --seed 42
+python -m hnl_voter_model   --dataset ../pythonCS6850_Project/PythonHybrid/sentimentdataset.csv --steps 50
+```
+
+### Machine-learning notebooks
+
+Install the optional stack, then open the notebook from `Machine Learning/`:
+
+```bash
+python -m pip install -r "Machine Learning/requirements-ml.txt"
+jupyter lab "Machine Learning/knn/knn.ipynb"
+```
 
 ### Exercise notebook
 
@@ -74,6 +94,26 @@ jupyter lab questions.ipynb
 
 Task 1 needs only the local CSV/Parquet files. Task 2 requires a Gemini key.
 Task 3 works without a key at lower rate limits.
+
+## Java
+
+```bash
+./CSCI\ 161/build.sh
+./CSCI\ 161/test.sh
+./CSCI\ 161/run.sh
+```
+
+The graphics programs save a PNG to `CSCI 161/out/` when no display is available.
+`make java-test` runs the self-tests from the repository root.
+
+## C++
+
+```bash
+make -C C++/hello-world
+./C++/hello-world/build/hello-world
+```
+
+`make cpp-test` builds and runs it.
 
 ## R
 

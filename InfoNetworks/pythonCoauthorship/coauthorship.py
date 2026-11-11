@@ -1,26 +1,17 @@
 """Coauthorship-network analysis for the CS 6850 homework.
 
-The input file is a whitespace-delimited bibliography::
-
-    1996    3  3CONLINE     Shene, A Comparative Study of Linked List Sorting Algorithms
-    2000   17  AAAI         Achlioptas & Gomes & Kautz & Selman, Generating ...
-    2000   17  AAAI         Ben-Eliyahu-Zohary, A Demand-Driven Algorithm ...
-
-Columns are ``year``, ``citation count``, ``venue``, then the author list up to
-the first comma, followed by the paper title.  Authors are separated by ``&``.
-Earlier versions split the whole line on commas, which mixed the year/venue
-fields into the name of every single-author paper; this module parses the
-fields explicitly.
-
-Running the script writes ``hw1solution.txt`` and four PDF plots (degree
-distribution, component sizes, distances from a root, and average potential
-parents per BFS level) to the output directory.
+Records are whitespace-delimited: year, citation count, venue, authors (joined
+by ``&``) up to the first comma, then the title. The script writes
+``hw1solution.txt`` and four PDF plots for the degree distribution, component
+sizes, distances from a root author, and average potential parents per BFS
+level.
 """
 
 from __future__ import annotations
 
 import argparse
 import math
+import re
 from collections import Counter, deque
 from pathlib import Path
 
@@ -38,15 +29,20 @@ DEFAULT_NETID = "xc535"
 
 def parse_record(line: str) -> tuple[int, list[str]] | None:
     """Parse one bibliography line into (year, authors)."""
-    head, _, _title = line.partition(",")
-    fields = head.split(None, 3)
-    if len(fields) < 4:
+    stripped = line.strip()
+    match = re.match(r"^(\d{4})(?:\s+|$)", stripped)
+    if not match:
         return None
-    try:
-        year = int(fields[0])
-    except ValueError:
+    year = int(match.group(1))
+    fields = re.split(r"\s{2,}", stripped)
+    if len(fields) >= 4:
+        authors_field = fields[3]
+    elif len(fields) == 3:
+        authors_field = fields[2]
+    else:
         return None
-    authors = [name.strip() for name in fields[3].split("&") if name.strip()]
+    authors_part = authors_field.split(",", 1)[0].strip()
+    authors = [name.strip() for name in authors_part.split("&") if name.strip()]
     if not authors:
         return None
     return year, authors
@@ -242,7 +238,12 @@ def analyse(
 
 def main(argv: list[str] | None = None, *, manual_bfs: bool = False) -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--data", type=Path, default=Path("ps1data.txt"), help="bibliography file")
+    parser.add_argument(
+        "--data",
+        type=Path,
+        default=Path(__file__).with_name("ps1data.txt"),
+        help="bibliography file",
+    )
     parser.add_argument("--output-dir", type=Path, default=Path("."), help="where to write results")
     parser.add_argument("--netid", default=DEFAULT_NETID, help="identifier written in the solution file")
     parser.add_argument("--root", default=DEFAULT_ROOT, help="root author for problems 3 and 4")

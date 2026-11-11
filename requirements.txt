@@ -15,4 +15,5 @@ beautifulsoup4>=4.12   # ECON411 scraper
 jupyterlab>=4.0
 ipykernel>=6.29
 nbformat>=5.9
+pytest>=8.0
 nbclient>=0.10
