@@ -16,6 +16,7 @@ on:
       - "C*/**"
       - "Machine Learning/**"
       - "InfoNetworks/**"
+      - "MATH-Modeling/**"
       - "tools/**"
       - "requirements*.txt"
       - ".github/workflows/quality.yml"
@@ -33,6 +34,7 @@ on:
       - "C*/**"
       - "Machine Learning/**"
       - "InfoNetworks/**"
+      - "MATH-Modeling/**"
       - "tools/**"
       - "requirements*.txt"
 
@@ -53,9 +55,6 @@ jobs:
 
       - name: Check notebooks, links, secrets, and Python syntax
         run: python tools/check_repo.py --skip-code
-
-      - name: Check MATH-Modeling notebooks, links, and data paths
-        run: python "MATH-Modeling/scripts/check_repo.py"
 
   code:
     name: Java, C++, and Python tests
