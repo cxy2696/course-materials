@@ -6,8 +6,9 @@ polynomials.
 
 This project also appears in
 [`../Numerical-Analysis-Lab/Lab/`](../Numerical-Analysis-Lab/Lab/), which is the
-canonical multi-lab folder. The standalone copy is kept because it was published
-separately (and linked from the old MATH310Lab site).
+canonical multi-lab folder. The full MATH 310 course archive is in
+[`../MATH-Modeling/`](../MATH-Modeling/README.md). The standalone copy is kept
+because it was published separately (and linked from the old MATH310Lab site).
 
 ## What is inside
 

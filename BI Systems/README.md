@@ -43,5 +43,3 @@ a runnable application.
   material and may reference Cornell systems. They are included for study only.
 * Tableau workbooks can contain connection strings or server names. Review them
   before sharing a fork publicly.
-* See [`../docs/third-party-materials.md`](../docs/third-party-materials.md)
-  for the copyright status of the case material.

@@ -56,5 +56,4 @@ files may differ from the practice versions.
 * `6940/` has two copies of the midterm (`INFO6940_Midterm.pdf` and
   `INFO6940_Midterm (1).pdf`); they are retained because they are not
   byte-identical.
-* The readings and textbooks are third-party material; see
-  [`../docs/third-party-materials.md`](../docs/third-party-materials.md).
+* The readings and textbooks are course material.

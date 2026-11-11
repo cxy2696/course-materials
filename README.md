@@ -37,6 +37,7 @@ make check-code     # Java tests, C++ build, merged Python tests
 | [`InfoNetworks/`](<InfoNetworks/README.md>) | CS 6850 project | Fall 2024 | coauthorship graph, hybrid-contagion simulations, HNL voter model | Python |
 | [`Matrix Computations/`](<Matrix Computations/README.md>) | CS 6210 · Matrix Computations | Fall 2025 | ten Pluto problem sets, Bayesian-optimization tutorial | Julia |
 | [`Numerical-Analysis-Lab/`](<Numerical-Analysis-Lab/README.md>) | MATH 310 · Numerical Analysis Lab | 2024 | four labs, two projects, PCA face recognition | Python |
+| [`MATH-Modeling/`](<MATH-Modeling/README.md>) | MATH 310 · Numerical Analysis and Modeling (full archive) | Spring 2024 | 74 notebooks, eight problem sets, modeling notes, cross-entropy project | Python |
 | [`exercises/`](<exercises/README.md>) | Take-home data exercise | 2025 | messy publication data, Gemini and Semantic Scholar APIs | Python |
 | [`mobile-RPG-observation/`](<mobile-RPG-observation/README.md>) | Independent thesis | 2024 | otaku culture and the mobile-RPG market | R |
 | [`CSCI 161/`](<CSCI 161/README.md>) | CSCI 161 · Java labs | 2021 | console labs, sorting, cards, graphics, 301 self-tests | Java |
@@ -53,6 +54,7 @@ Shared infrastructure:
 * [`R/`](R/README.md) — shared R helpers used by the course scripts.
 * [`tools/check_repo.py`](tools/check_repo.py) — the hygiene and syntax checker.
 * [`docs/code-merge.md`](docs/code-merge.md) — mapping from the merged `code` archive.
+* [`docs/math-modeling.md`](docs/math-modeling.md) — notes on the MATH-Modeling migration.
 
 ## Start here
 
@@ -69,6 +71,7 @@ Shared infrastructure:
 | open the Julia homework | [`Matrix Computations/README.md`](<Matrix Computations/README.md>) |
 | run the SQL exercises | [`CS_5320/README.md`](<CS_5320/README.md>) |
 | see the numerical-methods labs | [`Numerical-Analysis-Lab/README.md`](<Numerical-Analysis-Lab/README.md>) |
+| work through the full numerical-analysis course | [`MATH-Modeling/README.md`](<MATH-Modeling/README.md>) |
 | run the RAG/LLM assignment | [`AI in Organizations/README.md`](<AI in Organizations/README.md>) |
 | run the Java labs | [`CSCI 161/README.md`](<CSCI 161/README.md>) |
 | work on the ML assignments | [`Machine Learning/README.md`](<Machine Learning/README.md>) |
@@ -80,8 +83,9 @@ in [`docs/running-code.md`](docs/running-code.md).
 
 ## Highlights
 
-* **Numerical analysis** — Newton basins of attraction, climate calculus, LU
-  factorization, and PCA-based face recognition, with reports and notebooks.
+* **Numerical analysis** — a full MATH 310 archive (33 notebooks, eight problem
+  sets, modeling notes, and a cross-entropy project) plus the lab subset with
+  Newton basins, climate calculus, LU factorization, and PCA face recognition.
 * **Network science** — a 34k-node coauthorship analysis (degree distribution,
   components, BFS levels) and hybrid-contagion simulations.
 * **Matrix computations** — Julia/Pluto problem sets plus a self-contained
@@ -104,7 +108,7 @@ This repository was refreshed in November 2026. The main changes:
 
 * **Documentation** — a landing page, a README for every course/project, and a
   `docs/` set covering the catalog, running code, conventions, privacy, and
-  third-party material.
+  security.
 * **Reproducibility** — `file.choose()` prompts replaced by explicit data
   paths; public statistics datasets cached under
   `Applied-Statistics/data/external/`; Julia `Project.toml` files; Python
@@ -118,6 +122,9 @@ This repository was refreshed in November 2026. The main changes:
 * **Hygiene** — removed 16 `.DS_Store` files, Office lock files, notebook
   checkpoints, redundant archives, and exact duplicates; added `.gitignore`,
   `.gitattributes`, and CI checks.
+* **Migration** — folded the standalone `MATH-Modeling` and `code` archives into
+  this repository, with a mapping note in [`docs/math-modeling.md`](docs/math-modeling.md)
+  and [`docs/code-merge.md`](docs/code-merge.md).
 * **Security** — removed a committed Google API key from the exercise notebook
   and documented the incident. **The key is still in git history; revoke it.**
   See [`docs/security.md`](docs/security.md).
@@ -128,12 +135,9 @@ leaked key was removed. Where the cleanup changed an analysis (for example the
 coauthorship parser or robust standard errors), the outputs were regenerated or
 the difference is noted in the course README.
 
-## Data, privacy, and licensing
+## Data and privacy
 
 * **Code and original writing** are MIT-licensed (see [`LICENSE`](LICENSE)).
-* **Third-party readings, textbooks, slides, case studies, and images** keep
-  their original copyright and are included for personal study only. See
-  [`docs/third-party-materials.md`](docs/third-party-materials.md).
 * **Human-subjects material**: `INFO_5355/Interview Recording (Anny)-…zip`
   contains interview transcripts and notes. Review
   [`docs/data-and-privacy.md`](docs/data-and-privacy.md) before redistributing
@@ -153,10 +157,8 @@ the difference is noted in the course README.
 * New code should be runnable from its own folder and should not depend on
   absolute paths or interactive file pickers.
 * Run `make check` before committing. See
-  [`docs/repository-conventions.md`](docs/repository-conventions.md) and
-  [`CONTRIBUTING.md`](CONTRIBUTING.md).
+  [`docs/repository-conventions.md`](docs/repository-conventions.md).
 
 ## Maintenance
 
-The archive is maintained by [@cxy2696](https://github.com/cxy2696). Issues and
-corrections are welcome; please read [`CONTRIBUTING.md`](CONTRIBUTING.md) first.
+The archive is maintained by [@cxy2696](https://github.com/cxy2696).

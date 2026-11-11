@@ -57,5 +57,4 @@ document-loading code at the local `docs/` folder.
   model-specific text; re-running with a different model will change them.
 * Do not commit API keys or `.env` files. See
   [`../docs/security.md`](../docs/security.md).
-* The syllabus and lecture material are third-party course content; see
-  [`../docs/third-party-materials.md`](../docs/third-party-materials.md).
+* The syllabus and lecture material are course content.

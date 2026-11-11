@@ -1,5 +1,9 @@
 # MATH 310 · Numerical Analysis Lab (2024)
 
+> The full MATH 310 archive — 33 topic notebooks, eight problem sets, modeling
+> notes, and a cross-entropy project — is in [`../MATH-Modeling/`](../MATH-Modeling/README.md).
+> This folder is the smaller lab/project subset.
+
 Four labs and two projects from the numerical-analysis lab sequence. The work
 covers root finding, floating-point/conditioning, climate-data calculus, LU
 factorization with pivoting, PCA-based face recognition, Newton's method in
@@ -68,7 +72,6 @@ course folder.
 * `AllLab/` is a working folder, not a second canonical set. It retains the
   audio experiments (`Audio.ipynb`, `Audio Processing.ipynb`), `check.ipynb`,
   and a scratch face-recognition notebook.
-* The face images are celebrity photos used only for the PCA exercise; see
-  [`../docs/third-party-materials.md`](../docs/third-party-materials.md).
+* The face images are celebrity photos used only for the PCA exercise.
 * The reports are the submitted PDFs; re-running a notebook may produce
   slightly different plots due to library versions.

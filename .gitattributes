@@ -32,3 +32,6 @@
 # Keep the documentation out of GitHub's language statistics.
 docs/** linguist-documentation
 *.md linguist-documentation
+
+# Preserve the byte-exact MATH-Modeling datasets and their recorded hashes.
+MATH-Modeling/data/*.csv -text

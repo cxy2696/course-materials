@@ -55,8 +55,7 @@ julia --project="Matrix Computations/bo-tutorial" "Matrix Computations/bo-tutori
 
 ## Notes
 
-* The textbook PDFs are third-party material; see
-  [`../docs/third-party-materials.md`](../docs/third-party-materials.md).
+* The textbook PDFs are course references.
 * Pluto notebooks contain their own package imports; if a cell reports a missing
   package, add it to `Matrix Computations/Project.toml` and re-instantiate.
 * The `hw/*.pdf` files are the submitted write-ups; the `.jl` files are the

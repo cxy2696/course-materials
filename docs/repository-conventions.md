@@ -42,7 +42,7 @@ Every course folder has a `README.md` with:
 1. **Overview** — course, term, and two or three sentences on the topic.
 2. **What is inside** — a table or bullet list of the important files/folders.
 3. **How to run it** — exact commands, or “no code” if it is document-only.
-4. **Notes and caveats** — missing data, third-party material, known issues.
+4. **Notes and caveats** — missing data and known issues.
 
 The per-course READMEs are the source of truth for that course; the root
 README and `docs/catalog.md` are indexes.

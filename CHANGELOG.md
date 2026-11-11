@@ -12,12 +12,14 @@ No course content was rewritten; the changes are cleanup, fixes, and guides.
 
 * Root README with a course table, highlights, setup pointers, and a summary of
   the cleanup.
-* Per-course READMEs for all 17 course/project folders.
-* `docs/`: catalog, running guide, repository conventions, data/privacy,
-  third-party materials, and the security incident.
-* `CONTRIBUTING.md`, `CITATION.cff`, `LICENSE`, `.editorconfig`,
-  `.gitattributes`, `.gitignore`.
+* Per-course READMEs for every course/project folder.
+* `docs/`: catalog, running guide, repository conventions, data/privacy, and
+  the security incident.
+* `LICENSE`, `.editorconfig`, `.gitattributes`, `.gitignore`.
 * `requirements.txt`, `requirements-ai.txt`, and `exercises/requirements.txt`.
+* Merged coursework from the separate `MATH-Modeling` archive: 33 numerical
+  analysis notebooks, eight problem sets, modeling notes, references, and a
+  cross-entropy project under `MATH-Modeling/`.
 * Merged coursework from the separate `code` archive: `CSCI 161` Java labs,
   five `Machine Learning` assignments, `MITx 6.00.1x`, `INFO 4100` R setup,
   `Practice Notebooks`, `Creative Project (CS 3780-5780)`, a C++ example, and
@@ -79,6 +81,9 @@ No course content was rewritten; the changes are cleanup, fixes, and guides.
   workbook, `AI in Organizations/hw4/docs.zip`, and the redundant audio archive.
 * Duplicate root copies of two numerical-analysis notebooks.
 * The scratch `2025Spring/6220/Assignment/test.R`.
+* The `CONTRIBUTING.md`, `CITATION.cff`, and `docs/third-party-materials.md`
+  meta documents; this is a course archive, not a collaborative or citable
+  project.
 
 ### Known issues
 
@@ -87,4 +92,5 @@ No course content was rewritten; the changes are cleanup, fixes, and guides.
 * `ECON284/Ed.R` needs `ECON284_DISTANCE_DATA`.
 * Notebook outputs are retained from the original runs; re-run a notebook after
   changing its code.
-* The repository is still large (hundreds of MB of PDFs); Git LFS is not used.
+* The repository is still large (hundreds of MB of PDFs and the MATH-Modeling
+  reference books); Git LFS is not used.

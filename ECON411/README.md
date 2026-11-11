@@ -59,5 +59,3 @@ created `ndata` but referenced an undefined `pdata`, which is fixed.
   page; the live site blocks scripted requests with Cloudflare.
 * The thesis text is in `../mobile-RPG-observation/Thesis (1).docx`; the poster
   figures here match it.
-* Third-party data and figures: see
-  [`../docs/third-party-materials.md`](../docs/third-party-materials.md).

@@ -45,8 +45,6 @@ The queries were syntax-checked with DuckDB during the 2026 cleanup (same
 
 ## Notes
 
-* The lecture slides are by Immanuel Trummer (Cornell); they are third-party
-  course material. See
-  [`../docs/third-party-materials.md`](../docs/third-party-materials.md).
+* The lecture slides are by Immanuel Trummer (Cornell).
 * The original version of `bars.pgsql` loaded from
   `/Users/xinyi/Downloads/...`; the relative path makes the lab portable.

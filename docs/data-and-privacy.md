@@ -23,7 +23,7 @@ is in the archive, what needs a second look, and how to remove something.
 | `INFO_5355/A1 Individual.docx`, `A2 Individual.docx`, `A5 Group.pdf` | Course submissions may include participant details or teammates' work. | Review for personal data and credit co-authors. |
 | `2025Spring/5940/Reflection*.docx`, exams | Reflections discuss legal cases, not people, but may include personal opinions. | Fine to publish unless a document names a private individual. |
 | `ECON411/`, `mobile-RPG-observation/` | Thesis data compiled from public sources and Statista extracts. | Check the source terms before reusing the data commercially. |
-| `BUS435/CoursePack/*.pdf`, `BI Systems/*.pdf` | Publisher case studies and course packs. | Personal study only; see [`third-party-materials.md`](third-party-materials.md). |
+| `BUS435/CoursePack/*.pdf`, `BI Systems/*.pdf` | Publisher case studies and course packs. | Personal study only. |
 | `Numerical-Analysis-Lab/data/faces/` | Celebrity face images used for a PCA lab. | Course-provided images; do not reuse outside the lab context. |
 
 Also review any presentation or PDF for:

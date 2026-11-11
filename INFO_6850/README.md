@@ -40,9 +40,7 @@ pdflatex ps2.tex
 
 ## Notes
 
-* The course is taught by Jon Kleinberg at Cornell; the syllabus and readings
-  are third-party material. See
-  [`../docs/third-party-materials.md`](../docs/third-party-materials.md).
+* The course is taught by Jon Kleinberg at Cornell.
 * The problem-set PDFs may contain instructor-provided questions; the solutions
   and code are original work.
 * The `InfoNetworks` folder contains the full project version, including the

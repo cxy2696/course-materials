@@ -81,5 +81,4 @@ script at your own file; the helper will explain what is missing.
   course-local helper. Base R silently ignores that argument, so this archive
   provides `robust_summary()` (HC1 via `sandwich`/`lmtest`) in
   `R/course_utils.R` for scripts that need robust standard errors.
-* `Stat2RCompanion.pdf` and the textbooks are third-party material; see
-  [`../docs/third-party-materials.md`](../docs/third-party-materials.md).
+* `Stat2RCompanion.pdf` is the course's R companion, kept for study.

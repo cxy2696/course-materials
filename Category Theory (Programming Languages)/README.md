@@ -48,8 +48,6 @@ installation is needed.
 
 ## Notes
 
-* Every paper and textbook here is third-party material included for personal
-  study. Do not redistribute it; see
-  [`../docs/third-party-materials.md`](../docs/third-party-materials.md).
+* Every paper and textbook here is included as study material.
 * The problem-set solutions are original work; the questions themselves may be
   from the instructor and are not always included.

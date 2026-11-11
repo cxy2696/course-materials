@@ -61,5 +61,4 @@ keys and reports may show conventional standard errors.
 
 * The AER-based scripts (`HMDA`, `STAR`) download/load package data, so they do
   not need the `Data/` folder.
-* The textbook PDF and exam keys are third-party/instructor material; see
-  [`../docs/third-party-materials.md`](../docs/third-party-materials.md).
+* The textbook PDF and exam keys are instructor material.

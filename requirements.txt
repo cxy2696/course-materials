@@ -8,6 +8,8 @@ scipy>=1.11
 networkx>=3.2          # InfoNetworks coauthorship analysis
 opencv-python>=4.9     # Numerical-Analysis-Lab face lab
 sympy>=1.12            # Matrix Computations notebooks
+statsmodels>=0.14     # MATH-Modeling modeling/fitting notebooks
+ipywidgets>=8.0       # MATH-Modeling interactive demos
 requests>=2.31         # ECON411 scraper and API exercises
 beautifulsoup4>=4.12   # ECON411 scraper
 

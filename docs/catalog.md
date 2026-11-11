@@ -24,6 +24,12 @@ help you decide where to look, not as a precise inventory.
 | [`INFO_6850/`](../INFO_6850/README.md) | Information networks | Problem sets, spectral/random-walk/expander notes, reaction paper | LaTeX, PDFs |
 | [`InfoNetworks/`](../InfoNetworks/README.md) | CS 6850 project | Coauthorship analysis, hybrid-contagion simulations, HNL voter model, reaction paper, final project | Python modules and notebooks |
 | [`mobile-RPG-observation/`](../mobile-RPG-observation/README.md) | Independent thesis | Otaku culture and mobile-RPG adoption; thesis, poster, data | R scripts, panel CSV, images |
+| [`MATH-Modeling/`](<../MATH-Modeling/README.md>) | MATH 310 · numerical analysis and modeling (full archive) | 33 notebooks, eight problem sets, 14 modeling lecture notes, 31 demos, a cross-entropy project, references and data | Python, CSV, PDFs |
+
+The smaller lab/project subset of the same MATH 310 course is in
+[`Numerical-Analysis-Lab/`](../Numerical-Analysis-Lab/README.md) and
+[`Basins-of-Attraction/`](../Basins-of-Attraction/README.md);
+[`MATH-Modeling/`](<../MATH-Modeling/README.md>) is the full course archive.
 
 ## Spring 2025
 
@@ -66,7 +72,7 @@ The [`2025Spring/`](../2025Spring/README.md) folder groups eight courses:
 
 | Language / tool | Where it appears |
 | --- | --- |
-| **Python** | `InfoNetworks`, `Machine Learning`, `Practice Notebooks`, `AI in Organizations`, `Numerical-Analysis-Lab`, `exercises`, `ECON411`, `BUS435` |
+| **Python** | `MATH-Modeling`, `InfoNetworks`, `Machine Learning`, `Practice Notebooks`, `AI in Organizations`, `Numerical-Analysis-Lab`, `exercises`, `ECON411`, `BUS435` |
 | **R** | `INFO 4100`, `Applied-Statistics`, `ECON284`, `ECON411`, `2025Spring/6220`, `mobile-RPG-observation` |
 | **Julia / Pluto** | `Matrix Computations` |
 | **SQL / PostgreSQL** | `CS_5320`, `BI Systems` |
@@ -74,7 +80,7 @@ The [`2025Spring/`](../2025Spring/README.md) folder groups eight courses:
 | **LaTeX** | `Category Theory (Programming Languages)`, `INFO_6850` |
 | **Java** | `CSCI 161` |
 | **C++** | `C++` |
-| **Jupyter** | 46 notebooks across the archive |
+| **Jupyter** | 120 notebooks across the archive |
 
 ## Datasets
 
@@ -84,6 +90,8 @@ The [`2025Spring/`](../2025Spring/README.md) folder groups eight courses:
   statsci.org: `insulgas`, `mazdas`, `sleep`, `punting`, `hanford`.
 * `Numerical-Analysis-Lab/data/` — climate CSVs, 41 face images, four audio
   recordings.
+* `MATH-Modeling/data/` — five datasets for the numerical-analysis and modeling
+  notebooks (fitting, water flow, ODE fitting, water quality).
 * `CS_5320/csv/` — chocolate bars, courses, students, enrollment.
 * `ECON284/Data/`, `ECON411/`, `mobile-RPG-observation/` — economics and
   thesis datasets.

@@ -83,6 +83,26 @@ python -m pip install -r "Machine Learning/requirements-ml.txt"
 jupyter lab "Machine Learning/knn/knn.ipynb"
 ```
 
+### MATH-Modeling notebooks
+
+The full MATH 310 archive has its own requirements file and 74 notebooks:
+
+```bash
+cd MATH-Modeling
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+jupyter lab
+```
+
+Start with `notebooks/README.md`, which lists the ten topic folders in learning
+order. The smaller lab subset in `../Numerical-Analysis-Lab/` uses the root
+`requirements.txt`. The folder’s own checker validates its notebook/link/data
+paths:
+
+```bash
+python "MATH-Modeling/scripts/check_repo.py"
+```
+
 ### Exercise notebook
 
 ```bash
@@ -222,8 +242,6 @@ pdflatex -shell-escape quiver-doc.tex
 pdflatex -shell-escape quiver-doc.tex
 ```
 
-The bibliography and paper PDFs in that folder are third-party readings; see
-[`third-party-materials.md`](third-party-materials.md).
 
 ## Per-course commands
 
@@ -235,6 +253,7 @@ The bibliography and paper PDFs in that folder are third-party readings; see
 | Market design | `cd "2025Spring/6220/Assignment" && Rscript INFO6220-A1.R` |
 | Coauthorship | `cd InfoNetworks/pythonCoauthorship && python code.py` |
 | Exercise notebook | `cd exercises && jupyter lab questions.ipynb` |
+| Full numerical-analysis course | `cd MATH-Modeling && pip install -r requirements.txt && jupyter lab` |
 | Numerical labs | `cd Numerical-Analysis-Lab/Lab && jupyter lab` |
 | Matrix computations | `julia --project="Matrix Computations" -e 'using Pluto; Pluto.run()'` |
 | Database lab | `cd CS_5320 && psql -d bars -f SQLfolder/bars.pgsql` |

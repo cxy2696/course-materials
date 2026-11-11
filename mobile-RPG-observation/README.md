@@ -62,7 +62,6 @@ fixed in the archive.
 * This is an observational study with a short panel; it documents associations,
   not causal effects.
 * The thesis and figures are original work; the underlying Statista/World Bank
-  extracts have their own terms. See
-  [`../docs/third-party-materials.md`](../docs/third-party-materials.md).
+  extracts have their own terms.
 * The old README used GitHub asset URLs from a previous repository; the images
   now point at the local `Poster pictures/` files.

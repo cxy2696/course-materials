@@ -43,7 +43,5 @@ notebook front end.
 Frazier, P. I. (2018). *A Tutorial on Bayesian Optimization.* arXiv:1807.02811.
 https://arxiv.org/abs/1807.02811
 
-The tutorial text and paper are third-party material; see
-[`../../docs/third-party-materials.md`](../../docs/third-party-materials.md).
 The Julia implementation in this folder is course/study code, not a production
 optimization library.

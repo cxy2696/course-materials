@@ -98,11 +98,41 @@ def check_junk(files: list[Path], errors: list[str]) -> None:
             errors.append(f"junk file is tracked: {rel(path)}")
 
 
+def scan_text(path: Path) -> str:
+    """Return the text to scan for secrets.
+
+    For notebooks, only cell source and textual outputs are scanned; embedded
+    PNG/JPEG/PDF payloads are base64 noise and produce false positives (an
+    ``AIza`` substring can occur by chance in a compressed image).
+    """
+    if path.suffix != ".ipynb":
+        return read_text(path)
+    try:
+        notebook = json.loads(read_text(path))
+    except json.JSONDecodeError:
+        return ""
+    chunks: list[str] = []
+    for cell in notebook.get("cells", []):
+        chunks.append("".join(cell.get("source", [])))
+        for output in cell.get("outputs", []):
+            if output.get("output_type") == "stream":
+                text = output.get("text", "")
+                chunks.append("".join(text) if isinstance(text, list) else str(text))
+            elif output.get("output_type") == "error":
+                chunks.append(str(output.get("evalue", "")))
+                chunks.append("".join(output.get("traceback", [])))
+            else:
+                for mime, value in output.get("data", {}).items():
+                    if mime.startswith("text/") or mime == "application/json":
+                        chunks.append("".join(value) if isinstance(value, list) else str(value))
+    return "\n".join(chunks)
+
+
 def check_secrets(files: list[Path], errors: list[str]) -> None:
     for path in files:
         if path.suffix.lower() not in TEXT_SUFFIXES or path.stat().st_size > 2_000_000:
             continue
-        text = read_text(path)
+        text = scan_text(path)
         for lineno, line in enumerate(text.splitlines(), 1):
             if any(token.lower() in line.lower() for token in SECRET_ALLOW):
                 continue
