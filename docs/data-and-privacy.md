@@ -1,10 +1,10 @@
 # Data and privacy
 
-I keep this repo public, so I've tried to be careful about what goes in it.
-Course folders pick up things that were fine in private: interview transcripts,
-names, grades, email threads, or data I don't have the right to republish.
+I keep these notes in a public repo, but they're still personal records. Course
+folders pick up things that were fine in private: interview transcripts, names,
+grades, email threads, or data I don't have the right to republish.
 
-This page is my own checklist. It is not legal advice.
+This is just my own checklist.
 
 ## What I'm comfortable publishing
 

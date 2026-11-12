@@ -27,5 +27,5 @@ jupyter lab "Lab 1_Basins of Attraction.ipynb"
 The notebook is self-contained. It defines the polynomials, the Newton step, and
 the grid evaluation; there are no data files. I kept the original outputs.
 
-The report is the better place to start if you want the write-up rather than the
+The report is the better place to start if I want the write-up rather than the
 code.

@@ -34,8 +34,8 @@ julia --project="Matrix Computations" -e 'using Pluto; Pluto.run()'
 
 Then open `hw/hw1.jl` (or any other) in the Pluto window.
 
-If you'd rather use Jupyter, `bo-tutorial/vanilla_bo.ipynb` is a regular
-notebook; it needs a Julia kernel (`IJulia`) and the tutorial environment.
+If I'd rather use Jupyter, `bo-tutorial/vanilla_bo.ipynb` is a regular notebook;
+it needs a Julia kernel (`IJulia`) and the tutorial environment.
 
 ## Bayesian-optimization tutorial
 

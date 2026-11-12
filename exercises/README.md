@@ -18,7 +18,7 @@ of a paragraph with the Gemini API, and sample papers from Semantic Scholar.
 cd exercises
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env      # add GEMINI_API_KEY if you run task 2
+cp .env.example .env      # add GEMINI_API_KEY if I run task 2
 jupyter lab questions.ipynb
 ```
 
@@ -39,5 +39,5 @@ strings instead of enforcing the real 16-digit format.
 ## The key I left in the notebook
 
 An earlier version of `questions.ipynb` had a hard-coded Google API key. I
-removed it, but it's still in the git history. Please revoke it if you can, and
-read [`../docs/security.md`](../docs/security.md) before reusing the notebook.
+removed it, but it's still in the git history. I still need to revoke it; the
+notes are in [`../docs/security.md`](../docs/security.md).

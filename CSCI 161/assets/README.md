@@ -25,5 +25,5 @@ python -m pip install Pillow
 python "CSCI 161/scripts/generate_assets.py"
 ```
 
-If you replace an image, keep the name and dimensions; otherwise update the
+If I replace an image, I keep the name and dimensions; otherwise I update the
 constants in `Shuffler`, `Chess`, and `Fantasy`.

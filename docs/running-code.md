@@ -1,8 +1,8 @@
-# Running the code
+# How I run things
 
 I use a mix of Python, R, Julia/Pluto, SQL, Java, C++, Tableau, and LaTeX in
-these folders. You don't need all of it to browse the repo; each course README
-says what that course uses.
+these folders. I don't need all of it at once; each course README says what that
+course uses.
 
 Below is the setup I used for the last pass, plus the commands I actually ran.
 
@@ -21,7 +21,7 @@ Below is the setup I used for the last pass, plus the commands I actually ran.
 
 ## Python
 
-I keep one virtual environment at the repository root:
+I keep one virtual environment at the top of the folder:
 
 ```bash
 python3 -m venv .venv
@@ -123,7 +123,7 @@ task 3 works without one at lower rate limits.
 ```
 
 The graphics programs write a PNG to `CSCI 161/out/` when there's no display.
-`make java-test` runs the self-tests from the repo root.
+`make java-test` runs the self-tests from the top folder.
 
 ## C++
 
@@ -163,7 +163,7 @@ Rscript "ANOVA Inference.R"
 I replaced the old course-local `summary(model, robust = TRUE)` calls with
 `robust_summary()`. Base R silently ignores the `robust` argument, so the reports
 I generated before the cleanup may show conventional standard errors. Re-run a
-script if you need the robust ones.
+script if I need the robust ones.
 
 `read_data()` searches the script folder and its parents for `csv files/`,
 `Data/`, `data/`, `data/external/`, and `Project_3/`. That's why I run R scripts

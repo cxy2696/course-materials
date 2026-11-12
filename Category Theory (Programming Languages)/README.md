@@ -35,7 +35,7 @@ pdflatex -shell-escape quiver-doc.tex
 pdflatex -shell-escape quiver-doc.tex
 ```
 
-If you only want the problem sets, the PDFs are already compiled.
+If I only want the problem sets, the PDFs are already compiled.
 
 ## Notes
 

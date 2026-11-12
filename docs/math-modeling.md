@@ -1,4 +1,4 @@
-# Moving MATH-Modeling into this repo
+# Moving MATH-Modeling into these notes
 
 I had a separate [`MATH-Modeling`](https://github.com/cxy2696/MATH-Modeling)
 repository for my numerical analysis, modeling, and optimization coursework.
@@ -21,7 +21,7 @@ In November 2026 I moved it into this archive at
 
 I didn't copy `.github/workflows/check.yml`. GitHub only runs workflows from the
 repository root, so I added the same check to
-[`../.github/workflows/quality.yml`](../.github/workflows/quality.yml). You can
+[`../.github/workflows/quality.yml`](../.github/workflows/quality.yml). I can
 still run it by hand:
 
 ```bash

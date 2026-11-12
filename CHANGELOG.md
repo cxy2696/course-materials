@@ -10,14 +10,15 @@ the `MATH-Modeling` archive, and a rewrite of the docs in my own voice.
 
 ### Documentation
 
-- Rewrote the root README and the course READMEs so they say what I actually
-  did, in first person, instead of sounding like a generated project page.
+- Rewrote the root README and the course READMEs as personal notes in first
+  person, without the project-page framing.
 - Added `docs/`: catalog, running guide, conventions, data/privacy, security,
   and notes on the two merged repositories.
 - Added `LICENSE`, `.editorconfig`, `.gitattributes`, `.gitignore`, and the
   checker config.
-- Removed `CONTRIBUTING.md`, `CITATION.cff`, and the third-party-material page.
-  This is a course archive, not a collaborative or citable project.
+- Removed `CONTRIBUTING.md`, `CITATION.cff`, the third-party-material page, and
+  the root `SECURITY.md`. The key note is in `docs/security.md`; this is a
+  personal record, not a project page.
 
 ### Reproducibility
 
@@ -72,11 +73,11 @@ the `MATH-Modeling` archive, and a rewrite of the docs in my own voice.
 ### Still open
 
 - The “roots” dataset used by several `Applied-Statistics` effect-size scripts
-  never came with the course. The scripts stop and tell you what's missing.
+  never came with the course. The scripts stop and tell me what's missing.
 - `ECON284/Ed.R` needs `ECON284_DISTANCE_DATA`.
 - The API key is still in git history. Revoking it matters more than rewriting
   the history.
 - The repo is large: hundreds of MB of PDFs, plus the MATH-Modeling reference
   books. I don't use Git LFS.
-- Notebook outputs are from the original runs. Re-run a notebook if you change
+- Notebook outputs are from the original runs. I re-run a notebook if I change
   its code.

@@ -1,4 +1,4 @@
-# Moving the `code` repository into this one
+# Moving the `code` repository into these notes
 
 I had a separate [`cxy2696/code`](https://github.com/cxy2696/code) repository
 with Java, machine-learning, MITx, R, C++, and practice notebooks. In November

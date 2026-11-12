@@ -65,8 +65,8 @@ also makes them safe to run from a terminal.
 | `Effect Sizes.R`, `Reexpression.R`, `effectSizes.R`, `reexpression-multipleComparison.R`, `ANOVA and Regression with Indicators.R` | **`roots.csv` — I never had it** |
 
 The “roots” data (fine-root diameter by fertilizer treatment) was never
-distributed with the course. If you have a copy, put it in `csv files/`; the
-helper will tell you what's missing if you don't.
+distributed with the course. If I had a copy I'd put it in `csv files/`; the
+helper tells me what's missing otherwise.
 
 ## Notes
 
@@ -74,6 +74,6 @@ helper will tell you what's missing if you don't.
   paths, but the statistical methods are unchanged.
 - The course used `summary(model, robust = TRUE)`, which base R silently
   ignores. I added `robust_summary()` (HC1) in `R/course_utils.R` for scripts
-  that need robust standard errors. If a report looked different from what you'd
-  get now, that's why.
+  that need robust standard errors. If a report looks different from what I'd get
+  now, that's why.
 - `Stat2RCompanion.pdf` is course material.

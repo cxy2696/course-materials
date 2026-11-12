@@ -16,7 +16,7 @@ wrote.
 
 We covered exchange-rate determination, currency derivatives, parity
 conditions, forecasting, government intervention, and transaction/translation/
-operating exposure. The cases were the useful part: you have to decide whether
+operating exposure. The cases were the useful part: I had to decide whether
 to hedge, how much, and with what.
 
 ## The AIFS model

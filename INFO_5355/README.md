@@ -20,7 +20,7 @@ materials.
 | `Interview Recording (Anny)-20241004T002254Z-001.zip` | Interview transcripts and activity notes |
 | `citiCompletionReport_13696806_65119389.pdf` | CITI research-ethics completion |
 
-## Before you reuse the interview zip
+## Before I reuse the interview zip
 
 The zip has `interviewee-1.csv`, `interviewee-2.csv`, and `Activity Notes.xlsx`
 from a human-subjects study. Treat it as potentially confidential: check the

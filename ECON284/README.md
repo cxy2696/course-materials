@@ -55,7 +55,7 @@ The scripts load `_setup.R`, which points at the shared helpers in
 We used `summary(model, robust = TRUE)` in class. That relies on a course-local
 helper; base R's `summary()` silently ignores the argument. I replaced those
 calls with `robust_summary()` (HC1 via `sandwich`/`lmtest`). The exam keys and
-reports I kept may show conventional standard errors. Re-run a script if you
+reports I kept may show conventional standard errors. I re-run a script if I
 need the robust tables.
 
 ## Notes

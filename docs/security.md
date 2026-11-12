@@ -1,6 +1,4 @@
-# Security
-
-## The API key I committed
+# The API key I committed
 
 I left a Google API key in `exercises/questions.ipynb` — it was pasted into a
 shell example in one of the cells. It went into commit `96e7d77` while the repo
@@ -63,5 +61,5 @@ the environment; both are empty by default. The AI-in-Organizations notebooks
 expect `OPENAI_API_KEY` (or the provider named in the notebook) in the
 environment. No keys are stored in the repo.
 
-If you find a credential or private data here, please contact me privately
-rather than opening a public issue with the secret in it.
+I keep this note here so I don't forget to revoke the key. The key is still in
+history, even if the current notebook is clean.

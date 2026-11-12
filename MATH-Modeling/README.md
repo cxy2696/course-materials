@@ -34,7 +34,7 @@ pip install -r requirements.txt
 jupyter lab
 ```
 
-I wrote the notebooks with Python 3.8–3.12 and last ran them with Python 3.13, NumPy 2.5, SciPy 1.18 and Matplotlib 3.11. The saved outputs are from that run; use *Restart Kernel and Run All Cells* if you want outputs from your own versions.
+I wrote the notebooks with Python 3.8–3.12 and last ran them with Python 3.13, NumPy 2.5, SciPy 1.18 and Matplotlib 3.11. The saved outputs are from that run; I use *Restart Kernel and Run All Cells* if I want outputs from my versions.
 
 The datasets are all in [`data/`](data/), so the notebooks run without a network connection.
 
@@ -109,6 +109,5 @@ It checks that every notebook is valid JSON with Python kernels, that every Mark
 - The MATH 310 notebooks and the SVD handout are course material from the University of Puget Sound; the exercise data comes from the companion site of *Inquiry-Based Numerical Methods*.
 - The books and lecture notes belong to their authors and publishers. I keep them for personal study only.
 - `references/books/Algorithms for Optimization.pdf` is distributed under CC BY-NC-ND 4.0 (Kochenderfer and Wheeler, MIT Press, 2019) and is unmodified here.
-- If you own material in this repository and would rather it were not public, open an issue and I will remove it.
 
 More detail is in [`docs/provenance.md`](docs/provenance.md).

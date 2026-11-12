@@ -1,4 +1,4 @@
-# Notes about the repo
+# My notes
 
 I keep the cross-course notes here: what I took, how to run it, and the small
 rules I follow so the folders don't turn into a junk drawer.
@@ -13,14 +13,14 @@ rules I follow so the folders don't turn into a junk drawer.
 | [`code-merge.md`](code-merge.md) | Where the old `code` repository ended up |
 | [`math-modeling.md`](math-modeling.md) | Where the old `MATH-Modeling` repository ended up |
 
-I'd start with the root [`README.md`](../README.md), then open the README of
-the course you care about. The catalog is the quickest way to find a folder.
+I start with the root [`README.md`](../README.md), then open the README of the
+course I'm looking for. The catalog is the quickest way to find a folder.
 
 Commands I actually use:
 
 ```bash
-make check                  # repo checks + MATH-Modeling checks
+make check                  # my checks + MATH-Modeling checks
 make check-code             # Java, C++, and Python tests
 make setup                  # install the Python stack
-python tools/check_repo.py  # just the repo checker
+python tools/check_repo.py  # just the checker
 ```

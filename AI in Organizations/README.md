@@ -2,7 +2,7 @@
 
 I took *AI in Organizations* in fall 2025. The course was about how AI systems
 change work and decision-making, and the assignments were mostly hands-on: build
-something small, test it, then explain what you learned about the system and the
+something small, test it, then explain what I learned about the system and the
 organization around it.
 
 ## What I kept

@@ -49,8 +49,8 @@ jupyter lab
 ```
 
 The notebooks find `data/` by walking up from the current directory, so starting
-Jupyter in `Lab/` or in `Numerical-Analysis-Lab/` both work. If you move a
-notebook, keep it inside the course folder.
+Jupyter in `Lab/` or in `Numerical-Analysis-Lab/` both work. If I move a
+notebook, I keep it inside the course folder.
 
 ## What I changed later
 

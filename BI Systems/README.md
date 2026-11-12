@@ -19,7 +19,7 @@ registrar, the audit office, and alumni affairs.
 
 The project asked us to model access and usage, build the ETL, and present the
 result to a non-technical audience. The WhereScape recipes in `milestone/` are
-the part I'd look at first if you want to see how the dimensional model was
+the part I'd look at first if I want to see how the dimensional model was
 built.
 
 ## Opening the work

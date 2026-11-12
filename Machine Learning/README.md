@@ -20,7 +20,7 @@ python -m pip install -r "Machine Learning/requirements-ml.txt"   # kernels and 
 jupyter lab
 ```
 
-Start Jupyter from the repo root and open the notebook you need.
+I start Jupyter from the folder root and open the notebook I need.
 
 ## Things I ran into
 
