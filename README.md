@@ -3,8 +3,14 @@
 [![Quality checks](https://github.com/cxy2696/course-materials/actions/workflows/quality.yml/badge.svg)](https://github.com/cxy2696/course-materials/actions/workflows/quality.yml)
 
 I keep my university coursework here: lecture notes, lab reports, problem sets,
-slides, and the code and data behind them. Most materials are information science, computer science, mathematics, economics, business.
+slides, and the code and data behind them. Most of it is information science,
+computer science, mathematics, economics, and business coursework, plus some
+programming practice.
+
 I've tried to make the material easy to pick up. Each course has a README, data
+paths are relative, and the public datasets I could cache are in the repo. At
+the moment the repo has **1,083 tracked files**: 120 notebooks, 416 PDFs, and
+229 code files across 25 course/code folders.
 
 ```bash
 git clone https://github.com/cxy2696/course-materials.git
@@ -48,12 +54,23 @@ make check-code     # Java tests, C++ build, Python tests
 | [`C++/`](<C++/README.md>) | A small C++17 example with a Makefile | C++ |
 | [`exercises/`](<exercises/README.md>) | A take-home exercise on messy publication data and two APIs | Python |
 
-I also keep a few things that are not courses:
+## Shared files
 
-- [`docs/`](docs/README.md) — the catalog, running guide, and notes on how I
-  keep the repo tidy.
-- [`R/`](R/README.md) — the helpers the R scripts share.
-- [`tools/check_repo.py`](tools/check_repo.py) — the checker I run before pushing.
+These are the files that apply to the whole repo rather than one course.
+
+| Path | What it is |
+| --- | --- |
+| `docs/` | The catalog, running guide, conventions, privacy/security notes, and merge notes ([index](docs/README.md)) |
+| `R/` | The helpers the R scripts share ([README](R/README.md)) |
+| `tools/check_repo.py` | The repository checker I run before pushing |
+| `Makefile` | `make check`, `make check-code`, `make setup`, and a few course-specific targets |
+| `requirements.txt`, `requirements-ai.txt` | Python dependencies for the notebooks and the AI course |
+| `.github/workflows/quality.yml` | CI: repo hygiene plus the Java, C++, and Python tests |
+| `.editorconfig`, `.gitattributes`, `.gitignore` | Formatting, line-ending, and ignore rules |
+| `CHANGELOG.md` | A log of the bigger passes over the repo |
+| `SECURITY.md` | The key I committed by mistake and how I handle keys now |
+| `LICENSE` | MIT for my code and writing |
+| `README.md` | This index |
 
 ## Where to start
 
