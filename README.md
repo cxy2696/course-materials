@@ -3,9 +3,7 @@
 [![Quality checks](https://github.com/cxy2696/course-materials/actions/workflows/quality.yml/badge.svg)](https://github.com/cxy2696/course-materials/actions/workflows/quality.yml)
 
 I keep my university coursework here: lecture notes, lab reports, problem sets,
-slides, and the code and data behind them. Most of it is information science,
-computer science, mathematics, economics, and business coursework, plus some
-programming practice.
+slides, and the code and data behind them. Most of it is computer science, mathematics, economics, and business coursework, plus some programming practice.
 
 I've tried to make the material easy to pick up. Each course has a README, data
 paths are relative, and the public datasets I could cache are in the repo. At
