@@ -3,12 +3,8 @@
 [![Quality checks](https://github.com/cxy2696/course-materials/actions/workflows/quality.yml/badge.svg)](https://github.com/cxy2696/course-materials/actions/workflows/quality.yml)
 
 I keep my university coursework here: lecture notes, lab reports, problem sets,
-slides, and the code and data behind them. Most of the later INFO, CS, and MATH
-folders are from Cornell; the earlier economics, business, and statistics
-courses and the code archive come from elsewhere.
-
+slides, and the code and data behind them. Most materials are information science, computer science, mathematics, economics, business.
 I've tried to make the material easy to pick up. Each course has a README, data
-paths are relative, and the public datasets I could cache are in the repo.
 
 ```bash
 git clone https://github.com/cxy2696/course-materials.git
