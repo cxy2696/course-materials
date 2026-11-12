@@ -90,24 +90,3 @@ Julia, SQL, Java, C++, Tableau, and LaTeX.
 looks at notebook JSON, relative links, tracked junk, secrets, and Python/R/Julia
 syntax. `make check-code` runs the Java self-tests, builds the C++ example, and
 runs the Python tests.
-
-## Data and privacy
-
-The code and my own writing are MIT-licensed (see [`LICENSE`](LICENSE)).
-
-The one thing I'd review before reusing is
-`INFO_5355/Interview Recording (Anny)-…zip`: it contains interview transcripts
-and notes from a UX study. I wrote about that in
-[`docs/data-and-privacy.md`](docs/data-and-privacy.md).
-
-A few datasets used by the R labs were never distributed with the course, so
-those scripts stop and tell you what is missing.
-
-## A note on the state of the repo
-
-I merged the standalone `code` and `MATH-Modeling` repositories into this one in
-November 2026. The mapping notes are in [`docs/code-merge.md`](docs/code-merge.md)
-and [`docs/math-modeling.md`](docs/math-modeling.md), and the full list of
-changes is in [`CHANGELOG.md`](CHANGELOG.md).
-
-If something doesn't run, open an issue on GitHub and I'll take a look.
