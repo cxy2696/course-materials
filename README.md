@@ -8,7 +8,7 @@ slides, and the code and data behind them. Most of it is computer science, mathe
 I've tried to make the material easy to pick up. Each course has a README, data
 paths are relative, and the public datasets I could cache are in the repo. At
 the moment the repo has **1,083 tracked files**: 120 notebooks, 416 PDFs, and
-229 code files across 25 course/code folders.
+229 code files across 25 course/code folders and 174 directories.
 
 ```bash
 git clone https://github.com/cxy2696/course-materials.git
@@ -69,6 +69,193 @@ These are the files that apply to the whole repo rather than one course.
 | `SECURITY.md` | The key I committed by mistake and how I handle keys now |
 | `LICENSE` | MIT for my code and writing |
 | `README.md` | This index |
+
+## Directory index
+
+Every directory in the repo, including the nested ones. The file-level details
+are in each folder's README.
+
+<details>
+<summary>Show all 173 subdirectories</summary>
+
+```text
+course-materials/
+├── .github/
+│   └── workflows/
+├── 2025Spring/
+│   ├── 5080/
+│   ├── 5905/
+│   ├── 5940/
+│   │   ├── Reflection 1/
+│   │   ├── Reflection 2/
+│   │   ├── Reflection 3/
+│   │   ├── Reflection 4/
+│   │   └── Reflection 5/
+│   ├── 6220/
+│   │   ├── Assignment/
+│   │   ├── PS/
+│   │   └── SP25/
+│   ├── 6820/
+│   ├── 6940/
+│   └── STSCI/
+│       ├── 5090/
+│       │   └── recitation/
+│       └── 5740/
+├── AI in Organizations/
+│   ├── FinalReport/
+│   ├── FinalShowcase/
+│   ├── hw3/
+│   ├── hw4/
+│   │   └── docs/
+│   └── mid-term-check-in/
+├── Applied-Statistics/
+│   ├── csv files/
+│   ├── data/
+│   │   └── external/
+│   ├── Lab reports/
+│   ├── Project_3/
+│   └── R code/
+├── Basins-of-Attraction/
+├── BI Systems/
+│   ├── done/
+│   ├── lecture/
+│   └── milestone/
+├── BUS435/
+│   ├── ClassNotes/
+│   └── CoursePack/
+├── C++/
+│   └── hello-world/
+├── Category Theory (Programming Languages)/
+│   └── hw/
+├── Creative Project (CS 3780-5780)/
+│   └── data/
+├── CS_5320/
+│   ├── csv/
+│   └── SQLfolder/
+├── CSCI 161/
+│   ├── assets/
+│   ├── scripts/
+│   ├── src/
+│   │   └── coursework/
+│   │       ├── algorithms/
+│   │       ├── basics/
+│   │       ├── cards/
+│   │       ├── games/
+│   │       ├── graphics/
+│   │       ├── oop/
+│   │       └── util/
+│   └── test/
+│       └── coursework/
+├── docs/
+├── ECON284/
+│   ├── Appendix/
+│   └── Data/
+├── ECON411/
+│   ├── DataCollection/
+│   └── Poster pictures/
+├── exercises/
+├── INFO 4100/
+├── INFO_5355/
+├── INFO_6850/
+│   ├── hw1/
+│   ├── hw2/
+│   ├── notes/
+│   └── reactionpaperResources/
+├── InfoNetworks/
+│   ├── hnl_voter_model/
+│   │   ├── models/
+│   │   ├── notebooks/
+│   │   └── results/
+│   ├── pythonCoauthorship/
+│   │   └── tools/
+│   ├── pythonCoauthorship_customBFStree/
+│   ├── pythonCS6850_Project/
+│   │   └── PythonHybrid/
+│   └── tests/
+├── Machine Learning/
+│   ├── kernels/
+│   ├── knn/
+│   ├── naive_bayes/
+│   ├── perceptron/
+│   ├── sgd_neural_network/
+│   └── tests/
+├── MATH-Modeling/
+│   ├── archive/
+│   ├── data/
+│   ├── docs/
+│   ├── homework/
+│   ├── modeling/
+│   │   ├── code/
+│   │   │   ├── dynamical-systems/
+│   │   │   ├── fitting/
+│   │   │   ├── markov-chains/
+│   │   │   └── simulation/
+│   │   └── lecture-notes/
+│   ├── notebooks/
+│   │   ├── 01-python-and-floating-point/
+│   │   ├── 02-root-finding/
+│   │   ├── 03-linear-algebra/
+│   │   ├── 04-optimization/
+│   │   ├── 05-function-approximation/
+│   │   ├── 06-numerical-calculus/
+│   │   ├── 07-differential-equations/
+│   │   ├── 08-partial-differential-equations/
+│   │   ├── 09-fourier-analysis/
+│   │   └── 10-applications/
+│   ├── projects/
+│   │   └── cross-entropy/
+│   │       └── examples/
+│   ├── references/
+│   │   ├── books/
+│   │   │   └── optimization-modeling-algorithms-theory-zh/
+│   │   ├── lecture-notes/
+│   │   ├── linear-optimization/
+│   │   └── multivariable-calculus/
+│   └── scripts/
+├── Matrix Computations/
+│   ├── bo-tutorial/
+│   │   ├── docs/
+│   │   └── src/
+│   ├── hw/
+│   └── lecture/
+├── MITx 6.00.1x/
+│   ├── lectures/
+│   │   ├── lecture01/
+│   │   ├── lecture02/
+│   │   ├── lecture03/
+│   │   ├── lecture04/
+│   │   ├── lecture05/
+│   │   ├── lecture06/
+│   │   ├── lecture07/
+│   │   ├── lecture08/
+│   │   ├── lecture09/
+│   │   ├── lecture10/
+│   │   ├── lecture11/
+│   │   └── lecture12/
+│   ├── practice/
+│   ├── problem_sets/
+│   │   └── ps4/
+│   └── reference/
+├── mobile-RPG-observation/
+│   └── Poster pictures/
+├── Numerical-Analysis-Lab/
+│   ├── AllLab/
+│   │   └── Facial Recognition/
+│   │       └── Faces Lab/
+│   │           └── faces/
+│   ├── data/
+│   │   ├── audio/
+│   │   ├── climate/
+│   │   └── faces/
+│   ├── Lab/
+│   └── Project/
+├── Practice Notebooks/
+│   └── data/
+├── R/
+└── tools/
+```
+
+</details>
 
 ## Where to start
 
